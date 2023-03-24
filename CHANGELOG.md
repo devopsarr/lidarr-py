@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/devopsarr/lidarr-py/compare/v0.2.0...v0.2.1) (2023-03-24)
+
+
+### Bug Fixes
+
+* **devopsarr/radarr-py#6:** indentation error on config ([e82ba8f](https://github.com/devopsarr/lidarr-py/commit/e82ba8fe87c66e27aae261676747eb701ad6c851))
+
 ## [0.2.0](https://github.com/devopsarr/lidarr-py/compare/v0.1.0...v0.2.0) (2023-03-24)
 
 
