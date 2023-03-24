@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **release_group** | **str** |  | [optional] 
 **release_hash** | **str** |  | [optional] 
 **release_version** | **str** |  | [optional] 
+**release_title** | **str** |  | [optional] 
 
 ## Example
 

@@ -19,6 +19,7 @@ import json
 
 from typing import List, Optional
 from pydantic import BaseModel
+from lidarr.models.profile_format_item_resource import ProfileFormatItemResource
 from lidarr.models.quality_profile_quality_item_resource import QualityProfileQualityItemResource
 
 class QualityProfileResource(BaseModel):
@@ -32,7 +33,10 @@ class QualityProfileResource(BaseModel):
     upgrade_allowed: Optional[bool]
     cutoff: Optional[int]
     items: Optional[List]
-    __properties = ["id", "name", "upgradeAllowed", "cutoff", "items"]
+    min_format_score: Optional[int]
+    cutoff_format_score: Optional[int]
+    format_items: Optional[List]
+    __properties = ["id", "name", "upgradeAllowed", "cutoff", "items", "minFormatScore", "cutoffFormatScore", "formatItems"]
 
     class Config:
         allow_population_by_field_name = True
@@ -68,6 +72,13 @@ class QualityProfileResource(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['items'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in format_items (list)
+        _items = []
+        if self.format_items:
+            for _item in self.format_items:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['formatItems'] = _items
         # set to None if name (nullable) is None
         if self.name is None:
             _dict['name'] = None
@@ -75,6 +86,10 @@ class QualityProfileResource(BaseModel):
         # set to None if items (nullable) is None
         if self.items is None:
             _dict['items'] = None
+
+        # set to None if format_items (nullable) is None
+        if self.format_items is None:
+            _dict['formatItems'] = None
 
         return _dict
 
@@ -92,7 +107,10 @@ class QualityProfileResource(BaseModel):
             "name": obj.get("name"),
             "upgrade_allowed": obj.get("upgradeAllowed"),
             "cutoff": obj.get("cutoff"),
-            "items": [QualityProfileQualityItemResource.from_dict(_item) for _item in obj.get("items")] if obj.get("items") is not None else None
+            "items": [QualityProfileQualityItemResource.from_dict(_item) for _item in obj.get("items")] if obj.get("items") is not None else None,
+            "min_format_score": obj.get("minFormatScore"),
+            "cutoff_format_score": obj.get("cutoffFormatScore"),
+            "format_items": [ProfileFormatItemResource.from_dict(_item) for _item in obj.get("formatItems")] if obj.get("formatItems") is not None else None
         })
         return _obj
 

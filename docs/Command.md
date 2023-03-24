@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **requires_disk_access** | **bool** |  | [optional] [readonly] 
 **is_exclusive** | **bool** |  | [optional] [readonly] 
 **is_type_exclusive** | **bool** |  | [optional] [readonly] 
+**is_long_running** | **bool** |  | [optional] [readonly] 
 **name** | **str** |  | [optional] [readonly] 
 **last_execution_time** | **datetime** |  | [optional] 
 **last_start_time** | **datetime** |  | [optional] 

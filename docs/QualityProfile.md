@@ -8,6 +8,9 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **upgrade_allowed** | **bool** |  | [optional] 
 **cutoff** | **int** |  | [optional] 
+**min_format_score** | **int** |  | [optional] 
+**cutoff_format_score** | **int** |  | [optional] 
+**format_items** | [**List[ProfileFormatItem]**](ProfileFormatItem.md) |  | [optional] 
 **items** | [**List[QualityProfileQualityItem]**](QualityProfileQualityItem.md) |  | [optional] 
 
 ## Example

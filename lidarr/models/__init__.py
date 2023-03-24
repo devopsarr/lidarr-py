@@ -55,6 +55,10 @@ from lidarr.models.command_resource import CommandResource
 from lidarr.models.command_status import CommandStatus
 from lidarr.models.command_trigger import CommandTrigger
 from lidarr.models.custom_filter_resource import CustomFilterResource
+from lidarr.models.custom_format import CustomFormat
+from lidarr.models.custom_format_resource import CustomFormatResource
+from lidarr.models.custom_format_specification_schema import CustomFormatSpecificationSchema
+from lidarr.models.database_type import DatabaseType
 from lidarr.models.delay_profile_resource import DelayProfileResource
 from lidarr.models.disk_space_resource import DiskSpaceResource
 from lidarr.models.download_client_config_resource import DownloadClientConfigResource
@@ -68,7 +72,7 @@ from lidarr.models.health_resource import HealthResource
 from lidarr.models.history_resource import HistoryResource
 from lidarr.models.history_resource_paging_resource import HistoryResourcePagingResource
 from lidarr.models.host_config_resource import HostConfigResource
-from lidarr.models.http_uri import HttpUri
+from lidarr.models.i_custom_format_specification import ICustomFormatSpecification
 from lidarr.models.import_list_exclusion_resource import ImportListExclusionResource
 from lidarr.models.import_list_monitor_type import ImportListMonitorType
 from lidarr.models.import_list_resource import ImportListResource
@@ -82,6 +86,7 @@ from lidarr.models.log_file_resource import LogFileResource
 from lidarr.models.log_resource import LogResource
 from lidarr.models.log_resource_paging_resource import LogResourcePagingResource
 from lidarr.models.manual_import_resource import ManualImportResource
+from lidarr.models.manual_import_update_resource import ManualImportUpdateResource
 from lidarr.models.media_cover import MediaCover
 from lidarr.models.media_cover_types import MediaCoverTypes
 from lidarr.models.media_info_model import MediaInfoModel
@@ -104,7 +109,10 @@ from lidarr.models.paging_resource_filter import PagingResourceFilter
 from lidarr.models.parse_resource import ParseResource
 from lidarr.models.parsed_album_info import ParsedAlbumInfo
 from lidarr.models.parsed_track_info import ParsedTrackInfo
+from lidarr.models.ping_resource import PingResource
 from lidarr.models.primary_album_type import PrimaryAlbumType
+from lidarr.models.profile_format_item import ProfileFormatItem
+from lidarr.models.profile_format_item_resource import ProfileFormatItemResource
 from lidarr.models.profile_primary_album_type_item import ProfilePrimaryAlbumTypeItem
 from lidarr.models.profile_primary_album_type_item_resource import ProfilePrimaryAlbumTypeItemResource
 from lidarr.models.profile_release_status_item import ProfileReleaseStatusItem
@@ -139,15 +147,15 @@ from lidarr.models.rescan_after_refresh_type import RescanAfterRefreshType
 from lidarr.models.retag_track_resource import RetagTrackResource
 from lidarr.models.revision import Revision
 from lidarr.models.root_folder_resource import RootFolderResource
+from lidarr.models.runtime_mode import RuntimeMode
 from lidarr.models.secondary_album_type import SecondaryAlbumType
 from lidarr.models.select_option import SelectOption
 from lidarr.models.sort_direction import SortDirection
-from lidarr.models.string_int32_key_value_pair import StringInt32KeyValuePair
+from lidarr.models.system_resource import SystemResource
 from lidarr.models.tag_details_resource import TagDetailsResource
 from lidarr.models.tag_difference import TagDifference
 from lidarr.models.tag_resource import TagResource
 from lidarr.models.task_resource import TaskResource
-from lidarr.models.time_span import TimeSpan
 from lidarr.models.track import Track
 from lidarr.models.track_file import TrackFile
 from lidarr.models.track_file_lazy_loaded import TrackFileLazyLoaded
@@ -162,5 +170,4 @@ from lidarr.models.ui_config_resource import UiConfigResource
 from lidarr.models.update_changes import UpdateChanges
 from lidarr.models.update_mechanism import UpdateMechanism
 from lidarr.models.update_resource import UpdateResource
-from lidarr.models.version import Version
 from lidarr.models.write_audio_tags_type import WriteAudioTagsType

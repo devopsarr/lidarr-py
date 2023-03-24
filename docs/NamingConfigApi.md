@@ -17,50 +17,6 @@ Method | HTTP request | Description
 
 ### Example
 
-* Api Key Authentication (X-Api-Key):
-```python
-from __future__ import print_function
-import time
-import os
-import lidarr
-from lidarr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:8686
-# See configuration.py for a list of all supported configuration parameters.
-configuration = lidarr.Configuration(
-    host = "http://localhost:8686"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
-# Configure API key authorization: apikey
-configuration.api_key['apikey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with lidarr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = lidarr.NamingConfigApi(api_client)
-
-    try:
-        api_response = api_instance.get_naming_config()
-        print("The response of NamingConfigApi->get_naming_config:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling NamingConfigApi->get_naming_config: %s\n" % e)
-```
-
 * Api Key Authentication (apikey):
 ```python
 from __future__ import print_function
@@ -80,17 +36,61 @@ configuration = lidarr.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
 # Configure API key authorization: X-Api-Key
 configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.NamingConfigApi(api_client)
+
+    try:
+        api_response = api_instance.get_naming_config()
+        print("The response of NamingConfigApi->get_naming_config:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling NamingConfigApi->get_naming_config: %s\n" % e)
+```
+
+* Api Key Authentication (X-Api-Key):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure API key authorization: apikey
 configuration.api_key['apikey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
@@ -114,7 +114,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[X-Api-Key](../README.md#X-Api-Key), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -135,51 +135,6 @@ This endpoint does not need any parameter.
 
 ### Example
 
-* Api Key Authentication (X-Api-Key):
-```python
-from __future__ import print_function
-import time
-import os
-import lidarr
-from lidarr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:8686
-# See configuration.py for a list of all supported configuration parameters.
-configuration = lidarr.Configuration(
-    host = "http://localhost:8686"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
-# Configure API key authorization: apikey
-configuration.api_key['apikey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with lidarr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = lidarr.NamingConfigApi(api_client)
-    id = 56 # int | 
-
-    try:
-        api_response = api_instance.get_naming_config_by_id(id)
-        print("The response of NamingConfigApi->get_naming_config_by_id:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling NamingConfigApi->get_naming_config_by_id: %s\n" % e)
-```
-
 * Api Key Authentication (apikey):
 ```python
 from __future__ import print_function
@@ -199,17 +154,62 @@ configuration = lidarr.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
 # Configure API key authorization: X-Api-Key
 configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.NamingConfigApi(api_client)
+    id = 56 # int | 
+
+    try:
+        api_response = api_instance.get_naming_config_by_id(id)
+        print("The response of NamingConfigApi->get_naming_config_by_id:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling NamingConfigApi->get_naming_config_by_id: %s\n" % e)
+```
+
+* Api Key Authentication (X-Api-Key):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure API key authorization: apikey
 configuration.api_key['apikey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[X-Api-Key](../README.md#X-Api-Key), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Example
 
-* Api Key Authentication (X-Api-Key):
+* Api Key Authentication (apikey):
 ```python
 from __future__ import print_function
 import time
@@ -277,17 +277,17 @@ configuration = lidarr.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
 # Configure API key authorization: apikey
 configuration.api_key['apikey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
@@ -313,7 +313,7 @@ with lidarr.ApiClient(configuration) as api_client:
         print("Exception when calling NamingConfigApi->get_naming_config_examples: %s\n" % e)
 ```
 
-* Api Key Authentication (apikey):
+* Api Key Authentication (X-Api-Key):
 ```python
 from __future__ import print_function
 import time
@@ -332,17 +332,17 @@ configuration = lidarr.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
 # Configure API key authorization: apikey
 configuration.api_key['apikey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
@@ -392,7 +392,7 @@ void (empty response body)
 
 ### Authorization
 
-[X-Api-Key](../README.md#X-Api-Key), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -413,52 +413,6 @@ void (empty response body)
 
 ### Example
 
-* Api Key Authentication (X-Api-Key):
-```python
-from __future__ import print_function
-import time
-import os
-import lidarr
-from lidarr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:8686
-# See configuration.py for a list of all supported configuration parameters.
-configuration = lidarr.Configuration(
-    host = "http://localhost:8686"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
-# Configure API key authorization: apikey
-configuration.api_key['apikey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with lidarr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = lidarr.NamingConfigApi(api_client)
-    id = 'id_example' # str | 
-    naming_config_resource = lidarr.NamingConfigResource() # NamingConfigResource |  (optional)
-
-    try:
-        api_response = api_instance.update_naming_config(id, naming_config_resource=naming_config_resource)
-        print("The response of NamingConfigApi->update_naming_config:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling NamingConfigApi->update_naming_config: %s\n" % e)
-```
-
 * Api Key Authentication (apikey):
 ```python
 from __future__ import print_function
@@ -478,17 +432,63 @@ configuration = lidarr.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
 # Configure API key authorization: X-Api-Key
 configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.NamingConfigApi(api_client)
+    id = 'id_example' # str | 
+    naming_config_resource = lidarr.NamingConfigResource() # NamingConfigResource |  (optional)
+
+    try:
+        api_response = api_instance.update_naming_config(id, naming_config_resource=naming_config_resource)
+        print("The response of NamingConfigApi->update_naming_config:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling NamingConfigApi->update_naming_config: %s\n" % e)
+```
+
+* Api Key Authentication (X-Api-Key):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure API key authorization: apikey
 configuration.api_key['apikey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[X-Api-Key](../README.md#X-Api-Key), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 

@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **path** | **str** |  | [optional] 
 **size** | **int** |  | [optional] 
 **date_added** | **datetime** |  | [optional] 
+**scene_name** | **str** |  | [optional] 
+**release_group** | **str** |  | [optional] 
 **quality** | [**QualityModel**](QualityModel.md) |  | [optional] 
 **quality_weight** | **int** |  | [optional] 
 **media_info** | [**MediaInfoResource**](MediaInfoResource.md) |  | [optional] 

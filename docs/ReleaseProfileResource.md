@@ -6,10 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
 **enabled** | **bool** |  | [optional] 
-**required** | **str** |  | [optional] 
-**ignored** | **str** |  | [optional] 
-**preferred** | [**List[StringInt32KeyValuePair]**](StringInt32KeyValuePair.md) |  | [optional] 
-**include_preferred_when_renaming** | **bool** |  | [optional] 
+**required** | **List[str]** |  | [optional] 
+**ignored** | **List[str]** |  | [optional] 
 **indexer_id** | **int** |  | [optional] 
 **tags** | **List[int]** |  | [optional] 
 

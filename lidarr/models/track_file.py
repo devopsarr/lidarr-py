@@ -33,6 +33,7 @@ class TrackFile(BaseModel):
     size: Optional[int]
     modified: Optional[datetime]
     date_added: Optional[datetime]
+    original_file_path: Optional[str]
     scene_name: Optional[str]
     release_group: Optional[str]
     quality: Optional[QualityModel]
@@ -41,7 +42,7 @@ class TrackFile(BaseModel):
     tracks: Optional[TrackListLazyLoaded]
     artist: Optional[ArtistLazyLoaded]
     album: Optional[AlbumLazyLoaded]
-    __properties = ["id", "path", "size", "modified", "dateAdded", "sceneName", "releaseGroup", "quality", "mediaInfo", "albumId", "tracks", "artist", "album"]
+    __properties = ["id", "path", "size", "modified", "dateAdded", "originalFilePath", "sceneName", "releaseGroup", "quality", "mediaInfo", "albumId", "tracks", "artist", "album"]
 
     class Config:
         allow_population_by_field_name = True
@@ -89,6 +90,10 @@ class TrackFile(BaseModel):
         if self.path is None:
             _dict['path'] = None
 
+        # set to None if original_file_path (nullable) is None
+        if self.original_file_path is None:
+            _dict['originalFilePath'] = None
+
         # set to None if scene_name (nullable) is None
         if self.scene_name is None:
             _dict['sceneName'] = None
@@ -114,6 +119,7 @@ class TrackFile(BaseModel):
             "size": obj.get("size"),
             "modified": obj.get("modified"),
             "date_added": obj.get("dateAdded"),
+            "original_file_path": obj.get("originalFilePath"),
             "scene_name": obj.get("sceneName"),
             "release_group": obj.get("releaseGroup"),
             "quality": QualityModel.from_dict(obj.get("quality")) if obj.get("quality") is not None else None,

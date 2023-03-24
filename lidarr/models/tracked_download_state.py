@@ -31,11 +31,11 @@ class TrackedDownloadState(str, Enum):
     """
 
     DOWNLOADING = 'downloading'
-    DOWNLOAD_FAILED = 'downloadFailed'
-    DOWNLOAD_FAILED_PENDING = 'downloadFailedPending'
-    IMPORT_PENDING = 'importPending'
+    DOWNLOADFAILED = 'downloadFailed'
+    DOWNLOADFAILEDPENDING = 'downloadFailedPending'
+    IMPORTPENDING = 'importPending'
     IMPORTING = 'importing'
-    IMPORT_FAILED = 'importFailed'
+    IMPORTFAILED = 'importFailed'
     IMPORTED = 'imported'
     IGNORED = 'ignored'
 

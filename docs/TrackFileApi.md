@@ -19,49 +19,6 @@ Method | HTTP request | Description
 
 ### Example
 
-* Api Key Authentication (X-Api-Key):
-```python
-from __future__ import print_function
-import time
-import os
-import lidarr
-from lidarr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:8686
-# See configuration.py for a list of all supported configuration parameters.
-configuration = lidarr.Configuration(
-    host = "http://localhost:8686"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
-# Configure API key authorization: apikey
-configuration.api_key['apikey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with lidarr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = lidarr.TrackFileApi(api_client)
-    id = 56 # int | 
-
-    try:
-        api_instance.delete_track_file(id)
-    except Exception as e:
-        print("Exception when calling TrackFileApi->delete_track_file: %s\n" % e)
-```
-
 * Api Key Authentication (apikey):
 ```python
 from __future__ import print_function
@@ -81,17 +38,60 @@ configuration = lidarr.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
 # Configure API key authorization: X-Api-Key
 configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.TrackFileApi(api_client)
+    id = 56 # int | 
+
+    try:
+        api_instance.delete_track_file(id)
+    except Exception as e:
+        print("Exception when calling TrackFileApi->delete_track_file: %s\n" % e)
+```
+
+* Api Key Authentication (X-Api-Key):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure API key authorization: apikey
 configuration.api_key['apikey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
@@ -117,7 +117,7 @@ void (empty response body)
 
 ### Authorization
 
-[X-Api-Key](../README.md#X-Api-Key), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -138,49 +138,6 @@ void (empty response body)
 
 ### Example
 
-* Api Key Authentication (X-Api-Key):
-```python
-from __future__ import print_function
-import time
-import os
-import lidarr
-from lidarr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:8686
-# See configuration.py for a list of all supported configuration parameters.
-configuration = lidarr.Configuration(
-    host = "http://localhost:8686"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
-# Configure API key authorization: apikey
-configuration.api_key['apikey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with lidarr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = lidarr.TrackFileApi(api_client)
-    track_file_list_resource = lidarr.TrackFileListResource() # TrackFileListResource |  (optional)
-
-    try:
-        api_instance.delete_track_file_bulk(track_file_list_resource=track_file_list_resource)
-    except Exception as e:
-        print("Exception when calling TrackFileApi->delete_track_file_bulk: %s\n" % e)
-```
-
 * Api Key Authentication (apikey):
 ```python
 from __future__ import print_function
@@ -200,17 +157,60 @@ configuration = lidarr.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
 # Configure API key authorization: X-Api-Key
 configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.TrackFileApi(api_client)
+    track_file_list_resource = lidarr.TrackFileListResource() # TrackFileListResource |  (optional)
+
+    try:
+        api_instance.delete_track_file_bulk(track_file_list_resource=track_file_list_resource)
+    except Exception as e:
+        print("Exception when calling TrackFileApi->delete_track_file_bulk: %s\n" % e)
+```
+
+* Api Key Authentication (X-Api-Key):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure API key authorization: apikey
 configuration.api_key['apikey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
@@ -236,7 +236,7 @@ void (empty response body)
 
 ### Authorization
 
-[X-Api-Key](../README.md#X-Api-Key), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -257,51 +257,6 @@ void (empty response body)
 
 ### Example
 
-* Api Key Authentication (X-Api-Key):
-```python
-from __future__ import print_function
-import time
-import os
-import lidarr
-from lidarr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:8686
-# See configuration.py for a list of all supported configuration parameters.
-configuration = lidarr.Configuration(
-    host = "http://localhost:8686"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
-# Configure API key authorization: apikey
-configuration.api_key['apikey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with lidarr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = lidarr.TrackFileApi(api_client)
-    id = 56 # int | 
-
-    try:
-        api_response = api_instance.get_track_file_by_id(id)
-        print("The response of TrackFileApi->get_track_file_by_id:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TrackFileApi->get_track_file_by_id: %s\n" % e)
-```
-
 * Api Key Authentication (apikey):
 ```python
 from __future__ import print_function
@@ -321,17 +276,62 @@ configuration = lidarr.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
 # Configure API key authorization: X-Api-Key
 configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.TrackFileApi(api_client)
+    id = 56 # int | 
+
+    try:
+        api_response = api_instance.get_track_file_by_id(id)
+        print("The response of TrackFileApi->get_track_file_by_id:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TrackFileApi->get_track_file_by_id: %s\n" % e)
+```
+
+* Api Key Authentication (X-Api-Key):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure API key authorization: apikey
 configuration.api_key['apikey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[X-Api-Key](../README.md#X-Api-Key), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -380,54 +380,6 @@ Name | Type | Description  | Notes
 
 ### Example
 
-* Api Key Authentication (X-Api-Key):
-```python
-from __future__ import print_function
-import time
-import os
-import lidarr
-from lidarr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:8686
-# See configuration.py for a list of all supported configuration parameters.
-configuration = lidarr.Configuration(
-    host = "http://localhost:8686"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
-# Configure API key authorization: apikey
-configuration.api_key['apikey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with lidarr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = lidarr.TrackFileApi(api_client)
-    artist_id = 56 # int |  (optional)
-    track_file_ids = [56] # List[int] |  (optional)
-    album_id = [56] # List[int] |  (optional)
-    unmapped = True # bool |  (optional)
-
-    try:
-        api_response = api_instance.list_track_file(artist_id=artist_id, track_file_ids=track_file_ids, album_id=album_id, unmapped=unmapped)
-        print("The response of TrackFileApi->list_track_file:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TrackFileApi->list_track_file: %s\n" % e)
-```
-
 * Api Key Authentication (apikey):
 ```python
 from __future__ import print_function
@@ -447,17 +399,65 @@ configuration = lidarr.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
 # Configure API key authorization: X-Api-Key
 configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.TrackFileApi(api_client)
+    artist_id = 56 # int |  (optional)
+    track_file_ids = [56] # List[int] |  (optional)
+    album_id = [56] # List[int] |  (optional)
+    unmapped = True # bool |  (optional)
+
+    try:
+        api_response = api_instance.list_track_file(artist_id=artist_id, track_file_ids=track_file_ids, album_id=album_id, unmapped=unmapped)
+        print("The response of TrackFileApi->list_track_file:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TrackFileApi->list_track_file: %s\n" % e)
+```
+
+* Api Key Authentication (X-Api-Key):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure API key authorization: apikey
 configuration.api_key['apikey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
@@ -491,7 +491,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[X-Api-Key](../README.md#X-Api-Key), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -512,49 +512,6 @@ Name | Type | Description  | Notes
 
 ### Example
 
-* Api Key Authentication (X-Api-Key):
-```python
-from __future__ import print_function
-import time
-import os
-import lidarr
-from lidarr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:8686
-# See configuration.py for a list of all supported configuration parameters.
-configuration = lidarr.Configuration(
-    host = "http://localhost:8686"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
-# Configure API key authorization: apikey
-configuration.api_key['apikey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with lidarr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = lidarr.TrackFileApi(api_client)
-    track_file_list_resource = lidarr.TrackFileListResource() # TrackFileListResource |  (optional)
-
-    try:
-        api_instance.put_track_file_editor(track_file_list_resource=track_file_list_resource)
-    except Exception as e:
-        print("Exception when calling TrackFileApi->put_track_file_editor: %s\n" % e)
-```
-
 * Api Key Authentication (apikey):
 ```python
 from __future__ import print_function
@@ -574,17 +531,60 @@ configuration = lidarr.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
 # Configure API key authorization: X-Api-Key
 configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.TrackFileApi(api_client)
+    track_file_list_resource = lidarr.TrackFileListResource() # TrackFileListResource |  (optional)
+
+    try:
+        api_instance.put_track_file_editor(track_file_list_resource=track_file_list_resource)
+    except Exception as e:
+        print("Exception when calling TrackFileApi->put_track_file_editor: %s\n" % e)
+```
+
+* Api Key Authentication (X-Api-Key):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure API key authorization: apikey
 configuration.api_key['apikey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
@@ -610,7 +610,7 @@ void (empty response body)
 
 ### Authorization
 
-[X-Api-Key](../README.md#X-Api-Key), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -631,52 +631,6 @@ void (empty response body)
 
 ### Example
 
-* Api Key Authentication (X-Api-Key):
-```python
-from __future__ import print_function
-import time
-import os
-import lidarr
-from lidarr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:8686
-# See configuration.py for a list of all supported configuration parameters.
-configuration = lidarr.Configuration(
-    host = "http://localhost:8686"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
-# Configure API key authorization: apikey
-configuration.api_key['apikey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with lidarr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = lidarr.TrackFileApi(api_client)
-    id = 'id_example' # str | 
-    track_file_resource = lidarr.TrackFileResource() # TrackFileResource |  (optional)
-
-    try:
-        api_response = api_instance.update_track_file(id, track_file_resource=track_file_resource)
-        print("The response of TrackFileApi->update_track_file:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TrackFileApi->update_track_file: %s\n" % e)
-```
-
 * Api Key Authentication (apikey):
 ```python
 from __future__ import print_function
@@ -696,17 +650,63 @@ configuration = lidarr.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
 # Configure API key authorization: X-Api-Key
 configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.TrackFileApi(api_client)
+    id = 'id_example' # str | 
+    track_file_resource = lidarr.TrackFileResource() # TrackFileResource |  (optional)
+
+    try:
+        api_response = api_instance.update_track_file(id, track_file_resource=track_file_resource)
+        print("The response of TrackFileApi->update_track_file:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TrackFileApi->update_track_file: %s\n" % e)
+```
+
+* Api Key Authentication (X-Api-Key):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure API key authorization: apikey
 configuration.api_key['apikey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
@@ -736,7 +736,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[X-Api-Key](../README.md#X-Api-Key), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 

@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **track_file_ids** | **List[int]** |  | [optional] 
 **quality** | [**QualityModel**](QualityModel.md) |  | [optional] 
+**scene_name** | **str** |  | [optional] 
+**release_group** | **str** |  | [optional] 
 
 ## Example
 

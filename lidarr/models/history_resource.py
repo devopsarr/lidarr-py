@@ -17,10 +17,11 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from typing import Dict, Optional
+from typing import Dict, List, Optional
 from pydantic import BaseModel
 from lidarr.models.album_resource import AlbumResource
 from lidarr.models.artist_resource import ArtistResource
+from lidarr.models.custom_format_resource import CustomFormatResource
 from lidarr.models.entity_history_event_type import EntityHistoryEventType
 from lidarr.models.quality_model import QualityModel
 from lidarr.models.track_resource import TrackResource
@@ -37,6 +38,7 @@ class HistoryResource(BaseModel):
     track_id: Optional[int]
     source_title: Optional[str]
     quality: Optional[QualityModel]
+    custom_formats: Optional[List]
     quality_cutoff_not_met: Optional[bool]
     var_date: Optional[datetime]
     download_id: Optional[str]
@@ -45,7 +47,7 @@ class HistoryResource(BaseModel):
     album: Optional[AlbumResource]
     artist: Optional[ArtistResource]
     track: Optional[TrackResource]
-    __properties = ["id", "albumId", "artistId", "trackId", "sourceTitle", "quality", "qualityCutoffNotMet", "date", "downloadId", "eventType", "data", "album", "artist", "track"]
+    __properties = ["id", "albumId", "artistId", "trackId", "sourceTitle", "quality", "customFormats", "qualityCutoffNotMet", "date", "downloadId", "eventType", "data", "album", "artist", "track"]
 
     class Config:
         allow_population_by_field_name = True
@@ -77,6 +79,13 @@ class HistoryResource(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of quality
         if self.quality:
             _dict['quality'] = self.quality.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in custom_formats (list)
+        _items = []
+        if self.custom_formats:
+            for _item in self.custom_formats:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['customFormats'] = _items
         # override the default output from pydantic by calling `to_dict()` of album
         if self.album:
             _dict['album'] = self.album.to_dict()
@@ -89,6 +98,10 @@ class HistoryResource(BaseModel):
         # set to None if source_title (nullable) is None
         if self.source_title is None:
             _dict['sourceTitle'] = None
+
+        # set to None if custom_formats (nullable) is None
+        if self.custom_formats is None:
+            _dict['customFormats'] = None
 
         # set to None if download_id (nullable) is None
         if self.download_id is None:
@@ -116,6 +129,7 @@ class HistoryResource(BaseModel):
             "track_id": obj.get("trackId"),
             "source_title": obj.get("sourceTitle"),
             "quality": QualityModel.from_dict(obj.get("quality")) if obj.get("quality") is not None else None,
+            "custom_formats": [CustomFormatResource.from_dict(_item) for _item in obj.get("customFormats")] if obj.get("customFormats") is not None else None,
             "quality_cutoff_not_met": obj.get("qualityCutoffNotMet"),
             "var_date": obj.get("date"),
             "download_id": obj.get("downloadId"),

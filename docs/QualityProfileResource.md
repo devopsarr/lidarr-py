@@ -9,6 +9,9 @@ Name | Type | Description | Notes
 **upgrade_allowed** | **bool** |  | [optional] 
 **cutoff** | **int** |  | [optional] 
 **items** | [**List[QualityProfileQualityItemResource]**](QualityProfileQualityItemResource.md) |  | [optional] 
+**min_format_score** | **int** |  | [optional] 
+**cutoff_format_score** | **int** |  | [optional] 
+**format_items** | [**List[ProfileFormatItemResource]**](ProfileFormatItemResource.md) |  | [optional] 
 
 ## Example
 

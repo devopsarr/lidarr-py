@@ -31,6 +31,6 @@ class NewItemMonitorTypes(str, Enum):
     """
 
     ALL = 'all'
-    var_NONE = 'none'
+    NONE = 'none'
     NEW = 'new'
 

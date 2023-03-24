@@ -36,6 +36,6 @@ class MonitorTypes(str, Enum):
     EXISTING = 'existing'
     LATEST = 'latest'
     FIRST = 'first'
-    var_NONE = 'none'
+    NONE = 'none'
     UNKNOWN = 'unknown'
 

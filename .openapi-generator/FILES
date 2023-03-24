@@ -55,7 +55,12 @@ docs/CommandStatus.md
 docs/CommandTrigger.md
 docs/CustomFilterApi.md
 docs/CustomFilterResource.md
+docs/CustomFormat.md
+docs/CustomFormatApi.md
+docs/CustomFormatResource.md
+docs/CustomFormatSpecificationSchema.md
 docs/CutoffApi.md
+docs/DatabaseType.md
 docs/DelayProfileApi.md
 docs/DelayProfileResource.md
 docs/DiskSpaceApi.md
@@ -77,7 +82,7 @@ docs/HistoryResource.md
 docs/HistoryResourcePagingResource.md
 docs/HostConfigApi.md
 docs/HostConfigResource.md
-docs/HttpUri.md
+docs/ICustomFormatSpecification.md
 docs/ImportListApi.md
 docs/ImportListExclusionApi.md
 docs/ImportListExclusionResource.md
@@ -101,6 +106,7 @@ docs/LogResource.md
 docs/LogResourcePagingResource.md
 docs/ManualImportApi.md
 docs/ManualImportResource.md
+docs/ManualImportUpdateResource.md
 docs/MediaCover.md
 docs/MediaCoverApi.md
 docs/MediaCoverTypes.md
@@ -133,7 +139,11 @@ docs/ParseApi.md
 docs/ParseResource.md
 docs/ParsedAlbumInfo.md
 docs/ParsedTrackInfo.md
+docs/PingApi.md
+docs/PingResource.md
 docs/PrimaryAlbumType.md
+docs/ProfileFormatItem.md
+docs/ProfileFormatItemResource.md
 docs/ProfilePrimaryAlbumTypeItem.md
 docs/ProfilePrimaryAlbumTypeItemResource.md
 docs/ProfileReleaseStatusItem.md
@@ -182,13 +192,14 @@ docs/RetagTrackResource.md
 docs/Revision.md
 docs/RootFolderApi.md
 docs/RootFolderResource.md
+docs/RuntimeMode.md
 docs/SearchApi.md
 docs/SecondaryAlbumType.md
 docs/SelectOption.md
 docs/SortDirection.md
 docs/StaticResourceApi.md
-docs/StringInt32KeyValuePair.md
 docs/SystemApi.md
+docs/SystemResource.md
 docs/TagApi.md
 docs/TagDetailsApi.md
 docs/TagDetailsResource.md
@@ -196,7 +207,6 @@ docs/TagDifference.md
 docs/TagResource.md
 docs/TaskApi.md
 docs/TaskResource.md
-docs/TimeSpan.md
 docs/Track.md
 docs/TrackApi.md
 docs/TrackFile.md
@@ -216,7 +226,6 @@ docs/UpdateChanges.md
 docs/UpdateLogFileApi.md
 docs/UpdateMechanism.md
 docs/UpdateResource.md
-docs/Version.md
 docs/WriteAudioTagsType.md
 lidarr/__init__.py
 lidarr/api/__init__.py
@@ -234,6 +243,7 @@ lidarr/api/calendar_api.py
 lidarr/api/calendar_feed_api.py
 lidarr/api/command_api.py
 lidarr/api/custom_filter_api.py
+lidarr/api/custom_format_api.py
 lidarr/api/cutoff_api.py
 lidarr/api/delay_profile_api.py
 lidarr/api/disk_space_api.py
@@ -263,6 +273,7 @@ lidarr/api/missing_api.py
 lidarr/api/naming_config_api.py
 lidarr/api/notification_api.py
 lidarr/api/parse_api.py
+lidarr/api/ping_api.py
 lidarr/api/quality_definition_api.py
 lidarr/api/quality_profile_api.py
 lidarr/api/quality_profile_schema_api.py
@@ -332,6 +343,10 @@ lidarr/models/command_resource.py
 lidarr/models/command_status.py
 lidarr/models/command_trigger.py
 lidarr/models/custom_filter_resource.py
+lidarr/models/custom_format.py
+lidarr/models/custom_format_resource.py
+lidarr/models/custom_format_specification_schema.py
+lidarr/models/database_type.py
 lidarr/models/delay_profile_resource.py
 lidarr/models/disk_space_resource.py
 lidarr/models/download_client_config_resource.py
@@ -345,7 +360,7 @@ lidarr/models/health_resource.py
 lidarr/models/history_resource.py
 lidarr/models/history_resource_paging_resource.py
 lidarr/models/host_config_resource.py
-lidarr/models/http_uri.py
+lidarr/models/i_custom_format_specification.py
 lidarr/models/import_list_exclusion_resource.py
 lidarr/models/import_list_monitor_type.py
 lidarr/models/import_list_resource.py
@@ -359,6 +374,7 @@ lidarr/models/log_file_resource.py
 lidarr/models/log_resource.py
 lidarr/models/log_resource_paging_resource.py
 lidarr/models/manual_import_resource.py
+lidarr/models/manual_import_update_resource.py
 lidarr/models/media_cover.py
 lidarr/models/media_cover_types.py
 lidarr/models/media_info_model.py
@@ -381,7 +397,10 @@ lidarr/models/paging_resource_filter.py
 lidarr/models/parse_resource.py
 lidarr/models/parsed_album_info.py
 lidarr/models/parsed_track_info.py
+lidarr/models/ping_resource.py
 lidarr/models/primary_album_type.py
+lidarr/models/profile_format_item.py
+lidarr/models/profile_format_item_resource.py
 lidarr/models/profile_primary_album_type_item.py
 lidarr/models/profile_primary_album_type_item_resource.py
 lidarr/models/profile_release_status_item.py
@@ -416,15 +435,15 @@ lidarr/models/rescan_after_refresh_type.py
 lidarr/models/retag_track_resource.py
 lidarr/models/revision.py
 lidarr/models/root_folder_resource.py
+lidarr/models/runtime_mode.py
 lidarr/models/secondary_album_type.py
 lidarr/models/select_option.py
 lidarr/models/sort_direction.py
-lidarr/models/string_int32_key_value_pair.py
+lidarr/models/system_resource.py
 lidarr/models/tag_details_resource.py
 lidarr/models/tag_difference.py
 lidarr/models/tag_resource.py
 lidarr/models/task_resource.py
-lidarr/models/time_span.py
 lidarr/models/track.py
 lidarr/models/track_file.py
 lidarr/models/track_file_lazy_loaded.py
@@ -439,8 +458,8 @@ lidarr/models/ui_config_resource.py
 lidarr/models/update_changes.py
 lidarr/models/update_mechanism.py
 lidarr/models/update_resource.py
-lidarr/models/version.py
 lidarr/models/write_audio_tags_type.py
 lidarr/rest.py
+pyproject.toml
 setup.cfg
 setup.py

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **album_release_id** | **int** |  | [optional] 
 **tracks** | [**List[TrackResource]**](TrackResource.md) |  | [optional] 
 **quality** | [**QualityModel**](QualityModel.md) |  | [optional] 
+**release_group** | **str** |  | [optional] 
 **quality_weight** | **int** |  | [optional] 
 **download_id** | **str** |  | [optional] 
 **rejections** | [**List[Rejection]**](Rejection.md) |  | [optional] 

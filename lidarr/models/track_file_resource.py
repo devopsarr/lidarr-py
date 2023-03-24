@@ -35,12 +35,14 @@ class TrackFileResource(BaseModel):
     path: Optional[str]
     size: Optional[int]
     date_added: Optional[datetime]
+    scene_name: Optional[str]
+    release_group: Optional[str]
     quality: Optional[QualityModel]
     quality_weight: Optional[int]
     media_info: Optional[MediaInfoResource]
     quality_cutoff_not_met: Optional[bool]
     audio_tags: Optional[ParsedTrackInfo]
-    __properties = ["id", "artistId", "albumId", "path", "size", "dateAdded", "quality", "qualityWeight", "mediaInfo", "qualityCutoffNotMet", "audioTags"]
+    __properties = ["id", "artistId", "albumId", "path", "size", "dateAdded", "sceneName", "releaseGroup", "quality", "qualityWeight", "mediaInfo", "qualityCutoffNotMet", "audioTags"]
 
     class Config:
         allow_population_by_field_name = True
@@ -82,6 +84,14 @@ class TrackFileResource(BaseModel):
         if self.path is None:
             _dict['path'] = None
 
+        # set to None if scene_name (nullable) is None
+        if self.scene_name is None:
+            _dict['sceneName'] = None
+
+        # set to None if release_group (nullable) is None
+        if self.release_group is None:
+            _dict['releaseGroup'] = None
+
         return _dict
 
     @classmethod
@@ -100,6 +110,8 @@ class TrackFileResource(BaseModel):
             "path": obj.get("path"),
             "size": obj.get("size"),
             "date_added": obj.get("dateAdded"),
+            "scene_name": obj.get("sceneName"),
+            "release_group": obj.get("releaseGroup"),
             "quality": QualityModel.from_dict(obj.get("quality")) if obj.get("quality") is not None else None,
             "quality_weight": obj.get("qualityWeight"),
             "media_info": MediaInfoResource.from_dict(obj.get("mediaInfo")) if obj.get("mediaInfo") is not None else None,

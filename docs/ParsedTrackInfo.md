@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **label** | **str** |  | [optional] 
 **catalog_number** | **str** |  | [optional] 
 **disambiguation** | **str** |  | [optional] 
-**duration** | [**TimeSpan**](TimeSpan.md) |  | [optional] 
+**duration** | **str** |  | [optional] 
 **quality** | [**QualityModel**](QualityModel.md) |  | [optional] 
 **media_info** | [**MediaInfoModel**](MediaInfoModel.md) |  | [optional] 
 **track_numbers** | **List[int]** |  | [optional] 

@@ -41,6 +41,7 @@ class ManualImportResource(BaseModel):
     album_release_id: Optional[int]
     tracks: Optional[List]
     quality: Optional[QualityModel]
+    release_group: Optional[str]
     quality_weight: Optional[int]
     download_id: Optional[str]
     rejections: Optional[List]
@@ -48,7 +49,7 @@ class ManualImportResource(BaseModel):
     additional_file: Optional[bool]
     replace_existing_files: Optional[bool]
     disable_release_switching: Optional[bool]
-    __properties = ["id", "path", "name", "size", "artist", "album", "albumReleaseId", "tracks", "quality", "qualityWeight", "downloadId", "rejections", "audioTags", "additionalFile", "replaceExistingFiles", "disableReleaseSwitching"]
+    __properties = ["id", "path", "name", "size", "artist", "album", "albumReleaseId", "tracks", "quality", "releaseGroup", "qualityWeight", "downloadId", "rejections", "audioTags", "additionalFile", "replaceExistingFiles", "disableReleaseSwitching"]
 
     class Config:
         allow_population_by_field_name = True
@@ -115,6 +116,10 @@ class ManualImportResource(BaseModel):
         if self.tracks is None:
             _dict['tracks'] = None
 
+        # set to None if release_group (nullable) is None
+        if self.release_group is None:
+            _dict['releaseGroup'] = None
+
         # set to None if download_id (nullable) is None
         if self.download_id is None:
             _dict['downloadId'] = None
@@ -144,6 +149,7 @@ class ManualImportResource(BaseModel):
             "album_release_id": obj.get("albumReleaseId"),
             "tracks": [TrackResource.from_dict(_item) for _item in obj.get("tracks")] if obj.get("tracks") is not None else None,
             "quality": QualityModel.from_dict(obj.get("quality")) if obj.get("quality") is not None else None,
+            "release_group": obj.get("releaseGroup"),
             "quality_weight": obj.get("qualityWeight"),
             "download_id": obj.get("downloadId"),
             "rejections": [Rejection.from_dict(_item) for _item in obj.get("rejections")] if obj.get("rejections") is not None else None,

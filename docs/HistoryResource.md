@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **track_id** | **int** |  | [optional] 
 **source_title** | **str** |  | [optional] 
 **quality** | [**QualityModel**](QualityModel.md) |  | [optional] 
+**custom_formats** | [**List[CustomFormatResource]**](CustomFormatResource.md) |  | [optional] 
 **quality_cutoff_not_met** | **bool** |  | [optional] 
 **var_date** | **datetime** |  | [optional] 
 **download_id** | **str** |  | [optional] 
