@@ -17,49 +17,6 @@ Method | HTTP request | Description
 
 ### Example
 
-* Api Key Authentication (X-Api-Key):
-```python
-from __future__ import print_function
-import time
-import os
-import lidarr
-from lidarr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:8686
-# See configuration.py for a list of all supported configuration parameters.
-configuration = lidarr.Configuration(
-    host = "http://localhost:8686"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
-# Configure API key authorization: apikey
-configuration.api_key['apikey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with lidarr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = lidarr.HistoryApi(api_client)
-    id = 56 # int | 
-
-    try:
-        api_instance.create_history_failed_by_id(id)
-    except Exception as e:
-        print("Exception when calling HistoryApi->create_history_failed_by_id: %s\n" % e)
-```
-
 * Api Key Authentication (apikey):
 ```python
 from __future__ import print_function
@@ -79,17 +36,60 @@ configuration = lidarr.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
 # Configure API key authorization: X-Api-Key
 configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.HistoryApi(api_client)
+    id = 56 # int | 
+
+    try:
+        api_instance.create_history_failed_by_id(id)
+    except Exception as e:
+        print("Exception when calling HistoryApi->create_history_failed_by_id: %s\n" % e)
+```
+
+* Api Key Authentication (X-Api-Key):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure API key authorization: apikey
 configuration.api_key['apikey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
@@ -115,7 +115,7 @@ void (empty response body)
 
 ### Authorization
 
-[X-Api-Key](../README.md#X-Api-Key), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -136,53 +136,6 @@ void (empty response body)
 
 ### Example
 
-* Api Key Authentication (X-Api-Key):
-```python
-from __future__ import print_function
-import time
-import os
-import lidarr
-from lidarr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:8686
-# See configuration.py for a list of all supported configuration parameters.
-configuration = lidarr.Configuration(
-    host = "http://localhost:8686"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
-# Configure API key authorization: apikey
-configuration.api_key['apikey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with lidarr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = lidarr.HistoryApi(api_client)
-    include_artist = False # bool |  (optional) (default to False)
-    include_album = False # bool |  (optional) (default to False)
-    include_track = False # bool |  (optional) (default to False)
-
-    try:
-        api_response = api_instance.get_history(include_artist=include_artist, include_album=include_album, include_track=include_track)
-        print("The response of HistoryApi->get_history:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling HistoryApi->get_history: %s\n" % e)
-```
-
 * Api Key Authentication (apikey):
 ```python
 from __future__ import print_function
@@ -202,17 +155,64 @@ configuration = lidarr.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
 # Configure API key authorization: X-Api-Key
 configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.HistoryApi(api_client)
+    include_artist = False # bool |  (optional) (default to False)
+    include_album = False # bool |  (optional) (default to False)
+    include_track = False # bool |  (optional) (default to False)
+
+    try:
+        api_response = api_instance.get_history(include_artist=include_artist, include_album=include_album, include_track=include_track)
+        print("The response of HistoryApi->get_history:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling HistoryApi->get_history: %s\n" % e)
+```
+
+* Api Key Authentication (X-Api-Key):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure API key authorization: apikey
 configuration.api_key['apikey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[X-Api-Key](../README.md#X-Api-Key), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Example
 
-* Api Key Authentication (X-Api-Key):
+* Api Key Authentication (apikey):
 ```python
 from __future__ import print_function
 import time
@@ -284,17 +284,17 @@ configuration = lidarr.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
 # Configure API key authorization: apikey
 configuration.api_key['apikey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
@@ -315,7 +315,7 @@ with lidarr.ApiClient(configuration) as api_client:
         print("Exception when calling HistoryApi->list_history_artist: %s\n" % e)
 ```
 
-* Api Key Authentication (apikey):
+* Api Key Authentication (X-Api-Key):
 ```python
 from __future__ import print_function
 import time
@@ -334,17 +334,17 @@ configuration = lidarr.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
 # Configure API key authorization: apikey
 configuration.api_key['apikey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[X-Api-Key](../README.md#X-Api-Key), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -403,55 +403,6 @@ Name | Type | Description  | Notes
 
 ### Example
 
-* Api Key Authentication (X-Api-Key):
-```python
-from __future__ import print_function
-import time
-import os
-import lidarr
-from lidarr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:8686
-# See configuration.py for a list of all supported configuration parameters.
-configuration = lidarr.Configuration(
-    host = "http://localhost:8686"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
-# Configure API key authorization: apikey
-configuration.api_key['apikey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with lidarr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = lidarr.HistoryApi(api_client)
-    var_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
-    event_type = lidarr.EntityHistoryEventType() # EntityHistoryEventType |  (optional)
-    include_artist = False # bool |  (optional) (default to False)
-    include_album = False # bool |  (optional) (default to False)
-    include_track = False # bool |  (optional) (default to False)
-
-    try:
-        api_response = api_instance.list_history_since(var_date=var_date, event_type=event_type, include_artist=include_artist, include_album=include_album, include_track=include_track)
-        print("The response of HistoryApi->list_history_since:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling HistoryApi->list_history_since: %s\n" % e)
-```
-
 * Api Key Authentication (apikey):
 ```python
 from __future__ import print_function
@@ -471,17 +422,66 @@ configuration = lidarr.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
 # Configure API key authorization: X-Api-Key
 configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.HistoryApi(api_client)
+    var_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    event_type = lidarr.EntityHistoryEventType() # EntityHistoryEventType |  (optional)
+    include_artist = False # bool |  (optional) (default to False)
+    include_album = False # bool |  (optional) (default to False)
+    include_track = False # bool |  (optional) (default to False)
+
+    try:
+        api_response = api_instance.list_history_since(var_date=var_date, event_type=event_type, include_artist=include_artist, include_album=include_album, include_track=include_track)
+        print("The response of HistoryApi->list_history_since:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling HistoryApi->list_history_since: %s\n" % e)
+```
+
+* Api Key Authentication (X-Api-Key):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure API key authorization: apikey
 configuration.api_key['apikey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[X-Api-Key](../README.md#X-Api-Key), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 

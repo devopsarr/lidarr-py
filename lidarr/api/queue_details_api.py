@@ -17,7 +17,7 @@ import re  # noqa: F401
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
-from pydantic import StrictBool, StrictInt
+from pydantic import StrictBool, StrictInt, conlist
 
 from typing import List, Optional
 
@@ -160,7 +160,7 @@ class QueueDetailsApi(object):
             ['text/plain', 'application/json', 'text/json'])  # noqa: E501
 
         # authentication setting
-        _auth_settings = ['X-Api-Key', 'apikey']  # noqa: E501
+        _auth_settings = ['apikey', 'X-Api-Key']  # noqa: E501
 
         _response_types_map = {
             '200': "QueueResource",
@@ -184,7 +184,7 @@ class QueueDetailsApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def list_queue_details(self, artist_id : Optional[StrictInt] = None, album_ids : Optional[List[StrictInt]] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, **kwargs) -> List[QueueResource]:  # noqa: E501
+    def list_queue_details(self, artist_id : Optional[StrictInt] = None, album_ids : Optional[conlist(StrictInt)] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, **kwargs) -> List[QueueResource]:  # noqa: E501
         """list_queue_details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -220,7 +220,7 @@ class QueueDetailsApi(object):
         return self.list_queue_details_with_http_info(artist_id, album_ids, include_artist, include_album, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def list_queue_details_with_http_info(self, artist_id : Optional[StrictInt] = None, album_ids : Optional[List[StrictInt]] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, **kwargs):  # noqa: E501
+    def list_queue_details_with_http_info(self, artist_id : Optional[StrictInt] = None, album_ids : Optional[conlist(StrictInt)] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, **kwargs):  # noqa: E501
         """list_queue_details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -323,7 +323,7 @@ class QueueDetailsApi(object):
             ['text/plain', 'application/json', 'text/json'])  # noqa: E501
 
         # authentication setting
-        _auth_settings = ['X-Api-Key', 'apikey']  # noqa: E501
+        _auth_settings = ['apikey', 'X-Api-Key']  # noqa: E501
 
         _response_types_map = {
             '200': "List[QueueResource]",

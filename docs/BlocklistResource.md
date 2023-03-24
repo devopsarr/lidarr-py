@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **album_ids** | **List[int]** |  | [optional] 
 **source_title** | **str** |  | [optional] 
 **quality** | [**QualityModel**](QualityModel.md) |  | [optional] 
+**custom_formats** | [**List[CustomFormatResource]**](CustomFormatResource.md) |  | [optional] 
 **var_date** | **datetime** |  | [optional] 
 **protocol** | [**DownloadProtocol**](DownloadProtocol.md) |  | [optional] 
 **indexer** | **str** |  | [optional] 

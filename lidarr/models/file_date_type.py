@@ -30,6 +30,6 @@ class FileDateType(str, Enum):
     allowed enum values
     """
 
-    var_NONE = 'none'
-    ALBUM_RELEASE_DATE = 'albumReleaseDate'
+    NONE = 'none'
+    ALBUMRELEASEDATE = 'albumReleaseDate'
 

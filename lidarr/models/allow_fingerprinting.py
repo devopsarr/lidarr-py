@@ -31,6 +31,6 @@ class AllowFingerprinting(str, Enum):
     """
 
     NEVER = 'never'
-    NEW_FILES = 'newFiles'
-    ALL_FILES = 'allFiles'
+    NEWFILES = 'newFiles'
+    ALLFILES = 'allFiles'
 

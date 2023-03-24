@@ -30,7 +30,7 @@ class ImportListMonitorType(str, Enum):
     allowed enum values
     """
 
-    var_NONE = 'none'
-    SPECIFIC_ALBUM = 'specificAlbum'
-    ENTIRE_ARTIST = 'entireArtist'
+    NONE = 'none'
+    SPECIFICALBUM = 'specificAlbum'
+    ENTIREARTIST = 'entireArtist'
 

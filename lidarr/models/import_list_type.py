@@ -32,6 +32,7 @@ class ImportListType(str, Enum):
 
     PROGRAM = 'program'
     SPOTIFY = 'spotify'
-    LAST_FM = 'lastFm'
+    LASTFM = 'lastFm'
     OTHER = 'other'
+    ADVANCED = 'advanced'
 

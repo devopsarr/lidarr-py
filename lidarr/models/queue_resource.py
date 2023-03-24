@@ -18,12 +18,12 @@ import json
 
 from datetime import datetime
 from typing import List, Optional
-from pydantic import BaseModel
+from pydantic import BaseModel, validator
 from lidarr.models.album_resource import AlbumResource
 from lidarr.models.artist_resource import ArtistResource
+from lidarr.models.custom_format_resource import CustomFormatResource
 from lidarr.models.download_protocol import DownloadProtocol
 from lidarr.models.quality_model import QualityModel
-from lidarr.models.time_span import TimeSpan
 from lidarr.models.tracked_download_state import TrackedDownloadState
 from lidarr.models.tracked_download_status import TrackedDownloadStatus
 from lidarr.models.tracked_download_status_message import TrackedDownloadStatusMessage
@@ -40,10 +40,11 @@ class QueueResource(BaseModel):
     artist: Optional[ArtistResource]
     album: Optional[AlbumResource]
     quality: Optional[QualityModel]
+    custom_formats: Optional[List]
     size: Optional[float]
     title: Optional[str]
     sizeleft: Optional[float]
-    timeleft: Optional[TimeSpan]
+    timeleft: Optional[str]
     estimated_completion_time: Optional[datetime]
     status: Optional[str]
     tracked_download_status: Optional[TrackedDownloadStatus]
@@ -56,7 +57,13 @@ class QueueResource(BaseModel):
     indexer: Optional[str]
     output_path: Optional[str]
     download_forced: Optional[bool]
-    __properties = ["id", "artistId", "albumId", "artist", "album", "quality", "size", "title", "sizeleft", "timeleft", "estimatedCompletionTime", "status", "trackedDownloadStatus", "trackedDownloadState", "statusMessages", "errorMessage", "downloadId", "protocol", "downloadClient", "indexer", "outputPath", "downloadForced"]
+    __properties = ["id", "artistId", "albumId", "artist", "album", "quality", "customFormats", "size", "title", "sizeleft", "timeleft", "estimatedCompletionTime", "status", "trackedDownloadStatus", "trackedDownloadState", "statusMessages", "errorMessage", "downloadId", "protocol", "downloadClient", "indexer", "outputPath", "downloadForced"]
+
+    @validator('timeleft')
+    def timeleft_validate_regular_expression(cls, v):
+        if not re.match(r"\d{2}:\d{2}:\d{2}", v):
+            raise ValueError(r"must validate the regular expression /\d{2}:\d{2}:\d{2}/")
+        return v
 
     class Config:
         allow_population_by_field_name = True
@@ -94,9 +101,13 @@ class QueueResource(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of quality
         if self.quality:
             _dict['quality'] = self.quality.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of timeleft
-        if self.timeleft:
-            _dict['timeleft'] = self.timeleft.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in custom_formats (list)
+        _items = []
+        if self.custom_formats:
+            for _item in self.custom_formats:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['customFormats'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in status_messages (list)
         _items = []
         if self.status_messages:
@@ -111,6 +122,10 @@ class QueueResource(BaseModel):
         # set to None if album_id (nullable) is None
         if self.album_id is None:
             _dict['albumId'] = None
+
+        # set to None if custom_formats (nullable) is None
+        if self.custom_formats is None:
+            _dict['customFormats'] = None
 
         # set to None if title (nullable) is None
         if self.title is None:
@@ -166,10 +181,11 @@ class QueueResource(BaseModel):
             "artist": ArtistResource.from_dict(obj.get("artist")) if obj.get("artist") is not None else None,
             "album": AlbumResource.from_dict(obj.get("album")) if obj.get("album") is not None else None,
             "quality": QualityModel.from_dict(obj.get("quality")) if obj.get("quality") is not None else None,
+            "custom_formats": [CustomFormatResource.from_dict(_item) for _item in obj.get("customFormats")] if obj.get("customFormats") is not None else None,
             "size": obj.get("size"),
             "title": obj.get("title"),
             "sizeleft": obj.get("sizeleft"),
-            "timeleft": TimeSpan.from_dict(obj.get("timeleft")) if obj.get("timeleft") is not None else None,
+            "timeleft": obj.get("timeleft"),
             "estimated_completion_time": obj.get("estimatedCompletionTime"),
             "status": obj.get("status"),
             "tracked_download_status": obj.get("trackedDownloadStatus"),

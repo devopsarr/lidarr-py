@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from typing import List, Optional
 from pydantic import BaseModel
+from lidarr.models.custom_format_resource import CustomFormatResource
 from lidarr.models.download_protocol import DownloadProtocol
 from lidarr.models.quality_model import QualityModel
 
@@ -57,7 +58,8 @@ class ReleaseResource(BaseModel):
     info_url: Optional[str]
     download_allowed: Optional[bool]
     release_weight: Optional[int]
-    preferred_word_score: Optional[int]
+    custom_formats: Optional[List]
+    custom_format_score: Optional[int]
     magnet_url: Optional[str]
     info_hash: Optional[str]
     seeders: Optional[int]
@@ -65,7 +67,7 @@ class ReleaseResource(BaseModel):
     protocol: Optional[DownloadProtocol]
     artist_id: Optional[int]
     album_id: Optional[int]
-    __properties = ["id", "guid", "quality", "qualityWeight", "age", "ageHours", "ageMinutes", "size", "indexerId", "indexer", "releaseGroup", "subGroup", "releaseHash", "title", "discography", "sceneSource", "airDate", "artistName", "albumTitle", "approved", "temporarilyRejected", "rejected", "rejections", "publishDate", "commentUrl", "downloadUrl", "infoUrl", "downloadAllowed", "releaseWeight", "preferredWordScore", "magnetUrl", "infoHash", "seeders", "leechers", "protocol", "artistId", "albumId"]
+    __properties = ["id", "guid", "quality", "qualityWeight", "age", "ageHours", "ageMinutes", "size", "indexerId", "indexer", "releaseGroup", "subGroup", "releaseHash", "title", "discography", "sceneSource", "airDate", "artistName", "albumTitle", "approved", "temporarilyRejected", "rejected", "rejections", "publishDate", "commentUrl", "downloadUrl", "infoUrl", "downloadAllowed", "releaseWeight", "customFormats", "customFormatScore", "magnetUrl", "infoHash", "seeders", "leechers", "protocol", "artistId", "albumId"]
 
     class Config:
         allow_population_by_field_name = True
@@ -97,6 +99,13 @@ class ReleaseResource(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of quality
         if self.quality:
             _dict['quality'] = self.quality.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in custom_formats (list)
+        _items = []
+        if self.custom_formats:
+            for _item in self.custom_formats:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['customFormats'] = _items
         # set to None if guid (nullable) is None
         if self.guid is None:
             _dict['guid'] = None
@@ -148,6 +157,10 @@ class ReleaseResource(BaseModel):
         # set to None if info_url (nullable) is None
         if self.info_url is None:
             _dict['infoUrl'] = None
+
+        # set to None if custom_formats (nullable) is None
+        if self.custom_formats is None:
+            _dict['customFormats'] = None
 
         # set to None if magnet_url (nullable) is None
         if self.magnet_url is None:
@@ -214,7 +227,8 @@ class ReleaseResource(BaseModel):
             "info_url": obj.get("infoUrl"),
             "download_allowed": obj.get("downloadAllowed"),
             "release_weight": obj.get("releaseWeight"),
-            "preferred_word_score": obj.get("preferredWordScore"),
+            "custom_formats": [CustomFormatResource.from_dict(_item) for _item in obj.get("customFormats")] if obj.get("customFormats") is not None else None,
+            "custom_format_score": obj.get("customFormatScore"),
             "magnet_url": obj.get("magnetUrl"),
             "info_hash": obj.get("infoHash"),
             "seeders": obj.get("seeders"),

@@ -20,6 +20,7 @@ from datetime import datetime
 from typing import List, Optional
 from pydantic import BaseModel
 from lidarr.models.artist_resource import ArtistResource
+from lidarr.models.custom_format_resource import CustomFormatResource
 from lidarr.models.download_protocol import DownloadProtocol
 from lidarr.models.quality_model import QualityModel
 
@@ -34,12 +35,13 @@ class BlocklistResource(BaseModel):
     album_ids: Optional[List]
     source_title: Optional[str]
     quality: Optional[QualityModel]
+    custom_formats: Optional[List]
     var_date: Optional[datetime]
     protocol: Optional[DownloadProtocol]
     indexer: Optional[str]
     message: Optional[str]
     artist: Optional[ArtistResource]
-    __properties = ["id", "artistId", "albumIds", "sourceTitle", "quality", "date", "protocol", "indexer", "message", "artist"]
+    __properties = ["id", "artistId", "albumIds", "sourceTitle", "quality", "customFormats", "date", "protocol", "indexer", "message", "artist"]
 
     class Config:
         allow_population_by_field_name = True
@@ -71,6 +73,13 @@ class BlocklistResource(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of quality
         if self.quality:
             _dict['quality'] = self.quality.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in custom_formats (list)
+        _items = []
+        if self.custom_formats:
+            for _item in self.custom_formats:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['customFormats'] = _items
         # override the default output from pydantic by calling `to_dict()` of artist
         if self.artist:
             _dict['artist'] = self.artist.to_dict()
@@ -81,6 +90,10 @@ class BlocklistResource(BaseModel):
         # set to None if source_title (nullable) is None
         if self.source_title is None:
             _dict['sourceTitle'] = None
+
+        # set to None if custom_formats (nullable) is None
+        if self.custom_formats is None:
+            _dict['customFormats'] = None
 
         # set to None if indexer (nullable) is None
         if self.indexer is None:
@@ -107,6 +120,7 @@ class BlocklistResource(BaseModel):
             "album_ids": obj.get("albumIds"),
             "source_title": obj.get("sourceTitle"),
             "quality": QualityModel.from_dict(obj.get("quality")) if obj.get("quality") is not None else None,
+            "custom_formats": [CustomFormatResource.from_dict(_item) for _item in obj.get("customFormats")] if obj.get("customFormats") is not None else None,
             "var_date": obj.get("date"),
             "protocol": obj.get("protocol"),
             "indexer": obj.get("indexer"),

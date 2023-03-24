@@ -17,7 +17,7 @@ import re  # noqa: F401
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
-from pydantic import StrictBool, StrictInt, StrictStr
+from pydantic import StrictBool, StrictInt, StrictStr, conlist
 
 from typing import List, Optional
 
@@ -157,7 +157,7 @@ class TrackFileApi(object):
         _body_params = None
 
         # authentication setting
-        _auth_settings = ['X-Api-Key', 'apikey']  # noqa: E501
+        _auth_settings = ['apikey', 'X-Api-Key']  # noqa: E501
 
         _response_types_map = {}
 
@@ -299,7 +299,7 @@ class TrackFileApi(object):
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = ['X-Api-Key', 'apikey']  # noqa: E501
+        _auth_settings = ['apikey', 'X-Api-Key']  # noqa: E501
 
         _response_types_map = {}
 
@@ -438,7 +438,7 @@ class TrackFileApi(object):
             ['text/plain', 'application/json', 'text/json'])  # noqa: E501
 
         # authentication setting
-        _auth_settings = ['X-Api-Key', 'apikey']  # noqa: E501
+        _auth_settings = ['apikey', 'X-Api-Key']  # noqa: E501
 
         _response_types_map = {
             '200': "TrackFileResource",
@@ -462,7 +462,7 @@ class TrackFileApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def list_track_file(self, artist_id : Optional[StrictInt] = None, track_file_ids : Optional[List[StrictInt]] = None, album_id : Optional[List[StrictInt]] = None, unmapped : Optional[StrictBool] = None, **kwargs) -> List[TrackFileResource]:  # noqa: E501
+    def list_track_file(self, artist_id : Optional[StrictInt] = None, track_file_ids : Optional[conlist(StrictInt)] = None, album_id : Optional[conlist(StrictInt)] = None, unmapped : Optional[StrictBool] = None, **kwargs) -> List[TrackFileResource]:  # noqa: E501
         """list_track_file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -498,7 +498,7 @@ class TrackFileApi(object):
         return self.list_track_file_with_http_info(artist_id, track_file_ids, album_id, unmapped, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def list_track_file_with_http_info(self, artist_id : Optional[StrictInt] = None, track_file_ids : Optional[List[StrictInt]] = None, album_id : Optional[List[StrictInt]] = None, unmapped : Optional[StrictBool] = None, **kwargs):  # noqa: E501
+    def list_track_file_with_http_info(self, artist_id : Optional[StrictInt] = None, track_file_ids : Optional[conlist(StrictInt)] = None, album_id : Optional[conlist(StrictInt)] = None, unmapped : Optional[StrictBool] = None, **kwargs):  # noqa: E501
         """list_track_file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -602,7 +602,7 @@ class TrackFileApi(object):
             ['text/plain', 'application/json', 'text/json'])  # noqa: E501
 
         # authentication setting
-        _auth_settings = ['X-Api-Key', 'apikey']  # noqa: E501
+        _auth_settings = ['apikey', 'X-Api-Key']  # noqa: E501
 
         _response_types_map = {
             '200': "List[TrackFileResource]",
@@ -746,7 +746,7 @@ class TrackFileApi(object):
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = ['X-Api-Key', 'apikey']  # noqa: E501
+        _auth_settings = ['apikey', 'X-Api-Key']  # noqa: E501
 
         _response_types_map = {}
 
@@ -899,7 +899,7 @@ class TrackFileApi(object):
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = ['X-Api-Key', 'apikey']  # noqa: E501
+        _auth_settings = ['apikey', 'X-Api-Key']  # noqa: E501
 
         _response_types_map = {
             '200': "TrackFileResource",

@@ -31,7 +31,7 @@ class WriteAudioTagsType(str, Enum):
     """
 
     NO = 'no'
-    NEW_FILES = 'newFiles'
-    ALL_FILES = 'allFiles'
+    NEWFILES = 'newFiles'
+    ALLFILES = 'allFiles'
     SYNC = 'sync'
 

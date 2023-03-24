@@ -10,6 +10,9 @@ Name | Type | Description | Notes
 **preferred_protocol** | [**DownloadProtocol**](DownloadProtocol.md) |  | [optional] 
 **usenet_delay** | **int** |  | [optional] 
 **torrent_delay** | **int** |  | [optional] 
+**bypass_if_highest_quality** | **bool** |  | [optional] 
+**bypass_if_above_custom_format_score** | **bool** |  | [optional] 
+**minimum_custom_format_score** | **int** |  | [optional] 
 **order** | **int** |  | [optional] 
 **tags** | **List[int]** |  | [optional] 
 

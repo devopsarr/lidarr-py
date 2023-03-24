@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **size** | **int** |  | [optional] 
 **modified** | **datetime** |  | [optional] 
 **date_added** | **datetime** |  | [optional] 
+**original_file_path** | **str** |  | [optional] 
 **scene_name** | **str** |  | [optional] 
 **release_group** | **str** |  | [optional] 
 **quality** | [**QualityModel**](QualityModel.md) |  | [optional] 

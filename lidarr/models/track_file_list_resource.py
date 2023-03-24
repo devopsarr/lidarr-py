@@ -29,7 +29,9 @@ class TrackFileListResource(BaseModel):
     """
     track_file_ids: Optional[List]
     quality: Optional[QualityModel]
-    __properties = ["trackFileIds", "quality"]
+    scene_name: Optional[str]
+    release_group: Optional[str]
+    __properties = ["trackFileIds", "quality", "sceneName", "releaseGroup"]
 
     class Config:
         allow_population_by_field_name = True
@@ -65,6 +67,14 @@ class TrackFileListResource(BaseModel):
         if self.track_file_ids is None:
             _dict['trackFileIds'] = None
 
+        # set to None if scene_name (nullable) is None
+        if self.scene_name is None:
+            _dict['sceneName'] = None
+
+        # set to None if release_group (nullable) is None
+        if self.release_group is None:
+            _dict['releaseGroup'] = None
+
         return _dict
 
     @classmethod
@@ -78,7 +88,9 @@ class TrackFileListResource(BaseModel):
 
         _obj = TrackFileListResource.parse_obj({
             "track_file_ids": obj.get("trackFileIds"),
-            "quality": QualityModel.from_dict(obj.get("quality")) if obj.get("quality") is not None else None
+            "quality": QualityModel.from_dict(obj.get("quality")) if obj.get("quality") is not None else None,
+            "scene_name": obj.get("sceneName"),
+            "release_group": obj.get("releaseGroup")
         })
         return _obj
 

@@ -43,6 +43,8 @@ class NotificationResource(BaseModel):
     on_release_import: Optional[bool]
     on_upgrade: Optional[bool]
     on_rename: Optional[bool]
+    on_album_delete: Optional[bool]
+    on_artist_delete: Optional[bool]
     on_health_issue: Optional[bool]
     on_download_failure: Optional[bool]
     on_import_failure: Optional[bool]
@@ -52,6 +54,8 @@ class NotificationResource(BaseModel):
     supports_on_release_import: Optional[bool]
     supports_on_upgrade: Optional[bool]
     supports_on_rename: Optional[bool]
+    supports_on_album_delete: Optional[bool]
+    supports_on_artist_delete: Optional[bool]
     supports_on_health_issue: Optional[bool]
     include_health_warnings: Optional[bool]
     supports_on_download_failure: Optional[bool]
@@ -59,7 +63,7 @@ class NotificationResource(BaseModel):
     supports_on_track_retag: Optional[bool]
     supports_on_application_update: Optional[bool]
     test_command: Optional[str]
-    __properties = ["id", "name", "fields", "implementationName", "implementation", "configContract", "infoLink", "message", "tags", "presets", "link", "onGrab", "onReleaseImport", "onUpgrade", "onRename", "onHealthIssue", "onDownloadFailure", "onImportFailure", "onTrackRetag", "onApplicationUpdate", "supportsOnGrab", "supportsOnReleaseImport", "supportsOnUpgrade", "supportsOnRename", "supportsOnHealthIssue", "includeHealthWarnings", "supportsOnDownloadFailure", "supportsOnImportFailure", "supportsOnTrackRetag", "supportsOnApplicationUpdate", "testCommand"]
+    __properties = ["id", "name", "fields", "implementationName", "implementation", "configContract", "infoLink", "message", "tags", "presets", "link", "onGrab", "onReleaseImport", "onUpgrade", "onRename", "onAlbumDelete", "onArtistDelete", "onHealthIssue", "onDownloadFailure", "onImportFailure", "onTrackRetag", "onApplicationUpdate", "supportsOnGrab", "supportsOnReleaseImport", "supportsOnUpgrade", "supportsOnRename", "supportsOnAlbumDelete", "supportsOnArtistDelete", "supportsOnHealthIssue", "includeHealthWarnings", "supportsOnDownloadFailure", "supportsOnImportFailure", "supportsOnTrackRetag", "supportsOnApplicationUpdate", "testCommand"]
 
     class Config:
         allow_population_by_field_name = True
@@ -172,6 +176,8 @@ class NotificationResource(BaseModel):
             "on_release_import": obj.get("onReleaseImport"),
             "on_upgrade": obj.get("onUpgrade"),
             "on_rename": obj.get("onRename"),
+            "on_album_delete": obj.get("onAlbumDelete"),
+            "on_artist_delete": obj.get("onArtistDelete"),
             "on_health_issue": obj.get("onHealthIssue"),
             "on_download_failure": obj.get("onDownloadFailure"),
             "on_import_failure": obj.get("onImportFailure"),
@@ -181,6 +187,8 @@ class NotificationResource(BaseModel):
             "supports_on_release_import": obj.get("supportsOnReleaseImport"),
             "supports_on_upgrade": obj.get("supportsOnUpgrade"),
             "supports_on_rename": obj.get("supportsOnRename"),
+            "supports_on_album_delete": obj.get("supportsOnAlbumDelete"),
+            "supports_on_artist_delete": obj.get("supportsOnArtistDelete"),
             "supports_on_health_issue": obj.get("supportsOnHealthIssue"),
             "include_health_warnings": obj.get("includeHealthWarnings"),
             "supports_on_download_failure": obj.get("supportsOnDownloadFailure"),

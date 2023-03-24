@@ -27,6 +27,7 @@ from lidarr.api.calendar_api import CalendarApi
 from lidarr.api.calendar_feed_api import CalendarFeedApi
 from lidarr.api.command_api import CommandApi
 from lidarr.api.custom_filter_api import CustomFilterApi
+from lidarr.api.custom_format_api import CustomFormatApi
 from lidarr.api.cutoff_api import CutoffApi
 from lidarr.api.delay_profile_api import DelayProfileApi
 from lidarr.api.disk_space_api import DiskSpaceApi
@@ -56,6 +57,7 @@ from lidarr.api.missing_api import MissingApi
 from lidarr.api.naming_config_api import NamingConfigApi
 from lidarr.api.notification_api import NotificationApi
 from lidarr.api.parse_api import ParseApi
+from lidarr.api.ping_api import PingApi
 from lidarr.api.quality_definition_api import QualityDefinitionApi
 from lidarr.api.quality_profile_api import QualityProfileApi
 from lidarr.api.quality_profile_schema_api import QualityProfileSchemaApi

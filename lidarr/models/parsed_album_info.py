@@ -39,7 +39,8 @@ class ParsedAlbumInfo(BaseModel):
     release_group: Optional[str]
     release_hash: Optional[str]
     release_version: Optional[str]
-    __properties = ["albumTitle", "artistName", "artistTitleInfo", "quality", "releaseDate", "discography", "discographyStart", "discographyEnd", "releaseGroup", "releaseHash", "releaseVersion"]
+    release_title: Optional[str]
+    __properties = ["albumTitle", "artistName", "artistTitleInfo", "quality", "releaseDate", "discography", "discographyStart", "discographyEnd", "releaseGroup", "releaseHash", "releaseVersion", "releaseTitle"]
 
     class Config:
         allow_population_by_field_name = True
@@ -98,6 +99,10 @@ class ParsedAlbumInfo(BaseModel):
         if self.release_version is None:
             _dict['releaseVersion'] = None
 
+        # set to None if release_title (nullable) is None
+        if self.release_title is None:
+            _dict['releaseTitle'] = None
+
         return _dict
 
     @classmethod
@@ -120,7 +125,8 @@ class ParsedAlbumInfo(BaseModel):
             "discography_end": obj.get("discographyEnd"),
             "release_group": obj.get("releaseGroup"),
             "release_hash": obj.get("releaseHash"),
-            "release_version": obj.get("releaseVersion")
+            "release_version": obj.get("releaseVersion"),
+            "release_title": obj.get("releaseTitle")
         })
         return _obj
 
