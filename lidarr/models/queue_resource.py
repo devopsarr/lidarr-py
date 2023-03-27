@@ -18,7 +18,7 @@ import json
 
 from datetime import datetime
 from typing import List, Optional
-from pydantic import BaseModel, validator
+from pydantic import BaseModel
 from lidarr.models.album_resource import AlbumResource
 from lidarr.models.artist_resource import ArtistResource
 from lidarr.models.custom_format_resource import CustomFormatResource
@@ -58,12 +58,6 @@ class QueueResource(BaseModel):
     output_path: Optional[str]
     download_forced: Optional[bool]
     __properties = ["id", "artistId", "albumId", "artist", "album", "quality", "customFormats", "size", "title", "sizeleft", "timeleft", "estimatedCompletionTime", "status", "trackedDownloadStatus", "trackedDownloadState", "statusMessages", "errorMessage", "downloadId", "protocol", "downloadClient", "indexer", "outputPath", "downloadForced"]
-
-    @validator('timeleft')
-    def timeleft_validate_regular_expression(cls, v):
-        if not re.match(r"\d{2}:\d{2}:\d{2}", v):
-            raise ValueError(r"must validate the regular expression /\d{2}:\d{2}:\d{2}/")
-        return v
 
     class Config:
         allow_population_by_field_name = True
