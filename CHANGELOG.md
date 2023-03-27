@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/devopsarr/lidarr-py/compare/v0.2.1...v0.2.2) (2023-03-27)
+
+
+### Bug Fixes
+
+* **devopsarr/sonarr-py#6:** remove timespan validator ([b4c0396](https://github.com/devopsarr/lidarr-py/commit/b4c03962b24e2b10a233f2e0347631b64afaf208))
+
 ## [0.2.1](https://github.com/devopsarr/lidarr-py/compare/v0.2.0...v0.2.1) (2023-03-24)
 
 
