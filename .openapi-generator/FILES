@@ -300,6 +300,7 @@ lidarr/api/ui_config_api.py
 lidarr/api/update_api.py
 lidarr/api/update_log_file_api.py
 lidarr/api_client.py
+lidarr/api_response.py
 lidarr/configuration.py
 lidarr/exceptions.py
 lidarr/models/__init__.py
