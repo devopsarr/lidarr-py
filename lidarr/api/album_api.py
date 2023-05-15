@@ -192,17 +192,21 @@ class AlbumApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def delete_album(self, id : StrictInt, **kwargs) -> None:  # noqa: E501
+    def delete_album(self, id : StrictInt, delete_files : Optional[StrictBool] = None, add_import_list_exclusion : Optional[StrictBool] = None, **kwargs) -> None:  # noqa: E501
         """delete_album  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_album(id, async_req=True)
+        >>> thread = api.delete_album(id, delete_files, add_import_list_exclusion, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
         :type id: int
+        :param delete_files:
+        :type delete_files: bool
+        :param add_import_list_exclusion:
+        :type add_import_list_exclusion: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -219,20 +223,24 @@ class AlbumApi(object):
         :rtype: None
         """
         kwargs['_return_http_data_only'] = True
-        return self.delete_album_with_http_info(id, **kwargs)  # noqa: E501
+        return self.delete_album_with_http_info(id, delete_files, add_import_list_exclusion, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def delete_album_with_http_info(self, id : StrictInt, **kwargs):  # noqa: E501
+    def delete_album_with_http_info(self, id : StrictInt, delete_files : Optional[StrictBool] = None, add_import_list_exclusion : Optional[StrictBool] = None, **kwargs):  # noqa: E501
         """delete_album  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_album_with_http_info(id, async_req=True)
+        >>> thread = api.delete_album_with_http_info(id, delete_files, add_import_list_exclusion, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
         :type id: int
+        :param delete_files:
+        :type delete_files: bool
+        :param add_import_list_exclusion:
+        :type add_import_list_exclusion: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -260,7 +268,9 @@ class AlbumApi(object):
         _params = locals()
 
         _all_params = [
-            'id'
+            'id',
+            'delete_files',
+            'add_import_list_exclusion'
         ]
         _all_params.extend(
             [
@@ -293,6 +303,10 @@ class AlbumApi(object):
 
         # process the query parameters
         _query_params = []
+        if _params.get('delete_files') is not None:  # noqa: E501
+            _query_params.append(('deleteFiles', _params['delete_files']))
+        if _params.get('add_import_list_exclusion') is not None:  # noqa: E501
+            _query_params.append(('addImportListExclusion', _params['add_import_list_exclusion']))
 
         # process the header parameters
         _header_params = dict(_params.get('_headers', {}))

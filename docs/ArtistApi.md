@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_artist**
-> delete_artist(id)
+> delete_artist(id, delete_files=delete_files, add_import_list_exclusion=add_import_list_exclusion)
 
 
 
@@ -177,9 +177,11 @@ with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lidarr.ArtistApi(api_client)
     id = 56 # int | 
+    delete_files = False # bool |  (optional) (default to False)
+    add_import_list_exclusion = False # bool |  (optional) (default to False)
 
     try:
-        api_instance.delete_artist(id)
+        api_instance.delete_artist(id, delete_files=delete_files, add_import_list_exclusion=add_import_list_exclusion)
     except Exception as e:
         print("Exception when calling ArtistApi->delete_artist: %s\n" % e)
 ```
@@ -220,9 +222,11 @@ with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lidarr.ArtistApi(api_client)
     id = 56 # int | 
+    delete_files = False # bool |  (optional) (default to False)
+    add_import_list_exclusion = False # bool |  (optional) (default to False)
 
     try:
-        api_instance.delete_artist(id)
+        api_instance.delete_artist(id, delete_files=delete_files, add_import_list_exclusion=add_import_list_exclusion)
     except Exception as e:
         print("Exception when calling ArtistApi->delete_artist: %s\n" % e)
 ```
@@ -232,6 +236,8 @@ with lidarr.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  | 
+ **delete_files** | **bool**|  | [optional] [default to False]
+ **add_import_list_exclusion** | **bool**|  | [optional] [default to False]
 
 ### Return type
 
@@ -500,7 +506,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_artist**
-> ArtistResource update_artist(id, artist_resource=artist_resource)
+> ArtistResource update_artist(id, move_files=move_files, artist_resource=artist_resource)
 
 
 
@@ -542,10 +548,11 @@ with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lidarr.ArtistApi(api_client)
     id = 'id_example' # str | 
+    move_files = False # bool |  (optional) (default to False)
     artist_resource = lidarr.ArtistResource() # ArtistResource |  (optional)
 
     try:
-        api_response = api_instance.update_artist(id, artist_resource=artist_resource)
+        api_response = api_instance.update_artist(id, move_files=move_files, artist_resource=artist_resource)
         print("The response of ArtistApi->update_artist:\n")
         pprint(api_response)
     except Exception as e:
@@ -588,10 +595,11 @@ with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lidarr.ArtistApi(api_client)
     id = 'id_example' # str | 
+    move_files = False # bool |  (optional) (default to False)
     artist_resource = lidarr.ArtistResource() # ArtistResource |  (optional)
 
     try:
-        api_response = api_instance.update_artist(id, artist_resource=artist_resource)
+        api_response = api_instance.update_artist(id, move_files=move_files, artist_resource=artist_resource)
         print("The response of ArtistApi->update_artist:\n")
         pprint(api_response)
     except Exception as e:
@@ -603,6 +611,7 @@ with lidarr.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
+ **move_files** | **bool**|  | [optional] [default to False]
  **artist_resource** | [**ArtistResource**](ArtistResource.md)|  | [optional] 
 
 ### Return type
