@@ -29,6 +29,7 @@ class NamingConfigResource(BaseModel):
     id: Optional[int]
     rename_tracks: Optional[bool]
     replace_illegal_characters: Optional[bool]
+    colon_replacement_format: Optional[int]
     standard_track_format: Optional[str]
     multi_disc_track_format: Optional[str]
     artist_folder_format: Optional[str]
@@ -38,7 +39,7 @@ class NamingConfigResource(BaseModel):
     replace_spaces: Optional[bool]
     separator: Optional[str]
     number_style: Optional[str]
-    __properties = ["id", "renameTracks", "replaceIllegalCharacters", "standardTrackFormat", "multiDiscTrackFormat", "artistFolderFormat", "includeArtistName", "includeAlbumTitle", "includeQuality", "replaceSpaces", "separator", "numberStyle"]
+    __properties = ["id", "renameTracks", "replaceIllegalCharacters", "colonReplacementFormat", "standardTrackFormat", "multiDiscTrackFormat", "artistFolderFormat", "includeArtistName", "includeAlbumTitle", "includeQuality", "replaceSpaces", "separator", "numberStyle"]
 
     class Config:
         allow_population_by_field_name = True
@@ -102,6 +103,7 @@ class NamingConfigResource(BaseModel):
             "id": obj.get("id"),
             "rename_tracks": obj.get("renameTracks"),
             "replace_illegal_characters": obj.get("replaceIllegalCharacters"),
+            "colon_replacement_format": obj.get("colonReplacementFormat"),
             "standard_track_format": obj.get("standardTrackFormat"),
             "multi_disc_track_format": obj.get("multiDiscTrackFormat"),
             "artist_folder_format": obj.get("artistFolderFormat"),

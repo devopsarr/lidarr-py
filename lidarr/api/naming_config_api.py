@@ -318,19 +318,21 @@ class NamingConfigApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_naming_config_examples(self, rename_tracks : Optional[StrictBool] = None, replace_illegal_characters : Optional[StrictBool] = None, standard_track_format : Optional[StrictStr] = None, multi_disc_track_format : Optional[StrictStr] = None, artist_folder_format : Optional[StrictStr] = None, include_artist_name : Optional[StrictBool] = None, include_album_title : Optional[StrictBool] = None, include_quality : Optional[StrictBool] = None, replace_spaces : Optional[StrictBool] = None, separator : Optional[StrictStr] = None, number_style : Optional[StrictStr] = None, id : Optional[StrictInt] = None, resource_name : Optional[StrictStr] = None, **kwargs) -> None:  # noqa: E501
+    def get_naming_config_examples(self, rename_tracks : Optional[StrictBool] = None, replace_illegal_characters : Optional[StrictBool] = None, colon_replacement_format : Optional[StrictInt] = None, standard_track_format : Optional[StrictStr] = None, multi_disc_track_format : Optional[StrictStr] = None, artist_folder_format : Optional[StrictStr] = None, include_artist_name : Optional[StrictBool] = None, include_album_title : Optional[StrictBool] = None, include_quality : Optional[StrictBool] = None, replace_spaces : Optional[StrictBool] = None, separator : Optional[StrictStr] = None, number_style : Optional[StrictStr] = None, id : Optional[StrictInt] = None, resource_name : Optional[StrictStr] = None, **kwargs) -> None:  # noqa: E501
         """get_naming_config_examples  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_naming_config_examples(rename_tracks, replace_illegal_characters, standard_track_format, multi_disc_track_format, artist_folder_format, include_artist_name, include_album_title, include_quality, replace_spaces, separator, number_style, id, resource_name, async_req=True)
+        >>> thread = api.get_naming_config_examples(rename_tracks, replace_illegal_characters, colon_replacement_format, standard_track_format, multi_disc_track_format, artist_folder_format, include_artist_name, include_album_title, include_quality, replace_spaces, separator, number_style, id, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param rename_tracks:
         :type rename_tracks: bool
         :param replace_illegal_characters:
         :type replace_illegal_characters: bool
+        :param colon_replacement_format:
+        :type colon_replacement_format: int
         :param standard_track_format:
         :type standard_track_format: str
         :param multi_disc_track_format:
@@ -369,22 +371,24 @@ class NamingConfigApi(object):
         :rtype: None
         """
         kwargs['_return_http_data_only'] = True
-        return self.get_naming_config_examples_with_http_info(rename_tracks, replace_illegal_characters, standard_track_format, multi_disc_track_format, artist_folder_format, include_artist_name, include_album_title, include_quality, replace_spaces, separator, number_style, id, resource_name, **kwargs)  # noqa: E501
+        return self.get_naming_config_examples_with_http_info(rename_tracks, replace_illegal_characters, colon_replacement_format, standard_track_format, multi_disc_track_format, artist_folder_format, include_artist_name, include_album_title, include_quality, replace_spaces, separator, number_style, id, resource_name, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_naming_config_examples_with_http_info(self, rename_tracks : Optional[StrictBool] = None, replace_illegal_characters : Optional[StrictBool] = None, standard_track_format : Optional[StrictStr] = None, multi_disc_track_format : Optional[StrictStr] = None, artist_folder_format : Optional[StrictStr] = None, include_artist_name : Optional[StrictBool] = None, include_album_title : Optional[StrictBool] = None, include_quality : Optional[StrictBool] = None, replace_spaces : Optional[StrictBool] = None, separator : Optional[StrictStr] = None, number_style : Optional[StrictStr] = None, id : Optional[StrictInt] = None, resource_name : Optional[StrictStr] = None, **kwargs):  # noqa: E501
+    def get_naming_config_examples_with_http_info(self, rename_tracks : Optional[StrictBool] = None, replace_illegal_characters : Optional[StrictBool] = None, colon_replacement_format : Optional[StrictInt] = None, standard_track_format : Optional[StrictStr] = None, multi_disc_track_format : Optional[StrictStr] = None, artist_folder_format : Optional[StrictStr] = None, include_artist_name : Optional[StrictBool] = None, include_album_title : Optional[StrictBool] = None, include_quality : Optional[StrictBool] = None, replace_spaces : Optional[StrictBool] = None, separator : Optional[StrictStr] = None, number_style : Optional[StrictStr] = None, id : Optional[StrictInt] = None, resource_name : Optional[StrictStr] = None, **kwargs):  # noqa: E501
         """get_naming_config_examples  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_naming_config_examples_with_http_info(rename_tracks, replace_illegal_characters, standard_track_format, multi_disc_track_format, artist_folder_format, include_artist_name, include_album_title, include_quality, replace_spaces, separator, number_style, id, resource_name, async_req=True)
+        >>> thread = api.get_naming_config_examples_with_http_info(rename_tracks, replace_illegal_characters, colon_replacement_format, standard_track_format, multi_disc_track_format, artist_folder_format, include_artist_name, include_album_title, include_quality, replace_spaces, separator, number_style, id, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param rename_tracks:
         :type rename_tracks: bool
         :param replace_illegal_characters:
         :type replace_illegal_characters: bool
+        :param colon_replacement_format:
+        :type colon_replacement_format: int
         :param standard_track_format:
         :type standard_track_format: str
         :param multi_disc_track_format:
@@ -436,6 +440,7 @@ class NamingConfigApi(object):
         _all_params = [
             'rename_tracks',
             'replace_illegal_characters',
+            'colon_replacement_format',
             'standard_track_format',
             'multi_disc_track_format',
             'artist_folder_format',
@@ -481,6 +486,8 @@ class NamingConfigApi(object):
             _query_params.append(('RenameTracks', _params['rename_tracks']))
         if _params.get('replace_illegal_characters') is not None:  # noqa: E501
             _query_params.append(('ReplaceIllegalCharacters', _params['replace_illegal_characters']))
+        if _params.get('colon_replacement_format') is not None:  # noqa: E501
+            _query_params.append(('ColonReplacementFormat', _params['colon_replacement_format']))
         if _params.get('standard_track_format') is not None:  # noqa: E501
             _query_params.append(('StandardTrackFormat', _params['standard_track_format']))
         if _params.get('multi_disc_track_format') is not None:  # noqa: E501
