@@ -137,6 +137,7 @@ from lidarr.models.certificate_validation_type import CertificateValidationType
 from lidarr.models.command import Command
 from lidarr.models.command_priority import CommandPriority
 from lidarr.models.command_resource import CommandResource
+from lidarr.models.command_result import CommandResult
 from lidarr.models.command_status import CommandStatus
 from lidarr.models.command_trigger import CommandTrigger
 from lidarr.models.custom_filter_resource import CustomFilterResource

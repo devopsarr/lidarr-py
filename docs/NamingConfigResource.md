@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] 
 **rename_tracks** | **bool** |  | [optional] 
 **replace_illegal_characters** | **bool** |  | [optional] 
+**colon_replacement_format** | **int** |  | [optional] 
 **standard_track_format** | **str** |  | [optional] 
 **multi_disc_track_format** | **str** |  | [optional] 
 **artist_folder_format** | **str** |  | [optional] 

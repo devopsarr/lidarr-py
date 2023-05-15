@@ -51,6 +51,7 @@ docs/Command.md
 docs/CommandApi.md
 docs/CommandPriority.md
 docs/CommandResource.md
+docs/CommandResult.md
 docs/CommandStatus.md
 docs/CommandTrigger.md
 docs/CustomFilterApi.md
@@ -341,6 +342,7 @@ lidarr/models/certificate_validation_type.py
 lidarr/models/command.py
 lidarr/models/command_priority.py
 lidarr/models/command_resource.py
+lidarr/models/command_result.py
 lidarr/models/command_status.py
 lidarr/models/command_trigger.py
 lidarr/models/custom_filter_resource.py

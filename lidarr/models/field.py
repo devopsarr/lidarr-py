@@ -40,7 +40,8 @@ class Field(BaseModel):
     select_options_provider_action: Optional[str]
     section: Optional[str]
     hidden: Optional[str]
-    __properties = ["order", "name", "label", "unit", "helpText", "helpLink", "value", "type", "advanced", "selectOptions", "selectOptionsProviderAction", "section", "hidden"]
+    placeholder: Optional[str]
+    __properties = ["order", "name", "label", "unit", "helpText", "helpLink", "value", "type", "advanced", "selectOptions", "selectOptionsProviderAction", "section", "hidden", "placeholder"]
 
     class Config:
         allow_population_by_field_name = True
@@ -120,6 +121,10 @@ class Field(BaseModel):
         if self.hidden is None:
             _dict['hidden'] = None
 
+        # set to None if placeholder (nullable) is None
+        if self.placeholder is None:
+            _dict['placeholder'] = None
+
         return _dict
 
     @classmethod
@@ -144,7 +149,8 @@ class Field(BaseModel):
             "select_options": [SelectOption.from_dict(_item) for _item in obj.get("selectOptions")] if obj.get("selectOptions") is not None else None,
             "select_options_provider_action": obj.get("selectOptionsProviderAction"),
             "section": obj.get("section"),
-            "hidden": obj.get("hidden")
+            "hidden": obj.get("hidden"),
+            "placeholder": obj.get("placeholder")
         })
         return _obj
 
