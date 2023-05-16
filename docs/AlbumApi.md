@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_album**
-> delete_album(id)
+> delete_album(id, delete_files=delete_files, add_import_list_exclusion=add_import_list_exclusion)
 
 
 
@@ -178,9 +178,11 @@ with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lidarr.AlbumApi(api_client)
     id = 56 # int | 
+    delete_files = False # bool |  (optional) (default to False)
+    add_import_list_exclusion = False # bool |  (optional) (default to False)
 
     try:
-        api_instance.delete_album(id)
+        api_instance.delete_album(id, delete_files=delete_files, add_import_list_exclusion=add_import_list_exclusion)
     except Exception as e:
         print("Exception when calling AlbumApi->delete_album: %s\n" % e)
 ```
@@ -221,9 +223,11 @@ with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lidarr.AlbumApi(api_client)
     id = 56 # int | 
+    delete_files = False # bool |  (optional) (default to False)
+    add_import_list_exclusion = False # bool |  (optional) (default to False)
 
     try:
-        api_instance.delete_album(id)
+        api_instance.delete_album(id, delete_files=delete_files, add_import_list_exclusion=add_import_list_exclusion)
     except Exception as e:
         print("Exception when calling AlbumApi->delete_album: %s\n" % e)
 ```
@@ -233,6 +237,8 @@ with lidarr.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  | 
+ **delete_files** | **bool**|  | [optional] [default to False]
+ **add_import_list_exclusion** | **bool**|  | [optional] [default to False]
 
 ### Return type
 
