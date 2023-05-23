@@ -39,4 +39,5 @@ class MediaCoverTypes(str, Enum):
     COVER = 'cover'
     DISC = 'disc'
     LOGO = 'logo'
+    CLEARLOGO = 'clearlogo'
 
