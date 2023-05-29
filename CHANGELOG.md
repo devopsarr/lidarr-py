@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0](https://github.com/devopsarr/lidarr-py/compare/v0.2.2...v0.3.0) (2023-05-23)
+
+
+### Features
+
+* **devopsarr/prowlarr-py#11:** add request timeout to config ([9cfee60](https://github.com/devopsarr/lidarr-py/commit/9cfee60dd06d4d4c520f8db0c17014f1fc080a7c))
+* pin openapi version and add version management ([dbcdbe0](https://github.com/devopsarr/lidarr-py/commit/dbcdbe05994b37bd288805d3e1653b02d3925cda))
+
 ## [0.2.2](https://github.com/devopsarr/lidarr-py/compare/v0.2.1...v0.2.2) (2023-03-27)
 
 
