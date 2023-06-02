@@ -83,6 +83,7 @@ from lidarr.models.indexer_resource import IndexerResource
 from lidarr.models.iso_country import IsoCountry
 from lidarr.models.language_resource import LanguageResource
 from lidarr.models.links import Links
+from lidarr.models.localization_resource import LocalizationResource
 from lidarr.models.log_file_resource import LogFileResource
 from lidarr.models.log_resource import LogResource
 from lidarr.models.log_resource_paging_resource import LogResourcePagingResource

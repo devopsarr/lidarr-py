@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_localization**
-> str get_localization()
+> LocalizationResource get_localization()
 
 
 
@@ -107,7 +107,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**str**
+[**LocalizationResource**](LocalizationResource.md)
 
 ### Authorization
 
@@ -116,7 +116,7 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

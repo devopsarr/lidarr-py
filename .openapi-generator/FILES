@@ -100,6 +100,7 @@ docs/LanguageApi.md
 docs/LanguageResource.md
 docs/Links.md
 docs/LocalizationApi.md
+docs/LocalizationResource.md
 docs/LogApi.md
 docs/LogFileApi.md
 docs/LogFileResource.md
@@ -373,6 +374,7 @@ lidarr/models/indexer_resource.py
 lidarr/models/iso_country.py
 lidarr/models/language_resource.py
 lidarr/models/links.py
+lidarr/models/localization_resource.py
 lidarr/models/log_file_resource.py
 lidarr/models/log_resource.py
 lidarr/models/log_resource_paging_resource.py

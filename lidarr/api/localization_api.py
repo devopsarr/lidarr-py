@@ -17,6 +17,7 @@ import re  # noqa: F401
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
+from lidarr.models.localization_resource import LocalizationResource
 
 from lidarr.api_client import ApiClient
 from lidarr.exceptions import (  # noqa: F401
@@ -38,7 +39,7 @@ class LocalizationApi(object):
         self.api_client = api_client
 
     @validate_arguments
-    def get_localization(self, **kwargs) -> str:  # noqa: E501
+    def get_localization(self, **kwargs) -> LocalizationResource:  # noqa: E501
         """get_localization  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -60,7 +61,7 @@ class LocalizationApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: str
+        :rtype: LocalizationResource
         """
         kwargs['_return_http_data_only'] = True
         return self.get_localization_with_http_info(**kwargs)  # noqa: E501
@@ -96,7 +97,7 @@ class LocalizationApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(str, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(LocalizationResource, status_code(int), headers(HTTPHeaderDict))
         """
 
         _params = locals()
@@ -145,13 +146,13 @@ class LocalizationApi(object):
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # authentication setting
         _auth_settings = ['apikey', 'X-Api-Key']  # noqa: E501
 
         _response_types_map = {
-            '200': "str",
+            '200': "LocalizationResource",
         }
 
         return self.api_client.call_api(

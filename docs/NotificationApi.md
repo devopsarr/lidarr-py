@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **create_notification**
-> NotificationResource create_notification(notification_resource=notification_resource)
+> NotificationResource create_notification(force_save=force_save, notification_resource=notification_resource)
 
 
 
@@ -57,10 +57,11 @@ configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lidarr.NotificationApi(api_client)
+    force_save = False # bool |  (optional) (default to False)
     notification_resource = lidarr.NotificationResource() # NotificationResource |  (optional)
 
     try:
-        api_response = api_instance.create_notification(notification_resource=notification_resource)
+        api_response = api_instance.create_notification(force_save=force_save, notification_resource=notification_resource)
         print("The response of NotificationApi->create_notification:\n")
         pprint(api_response)
     except Exception as e:
@@ -102,10 +103,11 @@ configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lidarr.NotificationApi(api_client)
+    force_save = False # bool |  (optional) (default to False)
     notification_resource = lidarr.NotificationResource() # NotificationResource |  (optional)
 
     try:
-        api_response = api_instance.create_notification(notification_resource=notification_resource)
+        api_response = api_instance.create_notification(force_save=force_save, notification_resource=notification_resource)
         print("The response of NotificationApi->create_notification:\n")
         pprint(api_response)
     except Exception as e:
@@ -116,6 +118,7 @@ with lidarr.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **force_save** | **bool**|  | [optional] [default to False]
  **notification_resource** | [**NotificationResource**](NotificationResource.md)|  | [optional] 
 
 ### Return type
@@ -128,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -250,7 +253,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 ### HTTP response details
@@ -611,7 +614,7 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -729,7 +732,7 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -847,7 +850,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 ### HTTP response details
@@ -1090,7 +1093,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
