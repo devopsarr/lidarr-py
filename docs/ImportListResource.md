@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **metadata_profile_id** | **int** |  | [optional] 
 **list_type** | [**ImportListType**](ImportListType.md) |  | [optional] 
 **list_order** | **int** |  | [optional] 
+**min_refresh_interval** | **str** |  | [optional] 
 
 ## Example
 

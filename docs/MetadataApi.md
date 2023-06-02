@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **create_metadata**
-> MetadataResource create_metadata(metadata_resource=metadata_resource)
+> MetadataResource create_metadata(force_save=force_save, metadata_resource=metadata_resource)
 
 
 
@@ -57,10 +57,11 @@ configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lidarr.MetadataApi(api_client)
+    force_save = False # bool |  (optional) (default to False)
     metadata_resource = lidarr.MetadataResource() # MetadataResource |  (optional)
 
     try:
-        api_response = api_instance.create_metadata(metadata_resource=metadata_resource)
+        api_response = api_instance.create_metadata(force_save=force_save, metadata_resource=metadata_resource)
         print("The response of MetadataApi->create_metadata:\n")
         pprint(api_response)
     except Exception as e:
@@ -102,10 +103,11 @@ configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lidarr.MetadataApi(api_client)
+    force_save = False # bool |  (optional) (default to False)
     metadata_resource = lidarr.MetadataResource() # MetadataResource |  (optional)
 
     try:
-        api_response = api_instance.create_metadata(metadata_resource=metadata_resource)
+        api_response = api_instance.create_metadata(force_save=force_save, metadata_resource=metadata_resource)
         print("The response of MetadataApi->create_metadata:\n")
         pprint(api_response)
     except Exception as e:
@@ -116,6 +118,7 @@ with lidarr.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **force_save** | **bool**|  | [optional] [default to False]
  **metadata_resource** | [**MetadataResource**](MetadataResource.md)|  | [optional] 
 
 ### Return type
@@ -128,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
@@ -250,7 +253,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 ### HTTP response details
@@ -611,7 +614,7 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -729,7 +732,7 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -847,7 +850,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 ### HTTP response details
@@ -1090,7 +1093,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details

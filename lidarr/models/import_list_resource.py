@@ -51,7 +51,8 @@ class ImportListResource(BaseModel):
     metadata_profile_id: Optional[int]
     list_type: Optional[ImportListType]
     list_order: Optional[int]
-    __properties = ["id", "name", "fields", "implementationName", "implementation", "configContract", "infoLink", "message", "tags", "presets", "enableAutomaticAdd", "shouldMonitor", "shouldMonitorExisting", "shouldSearch", "rootFolderPath", "monitorNewItems", "qualityProfileId", "metadataProfileId", "listType", "listOrder"]
+    min_refresh_interval: Optional[str]
+    __properties = ["id", "name", "fields", "implementationName", "implementation", "configContract", "infoLink", "message", "tags", "presets", "enableAutomaticAdd", "shouldMonitor", "shouldMonitorExisting", "shouldSearch", "rootFolderPath", "monitorNewItems", "qualityProfileId", "metadataProfileId", "listType", "listOrder", "minRefreshInterval"]
 
     class Config:
         allow_population_by_field_name = True
@@ -164,7 +165,8 @@ class ImportListResource(BaseModel):
             "quality_profile_id": obj.get("qualityProfileId"),
             "metadata_profile_id": obj.get("metadataProfileId"),
             "list_type": obj.get("listType"),
-            "list_order": obj.get("listOrder")
+            "list_order": obj.get("listOrder"),
+            "min_refresh_interval": obj.get("minRefreshInterval")
         })
         return _obj
 

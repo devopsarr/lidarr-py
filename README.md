@@ -400,6 +400,7 @@ Class | Method | HTTP request | Description
  - [IsoCountry](docs/IsoCountry.md)
  - [LanguageResource](docs/LanguageResource.md)
  - [Links](docs/Links.md)
+ - [LocalizationResource](docs/LocalizationResource.md)
  - [LogFileResource](docs/LogFileResource.md)
  - [LogResource](docs/LogResource.md)
  - [LogResourcePagingResource](docs/LogResourcePagingResource.md)
