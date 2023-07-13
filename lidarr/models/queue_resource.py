@@ -41,6 +41,7 @@ class QueueResource(BaseModel):
     album: Optional[AlbumResource]
     quality: Optional[QualityModel]
     custom_formats: Optional[List]
+    custom_format_score: Optional[int]
     size: Optional[float]
     title: Optional[str]
     sizeleft: Optional[float]
@@ -57,7 +58,7 @@ class QueueResource(BaseModel):
     indexer: Optional[str]
     output_path: Optional[str]
     download_forced: Optional[bool]
-    __properties = ["id", "artistId", "albumId", "artist", "album", "quality", "customFormats", "size", "title", "sizeleft", "timeleft", "estimatedCompletionTime", "status", "trackedDownloadStatus", "trackedDownloadState", "statusMessages", "errorMessage", "downloadId", "protocol", "downloadClient", "indexer", "outputPath", "downloadForced"]
+    __properties = ["id", "artistId", "albumId", "artist", "album", "quality", "customFormats", "customFormatScore", "size", "title", "sizeleft", "timeleft", "estimatedCompletionTime", "status", "trackedDownloadStatus", "trackedDownloadState", "statusMessages", "errorMessage", "downloadId", "protocol", "downloadClient", "indexer", "outputPath", "downloadForced"]
 
     class Config:
         allow_population_by_field_name = True
@@ -176,6 +177,7 @@ class QueueResource(BaseModel):
             "album": AlbumResource.from_dict(obj.get("album")) if obj.get("album") is not None else None,
             "quality": QualityModel.from_dict(obj.get("quality")) if obj.get("quality") is not None else None,
             "custom_formats": [CustomFormatResource.from_dict(_item) for _item in obj.get("customFormats")] if obj.get("customFormats") is not None else None,
+            "custom_format_score": obj.get("customFormatScore"),
             "size": obj.get("size"),
             "title": obj.get("title"),
             "sizeleft": obj.get("sizeleft"),
