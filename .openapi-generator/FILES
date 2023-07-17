@@ -67,6 +67,7 @@ docs/DelayProfileResource.md
 docs/DiskSpaceApi.md
 docs/DiskSpaceResource.md
 docs/DownloadClientApi.md
+docs/DownloadClientBulkResource.md
 docs/DownloadClientConfigApi.md
 docs/DownloadClientConfigResource.md
 docs/DownloadClientResource.md
@@ -85,12 +86,14 @@ docs/HostConfigApi.md
 docs/HostConfigResource.md
 docs/ICustomFormatSpecification.md
 docs/ImportListApi.md
+docs/ImportListBulkResource.md
 docs/ImportListExclusionApi.md
 docs/ImportListExclusionResource.md
 docs/ImportListMonitorType.md
 docs/ImportListResource.md
 docs/ImportListType.md
 docs/IndexerApi.md
+docs/IndexerBulkResource.md
 docs/IndexerConfigApi.md
 docs/IndexerConfigResource.md
 docs/IndexerResource.md
@@ -353,6 +356,7 @@ lidarr/models/custom_format_specification_schema.py
 lidarr/models/database_type.py
 lidarr/models/delay_profile_resource.py
 lidarr/models/disk_space_resource.py
+lidarr/models/download_client_bulk_resource.py
 lidarr/models/download_client_config_resource.py
 lidarr/models/download_client_resource.py
 lidarr/models/download_protocol.py
@@ -365,10 +369,12 @@ lidarr/models/history_resource.py
 lidarr/models/history_resource_paging_resource.py
 lidarr/models/host_config_resource.py
 lidarr/models/i_custom_format_specification.py
+lidarr/models/import_list_bulk_resource.py
 lidarr/models/import_list_exclusion_resource.py
 lidarr/models/import_list_monitor_type.py
 lidarr/models/import_list_resource.py
 lidarr/models/import_list_type.py
+lidarr/models/indexer_bulk_resource.py
 lidarr/models/indexer_config_resource.py
 lidarr/models/indexer_resource.py
 lidarr/models/iso_country.py

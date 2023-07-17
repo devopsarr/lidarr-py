@@ -10,8 +10,9 @@ Name | Type | Description | Notes
 **import_list_ids** | **List[int]** |  | [optional] 
 **notification_ids** | **List[int]** |  | [optional] 
 **restriction_ids** | **List[int]** |  | [optional] 
-**indexer_ids** | **List[int]** |  | [optional] 
 **artist_ids** | **List[int]** |  | [optional] 
+**indexer_ids** | **List[int]** |  | [optional] 
+**download_client_ids** | **List[int]** |  | [optional] 
 
 ## Example
 

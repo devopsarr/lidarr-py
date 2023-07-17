@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **release_group** | **str** |  | [optional] 
 **quality** | [**QualityModel**](QualityModel.md) |  | [optional] 
 **quality_weight** | **int** |  | [optional] 
+**custom_formats** | [**List[CustomFormatResource]**](CustomFormatResource.md) |  | [optional] 
+**custom_format_score** | **int** |  | [optional] 
 **media_info** | [**MediaInfoResource**](MediaInfoResource.md) |  | [optional] 
 **quality_cutoff_not_met** | **bool** |  | [optional] 
 **audio_tags** | [**ParsedTrackInfo**](ParsedTrackInfo.md) |  | [optional] 
