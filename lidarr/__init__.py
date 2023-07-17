@@ -147,6 +147,7 @@ from lidarr.models.custom_format_specification_schema import CustomFormatSpecifi
 from lidarr.models.database_type import DatabaseType
 from lidarr.models.delay_profile_resource import DelayProfileResource
 from lidarr.models.disk_space_resource import DiskSpaceResource
+from lidarr.models.download_client_bulk_resource import DownloadClientBulkResource
 from lidarr.models.download_client_config_resource import DownloadClientConfigResource
 from lidarr.models.download_client_resource import DownloadClientResource
 from lidarr.models.download_protocol import DownloadProtocol
@@ -159,10 +160,12 @@ from lidarr.models.history_resource import HistoryResource
 from lidarr.models.history_resource_paging_resource import HistoryResourcePagingResource
 from lidarr.models.host_config_resource import HostConfigResource
 from lidarr.models.i_custom_format_specification import ICustomFormatSpecification
+from lidarr.models.import_list_bulk_resource import ImportListBulkResource
 from lidarr.models.import_list_exclusion_resource import ImportListExclusionResource
 from lidarr.models.import_list_monitor_type import ImportListMonitorType
 from lidarr.models.import_list_resource import ImportListResource
 from lidarr.models.import_list_type import ImportListType
+from lidarr.models.indexer_bulk_resource import IndexerBulkResource
 from lidarr.models.indexer_config_resource import IndexerConfigResource
 from lidarr.models.indexer_resource import IndexerResource
 from lidarr.models.iso_country import IsoCountry

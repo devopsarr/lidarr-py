@@ -17,8 +17,9 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from typing import Optional
+from typing import List, Optional
 from pydantic import BaseModel
+from lidarr.models.custom_format_resource import CustomFormatResource
 from lidarr.models.media_info_resource import MediaInfoResource
 from lidarr.models.parsed_track_info import ParsedTrackInfo
 from lidarr.models.quality_model import QualityModel
@@ -39,10 +40,12 @@ class TrackFileResource(BaseModel):
     release_group: Optional[str]
     quality: Optional[QualityModel]
     quality_weight: Optional[int]
+    custom_formats: Optional[List]
+    custom_format_score: Optional[int]
     media_info: Optional[MediaInfoResource]
     quality_cutoff_not_met: Optional[bool]
     audio_tags: Optional[ParsedTrackInfo]
-    __properties = ["id", "artistId", "albumId", "path", "size", "dateAdded", "sceneName", "releaseGroup", "quality", "qualityWeight", "mediaInfo", "qualityCutoffNotMet", "audioTags"]
+    __properties = ["id", "artistId", "albumId", "path", "size", "dateAdded", "sceneName", "releaseGroup", "quality", "qualityWeight", "customFormats", "customFormatScore", "mediaInfo", "qualityCutoffNotMet", "audioTags"]
 
     class Config:
         allow_population_by_field_name = True
@@ -74,6 +77,13 @@ class TrackFileResource(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of quality
         if self.quality:
             _dict['quality'] = self.quality.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in custom_formats (list)
+        _items = []
+        if self.custom_formats:
+            for _item in self.custom_formats:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['customFormats'] = _items
         # override the default output from pydantic by calling `to_dict()` of media_info
         if self.media_info:
             _dict['mediaInfo'] = self.media_info.to_dict()
@@ -91,6 +101,10 @@ class TrackFileResource(BaseModel):
         # set to None if release_group (nullable) is None
         if self.release_group is None:
             _dict['releaseGroup'] = None
+
+        # set to None if custom_formats (nullable) is None
+        if self.custom_formats is None:
+            _dict['customFormats'] = None
 
         return _dict
 
@@ -114,6 +128,8 @@ class TrackFileResource(BaseModel):
             "release_group": obj.get("releaseGroup"),
             "quality": QualityModel.from_dict(obj.get("quality")) if obj.get("quality") is not None else None,
             "quality_weight": obj.get("qualityWeight"),
+            "custom_formats": [CustomFormatResource.from_dict(_item) for _item in obj.get("customFormats")] if obj.get("customFormats") is not None else None,
+            "custom_format_score": obj.get("customFormatScore"),
             "media_info": MediaInfoResource.from_dict(obj.get("mediaInfo")) if obj.get("mediaInfo") is not None else None,
             "quality_cutoff_not_met": obj.get("qualityCutoffNotMet"),
             "audio_tags": ParsedTrackInfo.from_dict(obj.get("audioTags")) if obj.get("audioTags") is not None else None
