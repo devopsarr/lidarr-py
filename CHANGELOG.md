@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/devopsarr/lidarr-py/compare/v0.3.0...v0.3.1) (2023-07-21)
+
+
+### Bug Fixes
+
+* set pydantic version ([2306637](https://github.com/devopsarr/lidarr-py/commit/2306637b89faadfcdf666f20c932774d86cba7c5))
+
 ## [0.3.0](https://github.com/devopsarr/lidarr-py/compare/v0.2.2...v0.3.0) (2023-05-23)
 
 
