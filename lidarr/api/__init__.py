@@ -41,7 +41,6 @@ from lidarr.api.import_list_api import ImportListApi
 from lidarr.api.import_list_exclusion_api import ImportListExclusionApi
 from lidarr.api.indexer_api import IndexerApi
 from lidarr.api.indexer_config_api import IndexerConfigApi
-from lidarr.api.initialize_js_api import InitializeJsApi
 from lidarr.api.language_api import LanguageApi
 from lidarr.api.localization_api import LocalizationApi
 from lidarr.api.log_api import LogApi
