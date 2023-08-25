@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **monitored** | **bool** |  | [optional] 
 **monitor_new_items** | [**NewItemMonitorTypes**](NewItemMonitorTypes.md) |  | [optional] 
 **root_folder_path** | **str** |  | [optional] 
+**folder** | **str** |  | [optional] 
 **genres** | **List[str]** |  | [optional] 
 **clean_name** | **str** |  | [optional] 
 **sort_name** | **str** |  | [optional] 

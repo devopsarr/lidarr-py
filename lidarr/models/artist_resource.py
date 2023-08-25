@@ -60,6 +60,7 @@ class ArtistResource(BaseModel):
     monitored: Optional[bool]
     monitor_new_items: Optional[NewItemMonitorTypes]
     root_folder_path: Optional[str]
+    folder: Optional[str]
     genres: Optional[List]
     clean_name: Optional[str]
     sort_name: Optional[str]
@@ -68,7 +69,7 @@ class ArtistResource(BaseModel):
     add_options: Optional[AddArtistOptions]
     ratings: Optional[Ratings]
     statistics: Optional[ArtistStatisticsResource]
-    __properties = ["id", "artistMetadataId", "status", "ended", "artistName", "foreignArtistId", "mbId", "tadbId", "discogsId", "allMusicId", "overview", "artistType", "disambiguation", "links", "nextAlbum", "lastAlbum", "images", "members", "remotePoster", "path", "qualityProfileId", "metadataProfileId", "monitored", "monitorNewItems", "rootFolderPath", "genres", "cleanName", "sortName", "tags", "added", "addOptions", "ratings", "statistics"]
+    __properties = ["id", "artistMetadataId", "status", "ended", "artistName", "foreignArtistId", "mbId", "tadbId", "discogsId", "allMusicId", "overview", "artistType", "disambiguation", "links", "nextAlbum", "lastAlbum", "images", "members", "remotePoster", "path", "qualityProfileId", "metadataProfileId", "monitored", "monitorNewItems", "rootFolderPath", "folder", "genres", "cleanName", "sortName", "tags", "added", "addOptions", "ratings", "statistics"]
 
     class Config:
         allow_population_by_field_name = True
@@ -186,6 +187,10 @@ class ArtistResource(BaseModel):
         if self.root_folder_path is None:
             _dict['rootFolderPath'] = None
 
+        # set to None if folder (nullable) is None
+        if self.folder is None:
+            _dict['folder'] = None
+
         # set to None if genres (nullable) is None
         if self.genres is None:
             _dict['genres'] = None
@@ -239,6 +244,7 @@ class ArtistResource(BaseModel):
             "monitored": obj.get("monitored"),
             "monitor_new_items": obj.get("monitorNewItems"),
             "root_folder_path": obj.get("rootFolderPath"),
+            "folder": obj.get("folder"),
             "genres": obj.get("genres"),
             "clean_name": obj.get("cleanName"),
             "sort_name": obj.get("sortName"),
