@@ -40,13 +40,13 @@ class MediaCoverApi(object):
         self.api_client = api_client
 
     @validate_arguments
-    def get_media_cover_albumalbum_id_by_filename(self, album_id : StrictInt, filename : constr(strict=True), **kwargs) -> None:  # noqa: E501
-        """get_media_cover_albumalbum_id_by_filename  # noqa: E501
+    def get_media_cover_album_by_filename(self, album_id : StrictInt, filename : constr(strict=True), **kwargs) -> None:  # noqa: E501
+        """get_media_cover_album_by_filename  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_media_cover_albumalbum_id_by_filename(album_id, filename, async_req=True)
+        >>> thread = api.get_media_cover_album_by_filename(album_id, filename, async_req=True)
         >>> result = thread.get()
 
         :param album_id: (required)
@@ -69,16 +69,16 @@ class MediaCoverApi(object):
         :rtype: None
         """
         kwargs['_return_http_data_only'] = True
-        return self.get_media_cover_albumalbum_id_by_filename_with_http_info(album_id, filename, **kwargs)  # noqa: E501
+        return self.get_media_cover_album_by_filename_with_http_info(album_id, filename, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_media_cover_albumalbum_id_by_filename_with_http_info(self, album_id : StrictInt, filename : constr(strict=True), **kwargs):  # noqa: E501
-        """get_media_cover_albumalbum_id_by_filename  # noqa: E501
+    def get_media_cover_album_by_filename_with_http_info(self, album_id : StrictInt, filename : constr(strict=True), **kwargs):  # noqa: E501
+        """get_media_cover_album_by_filename  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_media_cover_albumalbum_id_by_filename_with_http_info(album_id, filename, async_req=True)
+        >>> thread = api.get_media_cover_album_by_filename_with_http_info(album_id, filename, async_req=True)
         >>> result = thread.get()
 
         :param album_id: (required)
@@ -132,7 +132,7 @@ class MediaCoverApi(object):
             if _key not in _all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_media_cover_albumalbum_id_by_filename" % _key
+                    " to method get_media_cover_album_by_filename" % _key
                 )
             _params[_key] = _val
         del _params['kwargs']
@@ -182,13 +182,13 @@ class MediaCoverApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_media_cover_artistartist_id_by_filename(self, artist_id : StrictInt, filename : constr(strict=True), **kwargs) -> None:  # noqa: E501
-        """get_media_cover_artistartist_id_by_filename  # noqa: E501
+    def get_media_cover_artist_by_filename(self, artist_id : StrictInt, filename : constr(strict=True), **kwargs) -> None:  # noqa: E501
+        """get_media_cover_artist_by_filename  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_media_cover_artistartist_id_by_filename(artist_id, filename, async_req=True)
+        >>> thread = api.get_media_cover_artist_by_filename(artist_id, filename, async_req=True)
         >>> result = thread.get()
 
         :param artist_id: (required)
@@ -211,16 +211,16 @@ class MediaCoverApi(object):
         :rtype: None
         """
         kwargs['_return_http_data_only'] = True
-        return self.get_media_cover_artistartist_id_by_filename_with_http_info(artist_id, filename, **kwargs)  # noqa: E501
+        return self.get_media_cover_artist_by_filename_with_http_info(artist_id, filename, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_media_cover_artistartist_id_by_filename_with_http_info(self, artist_id : StrictInt, filename : constr(strict=True), **kwargs):  # noqa: E501
-        """get_media_cover_artistartist_id_by_filename  # noqa: E501
+    def get_media_cover_artist_by_filename_with_http_info(self, artist_id : StrictInt, filename : constr(strict=True), **kwargs):  # noqa: E501
+        """get_media_cover_artist_by_filename  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_media_cover_artistartist_id_by_filename_with_http_info(artist_id, filename, async_req=True)
+        >>> thread = api.get_media_cover_artist_by_filename_with_http_info(artist_id, filename, async_req=True)
         >>> result = thread.get()
 
         :param artist_id: (required)
@@ -274,7 +274,7 @@ class MediaCoverApi(object):
             if _key not in _all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_media_cover_artistartist_id_by_filename" % _key
+                    " to method get_media_cover_artist_by_filename" % _key
                 )
             _params[_key] = _val
         del _params['kwargs']

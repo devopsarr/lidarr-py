@@ -217,8 +217,8 @@ Class | Method | HTTP request | Description
 *LogFileApi* | [**list_log_file**](docs/LogFileApi.md#list_log_file) | **GET** /api/v1/log/file | 
 *ManualImportApi* | [**create_manual_import**](docs/ManualImportApi.md#create_manual_import) | **POST** /api/v1/manualimport | 
 *ManualImportApi* | [**list_manual_import**](docs/ManualImportApi.md#list_manual_import) | **GET** /api/v1/manualimport | 
-*MediaCoverApi* | [**get_media_cover_albumalbum_id_by_filename**](docs/MediaCoverApi.md#get_media_cover_albumalbum_id_by_filename) | **GET** /api/v1/mediacover/album/{albumId}/{filename} | 
-*MediaCoverApi* | [**get_media_cover_artistartist_id_by_filename**](docs/MediaCoverApi.md#get_media_cover_artistartist_id_by_filename) | **GET** /api/v1/mediacover/artist/{artistId}/{filename} | 
+*MediaCoverApi* | [**get_media_cover_album_by_filename**](docs/MediaCoverApi.md#get_media_cover_album_by_filename) | **GET** /api/v1/mediacover/album/{albumId}/{filename} | 
+*MediaCoverApi* | [**get_media_cover_artist_by_filename**](docs/MediaCoverApi.md#get_media_cover_artist_by_filename) | **GET** /api/v1/mediacover/artist/{artistId}/{filename} | 
 *MediaManagementConfigApi* | [**get_media_management_config**](docs/MediaManagementConfigApi.md#get_media_management_config) | **GET** /api/v1/config/mediamanagement | 
 *MediaManagementConfigApi* | [**get_media_management_config_by_id**](docs/MediaManagementConfigApi.md#get_media_management_config_by_id) | **GET** /api/v1/config/mediamanagement/{id} | 
 *MediaManagementConfigApi* | [**update_media_management_config**](docs/MediaManagementConfigApi.md#update_media_management_config) | **PUT** /api/v1/config/mediamanagement/{id} | 
