@@ -4,12 +4,12 @@ All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_media_cover_albumalbum_id_by_filename**](MediaCoverApi.md#get_media_cover_albumalbum_id_by_filename) | **GET** /api/v1/mediacover/album/{albumId}/{filename} | 
-[**get_media_cover_artistartist_id_by_filename**](MediaCoverApi.md#get_media_cover_artistartist_id_by_filename) | **GET** /api/v1/mediacover/artist/{artistId}/{filename} | 
+[**get_media_cover_album_by_filename**](MediaCoverApi.md#get_media_cover_album_by_filename) | **GET** /api/v1/mediacover/album/{albumId}/{filename} | 
+[**get_media_cover_artist_by_filename**](MediaCoverApi.md#get_media_cover_artist_by_filename) | **GET** /api/v1/mediacover/artist/{artistId}/{filename} | 
 
 
-# **get_media_cover_albumalbum_id_by_filename**
-> get_media_cover_albumalbum_id_by_filename(album_id, filename)
+# **get_media_cover_album_by_filename**
+> get_media_cover_album_by_filename(album_id, filename)
 
 
 
@@ -54,9 +54,9 @@ with lidarr.ApiClient(configuration) as api_client:
     filename = 'filename_example' # str | 
 
     try:
-        api_instance.get_media_cover_albumalbum_id_by_filename(album_id, filename)
+        api_instance.get_media_cover_album_by_filename(album_id, filename)
     except Exception as e:
-        print("Exception when calling MediaCoverApi->get_media_cover_albumalbum_id_by_filename: %s\n" % e)
+        print("Exception when calling MediaCoverApi->get_media_cover_album_by_filename: %s\n" % e)
 ```
 
 * Api Key Authentication (X-Api-Key):
@@ -98,9 +98,9 @@ with lidarr.ApiClient(configuration) as api_client:
     filename = 'filename_example' # str | 
 
     try:
-        api_instance.get_media_cover_albumalbum_id_by_filename(album_id, filename)
+        api_instance.get_media_cover_album_by_filename(album_id, filename)
     except Exception as e:
-        print("Exception when calling MediaCoverApi->get_media_cover_albumalbum_id_by_filename: %s\n" % e)
+        print("Exception when calling MediaCoverApi->get_media_cover_album_by_filename: %s\n" % e)
 ```
 
 ### Parameters
@@ -130,8 +130,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_media_cover_artistartist_id_by_filename**
-> get_media_cover_artistartist_id_by_filename(artist_id, filename)
+# **get_media_cover_artist_by_filename**
+> get_media_cover_artist_by_filename(artist_id, filename)
 
 
 
@@ -176,9 +176,9 @@ with lidarr.ApiClient(configuration) as api_client:
     filename = 'filename_example' # str | 
 
     try:
-        api_instance.get_media_cover_artistartist_id_by_filename(artist_id, filename)
+        api_instance.get_media_cover_artist_by_filename(artist_id, filename)
     except Exception as e:
-        print("Exception when calling MediaCoverApi->get_media_cover_artistartist_id_by_filename: %s\n" % e)
+        print("Exception when calling MediaCoverApi->get_media_cover_artist_by_filename: %s\n" % e)
 ```
 
 * Api Key Authentication (X-Api-Key):
@@ -220,9 +220,9 @@ with lidarr.ApiClient(configuration) as api_client:
     filename = 'filename_example' # str | 
 
     try:
-        api_instance.get_media_cover_artistartist_id_by_filename(artist_id, filename)
+        api_instance.get_media_cover_artist_by_filename(artist_id, filename)
     except Exception as e:
-        print("Exception when calling MediaCoverApi->get_media_cover_artistartist_id_by_filename: %s\n" % e)
+        print("Exception when calling MediaCoverApi->get_media_cover_artist_by_filename: %s\n" % e)
 ```
 
 ### Parameters
