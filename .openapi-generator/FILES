@@ -468,6 +468,7 @@ lidarr/models/update_changes.py
 lidarr/models/update_mechanism.py
 lidarr/models/update_resource.py
 lidarr/models/write_audio_tags_type.py
+lidarr/py.typed
 lidarr/rest.py
 pyproject.toml
 setup.cfg

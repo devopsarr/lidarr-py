@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 from pydantic import BaseModel
 from lidarr.models.artist_title_info import ArtistTitleInfo
 from lidarr.models.iso_country import IsoCountry
