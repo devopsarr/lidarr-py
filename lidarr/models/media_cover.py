@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import Optional
+from typing import Any, Dict, Optional
 from pydantic import BaseModel
 from lidarr.models.media_cover_types import MediaCoverTypes
 

@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 from pydantic import BaseModel
 from lidarr.models.add_album_options import AddAlbumOptions
 from lidarr.models.artist_metadata_lazy_loaded import ArtistMetadataLazyLoaded

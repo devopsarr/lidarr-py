@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 from pydantic import BaseModel
 from lidarr.models.profile_primary_album_type_item_resource import ProfilePrimaryAlbumTypeItemResource
 from lidarr.models.profile_release_status_item_resource import ProfileReleaseStatusItemResource
