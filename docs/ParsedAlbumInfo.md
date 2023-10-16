@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **album_title** | **str** |  | [optional] 
 **artist_name** | **str** |  | [optional] 
+**album_type** | **str** |  | [optional] 
 **artist_title_info** | [**ArtistTitleInfo**](ArtistTitleInfo.md) |  | [optional] 
 **quality** | [**QualityModel**](QualityModel.md) |  | [optional] 
 **release_date** | **str** |  | [optional] 

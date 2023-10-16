@@ -30,6 +30,7 @@ class ParsedAlbumInfo(BaseModel):
     """
     album_title: Optional[str]
     artist_name: Optional[str]
+    album_type: Optional[str]
     artist_title_info: Optional[ArtistTitleInfo]
     quality: Optional[QualityModel]
     release_date: Optional[str]
@@ -40,7 +41,7 @@ class ParsedAlbumInfo(BaseModel):
     release_hash: Optional[str]
     release_version: Optional[str]
     release_title: Optional[str]
-    __properties = ["albumTitle", "artistName", "artistTitleInfo", "quality", "releaseDate", "discography", "discographyStart", "discographyEnd", "releaseGroup", "releaseHash", "releaseVersion", "releaseTitle"]
+    __properties = ["albumTitle", "artistName", "albumType", "artistTitleInfo", "quality", "releaseDate", "discography", "discographyStart", "discographyEnd", "releaseGroup", "releaseHash", "releaseVersion", "releaseTitle"]
 
     class Config:
         allow_population_by_field_name = True
@@ -83,6 +84,10 @@ class ParsedAlbumInfo(BaseModel):
         if self.artist_name is None:
             _dict['artistName'] = None
 
+        # set to None if album_type (nullable) is None
+        if self.album_type is None:
+            _dict['albumType'] = None
+
         # set to None if release_date (nullable) is None
         if self.release_date is None:
             _dict['releaseDate'] = None
@@ -117,6 +122,7 @@ class ParsedAlbumInfo(BaseModel):
         _obj = ParsedAlbumInfo.parse_obj({
             "album_title": obj.get("albumTitle"),
             "artist_name": obj.get("artistName"),
+            "album_type": obj.get("albumType"),
             "artist_title_info": ArtistTitleInfo.from_dict(obj.get("artistTitleInfo")) if obj.get("artistTitleInfo") is not None else None,
             "quality": QualityModel.from_dict(obj.get("quality")) if obj.get("quality") is not None else None,
             "release_date": obj.get("releaseDate"),
