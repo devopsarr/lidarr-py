@@ -126,6 +126,7 @@ from lidarr.models.artist_resource import ArtistResource
 from lidarr.models.artist_statistics_resource import ArtistStatisticsResource
 from lidarr.models.artist_status_type import ArtistStatusType
 from lidarr.models.artist_title_info import ArtistTitleInfo
+from lidarr.models.authentication_required_type import AuthenticationRequiredType
 from lidarr.models.authentication_type import AuthenticationType
 from lidarr.models.backup_resource import BackupResource
 from lidarr.models.backup_type import BackupType
@@ -200,6 +201,7 @@ from lidarr.models.parsed_album_info import ParsedAlbumInfo
 from lidarr.models.parsed_track_info import ParsedTrackInfo
 from lidarr.models.ping_resource import PingResource
 from lidarr.models.primary_album_type import PrimaryAlbumType
+from lidarr.models.privacy_level import PrivacyLevel
 from lidarr.models.profile_format_item import ProfileFormatItem
 from lidarr.models.profile_format_item_resource import ProfileFormatItemResource
 from lidarr.models.profile_primary_album_type_item import ProfilePrimaryAlbumTypeItem

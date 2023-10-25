@@ -36,6 +36,7 @@ docs/ArtistStatisticsResource.md
 docs/ArtistStatusType.md
 docs/ArtistTitleInfo.md
 docs/AuthenticationApi.md
+docs/AuthenticationRequiredType.md
 docs/AuthenticationType.md
 docs/BackupApi.md
 docs/BackupResource.md
@@ -146,6 +147,7 @@ docs/ParsedTrackInfo.md
 docs/PingApi.md
 docs/PingResource.md
 docs/PrimaryAlbumType.md
+docs/PrivacyLevel.md
 docs/ProfileFormatItem.md
 docs/ProfileFormatItemResource.md
 docs/ProfilePrimaryAlbumTypeItem.md
@@ -334,6 +336,7 @@ lidarr/models/artist_resource.py
 lidarr/models/artist_statistics_resource.py
 lidarr/models/artist_status_type.py
 lidarr/models/artist_title_info.py
+lidarr/models/authentication_required_type.py
 lidarr/models/authentication_type.py
 lidarr/models/backup_resource.py
 lidarr/models/backup_type.py
@@ -408,6 +411,7 @@ lidarr/models/parsed_album_info.py
 lidarr/models/parsed_track_info.py
 lidarr/models/ping_resource.py
 lidarr/models/primary_album_type.py
+lidarr/models/privacy_level.py
 lidarr/models/profile_format_item.py
 lidarr/models/profile_format_item_resource.py
 lidarr/models/profile_primary_album_type_item.py
