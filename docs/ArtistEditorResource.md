@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **apply_tags** | [**ApplyTags**](ApplyTags.md) |  | [optional] 
 **move_files** | **bool** |  | [optional] 
 **delete_files** | **bool** |  | [optional] 
+**add_import_list_exclusion** | **bool** |  | [optional] 
 
 ## Example
 

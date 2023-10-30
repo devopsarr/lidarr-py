@@ -38,7 +38,8 @@ class ArtistEditorResource(BaseModel):
     apply_tags: Optional[ApplyTags]
     move_files: Optional[bool]
     delete_files: Optional[bool]
-    __properties = ["artistIds", "monitored", "monitorNewItems", "qualityProfileId", "metadataProfileId", "rootFolderPath", "tags", "applyTags", "moveFiles", "deleteFiles"]
+    add_import_list_exclusion: Optional[bool]
+    __properties = ["artistIds", "monitored", "monitorNewItems", "qualityProfileId", "metadataProfileId", "rootFolderPath", "tags", "applyTags", "moveFiles", "deleteFiles", "addImportListExclusion"]
 
     class Config:
         allow_population_by_field_name = True
@@ -112,7 +113,8 @@ class ArtistEditorResource(BaseModel):
             "tags": obj.get("tags"),
             "apply_tags": obj.get("applyTags"),
             "move_files": obj.get("moveFiles"),
-            "delete_files": obj.get("deleteFiles")
+            "delete_files": obj.get("deleteFiles"),
+            "add_import_list_exclusion": obj.get("addImportListExclusion")
         })
         return _obj
 
