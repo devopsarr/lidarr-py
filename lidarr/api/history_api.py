@@ -19,13 +19,14 @@ from typing_extensions import Annotated
 
 from datetime import datetime
 
-from pydantic import StrictBool, StrictInt
+from pydantic import StrictBool, StrictInt, StrictStr, conlist
 
 from typing import List, Optional
 
 from lidarr.models.entity_history_event_type import EntityHistoryEventType
 from lidarr.models.history_resource import HistoryResource
 from lidarr.models.history_resource_paging_resource import HistoryResourcePagingResource
+from lidarr.models.sort_direction import SortDirection
 
 from lidarr.api_client import ApiClient
 from lidarr.exceptions import (  # noqa: F401
@@ -182,21 +183,39 @@ class HistoryApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_history(self, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, include_track : Optional[StrictBool] = None, **kwargs) -> HistoryResourcePagingResource:  # noqa: E501
+    def get_history(self, page : Optional[StrictInt] = None, page_size : Optional[StrictInt] = None, sort_key : Optional[StrictStr] = None, sort_direction : Optional[SortDirection] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, include_track : Optional[StrictBool] = None, event_type : Optional[StrictInt] = None, album_id : Optional[StrictInt] = None, download_id : Optional[StrictStr] = None, artist_ids : Optional[conlist(StrictInt)] = None, quality : Optional[conlist(StrictInt)] = None, **kwargs) -> HistoryResourcePagingResource:  # noqa: E501
         """get_history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_history(include_artist, include_album, include_track, async_req=True)
+        >>> thread = api.get_history(page, page_size, sort_key, sort_direction, include_artist, include_album, include_track, event_type, album_id, download_id, artist_ids, quality, async_req=True)
         >>> result = thread.get()
 
+        :param page:
+        :type page: int
+        :param page_size:
+        :type page_size: int
+        :param sort_key:
+        :type sort_key: str
+        :param sort_direction:
+        :type sort_direction: SortDirection
         :param include_artist:
         :type include_artist: bool
         :param include_album:
         :type include_album: bool
         :param include_track:
         :type include_track: bool
+        :param event_type:
+        :type event_type: int
+        :param album_id:
+        :type album_id: int
+        :param download_id:
+        :type download_id: str
+        :param artist_ids:
+        :type artist_ids: List[int]
+        :param quality:
+        :type quality: List[int]
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -213,24 +232,42 @@ class HistoryApi(object):
         :rtype: HistoryResourcePagingResource
         """
         kwargs['_return_http_data_only'] = True
-        return self.get_history_with_http_info(include_artist, include_album, include_track, **kwargs)  # noqa: E501
+        return self.get_history_with_http_info(page, page_size, sort_key, sort_direction, include_artist, include_album, include_track, event_type, album_id, download_id, artist_ids, quality, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_history_with_http_info(self, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, include_track : Optional[StrictBool] = None, **kwargs):  # noqa: E501
+    def get_history_with_http_info(self, page : Optional[StrictInt] = None, page_size : Optional[StrictInt] = None, sort_key : Optional[StrictStr] = None, sort_direction : Optional[SortDirection] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, include_track : Optional[StrictBool] = None, event_type : Optional[StrictInt] = None, album_id : Optional[StrictInt] = None, download_id : Optional[StrictStr] = None, artist_ids : Optional[conlist(StrictInt)] = None, quality : Optional[conlist(StrictInt)] = None, **kwargs):  # noqa: E501
         """get_history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_history_with_http_info(include_artist, include_album, include_track, async_req=True)
+        >>> thread = api.get_history_with_http_info(page, page_size, sort_key, sort_direction, include_artist, include_album, include_track, event_type, album_id, download_id, artist_ids, quality, async_req=True)
         >>> result = thread.get()
 
+        :param page:
+        :type page: int
+        :param page_size:
+        :type page_size: int
+        :param sort_key:
+        :type sort_key: str
+        :param sort_direction:
+        :type sort_direction: SortDirection
         :param include_artist:
         :type include_artist: bool
         :param include_album:
         :type include_album: bool
         :param include_track:
         :type include_track: bool
+        :param event_type:
+        :type event_type: int
+        :param album_id:
+        :type album_id: int
+        :param download_id:
+        :type download_id: str
+        :param artist_ids:
+        :type artist_ids: List[int]
+        :param quality:
+        :type quality: List[int]
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -258,9 +295,18 @@ class HistoryApi(object):
         _params = locals()
 
         _all_params = [
+            'page',
+            'page_size',
+            'sort_key',
+            'sort_direction',
             'include_artist',
             'include_album',
-            'include_track'
+            'include_track',
+            'event_type',
+            'album_id',
+            'download_id',
+            'artist_ids',
+            'quality'
         ]
         _all_params.extend(
             [
@@ -291,12 +337,32 @@ class HistoryApi(object):
 
         # process the query parameters
         _query_params = []
+        if _params.get('page') is not None:  # noqa: E501
+            _query_params.append(('page', _params['page']))
+        if _params.get('page_size') is not None:  # noqa: E501
+            _query_params.append(('pageSize', _params['page_size']))
+        if _params.get('sort_key') is not None:  # noqa: E501
+            _query_params.append(('sortKey', _params['sort_key']))
+        if _params.get('sort_direction') is not None:  # noqa: E501
+            _query_params.append(('sortDirection', _params['sort_direction']))
         if _params.get('include_artist') is not None:  # noqa: E501
             _query_params.append(('includeArtist', _params['include_artist']))
         if _params.get('include_album') is not None:  # noqa: E501
             _query_params.append(('includeAlbum', _params['include_album']))
         if _params.get('include_track') is not None:  # noqa: E501
             _query_params.append(('includeTrack', _params['include_track']))
+        if _params.get('event_type') is not None:  # noqa: E501
+            _query_params.append(('eventType', _params['event_type']))
+        if _params.get('album_id') is not None:  # noqa: E501
+            _query_params.append(('albumId', _params['album_id']))
+        if _params.get('download_id') is not None:  # noqa: E501
+            _query_params.append(('downloadId', _params['download_id']))
+        if _params.get('artist_ids') is not None:  # noqa: E501
+            _query_params.append(('artistIds', _params['artist_ids']))
+            _collection_formats['artistIds'] = 'multi'
+        if _params.get('quality') is not None:  # noqa: E501
+            _query_params.append(('quality', _params['quality']))
+            _collection_formats['quality'] = 'multi'
 
         # process the header parameters
         _header_params = dict(_params.get('_headers', {}))
@@ -310,7 +376,7 @@ class HistoryApi(object):
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # authentication setting
         _auth_settings = ['apikey', 'X-Api-Key']  # noqa: E501
@@ -486,7 +552,7 @@ class HistoryApi(object):
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # authentication setting
         _auth_settings = ['apikey', 'X-Api-Key']  # noqa: E501
@@ -655,7 +721,7 @@ class HistoryApi(object):
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # authentication setting
         _auth_settings = ['apikey', 'X-Api-Key']  # noqa: E501

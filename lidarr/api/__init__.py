@@ -21,6 +21,7 @@ from lidarr.api.artist_api import ArtistApi
 from lidarr.api.artist_editor_api import ArtistEditorApi
 from lidarr.api.artist_lookup_api import ArtistLookupApi
 from lidarr.api.authentication_api import AuthenticationApi
+from lidarr.api.auto_tagging_api import AutoTaggingApi
 from lidarr.api.backup_api import BackupApi
 from lidarr.api.blocklist_api import BlocklistApi
 from lidarr.api.calendar_api import CalendarApi

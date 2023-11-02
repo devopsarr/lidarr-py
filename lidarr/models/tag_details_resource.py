@@ -32,10 +32,11 @@ class TagDetailsResource(BaseModel):
     import_list_ids: Optional[List]
     notification_ids: Optional[List]
     restriction_ids: Optional[List]
-    artist_ids: Optional[List]
     indexer_ids: Optional[List]
     download_client_ids: Optional[List]
-    __properties = ["id", "label", "delayProfileIds", "importListIds", "notificationIds", "restrictionIds", "artistIds", "indexerIds", "downloadClientIds"]
+    auto_tag_ids: Optional[List]
+    artist_ids: Optional[List]
+    __properties = ["id", "label", "delayProfileIds", "importListIds", "notificationIds", "restrictionIds", "indexerIds", "downloadClientIds", "autoTagIds", "artistIds"]
 
     class Config:
         allow_population_by_field_name = True
@@ -84,10 +85,6 @@ class TagDetailsResource(BaseModel):
         if self.restriction_ids is None:
             _dict['restrictionIds'] = None
 
-        # set to None if artist_ids (nullable) is None
-        if self.artist_ids is None:
-            _dict['artistIds'] = None
-
         # set to None if indexer_ids (nullable) is None
         if self.indexer_ids is None:
             _dict['indexerIds'] = None
@@ -95,6 +92,14 @@ class TagDetailsResource(BaseModel):
         # set to None if download_client_ids (nullable) is None
         if self.download_client_ids is None:
             _dict['downloadClientIds'] = None
+
+        # set to None if auto_tag_ids (nullable) is None
+        if self.auto_tag_ids is None:
+            _dict['autoTagIds'] = None
+
+        # set to None if artist_ids (nullable) is None
+        if self.artist_ids is None:
+            _dict['artistIds'] = None
 
         return _dict
 
@@ -114,9 +119,10 @@ class TagDetailsResource(BaseModel):
             "import_list_ids": obj.get("importListIds"),
             "notification_ids": obj.get("notificationIds"),
             "restriction_ids": obj.get("restrictionIds"),
-            "artist_ids": obj.get("artistIds"),
             "indexer_ids": obj.get("indexerIds"),
-            "download_client_ids": obj.get("downloadClientIds")
+            "download_client_ids": obj.get("downloadClientIds"),
+            "auto_tag_ids": obj.get("autoTagIds"),
+            "artist_ids": obj.get("artistIds")
         })
         return _obj
 
