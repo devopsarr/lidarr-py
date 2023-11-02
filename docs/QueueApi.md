@@ -266,7 +266,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_queue**
-> QueueResourcePagingResource get_queue(include_unknown_artist_items=include_unknown_artist_items, include_artist=include_artist, include_album=include_album)
+> QueueResourcePagingResource get_queue(page=page, page_size=page_size, sort_key=sort_key, sort_direction=sort_direction, include_unknown_artist_items=include_unknown_artist_items, include_artist=include_artist, include_album=include_album, artist_ids=artist_ids, protocol=protocol, quality=quality)
 
 
 
@@ -307,12 +307,19 @@ configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lidarr.QueueApi(api_client)
+    page = 1 # int |  (optional) (default to 1)
+    page_size = 10 # int |  (optional) (default to 10)
+    sort_key = 'sort_key_example' # str |  (optional)
+    sort_direction = lidarr.SortDirection() # SortDirection |  (optional)
     include_unknown_artist_items = False # bool |  (optional) (default to False)
     include_artist = False # bool |  (optional) (default to False)
     include_album = False # bool |  (optional) (default to False)
+    artist_ids = [56] # List[int] |  (optional)
+    protocol = lidarr.DownloadProtocol() # DownloadProtocol |  (optional)
+    quality = 56 # int |  (optional)
 
     try:
-        api_response = api_instance.get_queue(include_unknown_artist_items=include_unknown_artist_items, include_artist=include_artist, include_album=include_album)
+        api_response = api_instance.get_queue(page=page, page_size=page_size, sort_key=sort_key, sort_direction=sort_direction, include_unknown_artist_items=include_unknown_artist_items, include_artist=include_artist, include_album=include_album, artist_ids=artist_ids, protocol=protocol, quality=quality)
         print("The response of QueueApi->get_queue:\n")
         pprint(api_response)
     except Exception as e:
@@ -354,12 +361,19 @@ configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lidarr.QueueApi(api_client)
+    page = 1 # int |  (optional) (default to 1)
+    page_size = 10 # int |  (optional) (default to 10)
+    sort_key = 'sort_key_example' # str |  (optional)
+    sort_direction = lidarr.SortDirection() # SortDirection |  (optional)
     include_unknown_artist_items = False # bool |  (optional) (default to False)
     include_artist = False # bool |  (optional) (default to False)
     include_album = False # bool |  (optional) (default to False)
+    artist_ids = [56] # List[int] |  (optional)
+    protocol = lidarr.DownloadProtocol() # DownloadProtocol |  (optional)
+    quality = 56 # int |  (optional)
 
     try:
-        api_response = api_instance.get_queue(include_unknown_artist_items=include_unknown_artist_items, include_artist=include_artist, include_album=include_album)
+        api_response = api_instance.get_queue(page=page, page_size=page_size, sort_key=sort_key, sort_direction=sort_direction, include_unknown_artist_items=include_unknown_artist_items, include_artist=include_artist, include_album=include_album, artist_ids=artist_ids, protocol=protocol, quality=quality)
         print("The response of QueueApi->get_queue:\n")
         pprint(api_response)
     except Exception as e:
@@ -370,9 +384,16 @@ with lidarr.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **page** | **int**|  | [optional] [default to 1]
+ **page_size** | **int**|  | [optional] [default to 10]
+ **sort_key** | **str**|  | [optional] 
+ **sort_direction** | [**SortDirection**](.md)|  | [optional] 
  **include_unknown_artist_items** | **bool**|  | [optional] [default to False]
  **include_artist** | **bool**|  | [optional] [default to False]
  **include_album** | **bool**|  | [optional] [default to False]
+ **artist_ids** | [**List[int]**](int.md)|  | [optional] 
+ **protocol** | [**DownloadProtocol**](.md)|  | [optional] 
+ **quality** | **int**|  | [optional] 
 
 ### Return type
 

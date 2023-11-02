@@ -44,6 +44,8 @@ from lidarr.models.artist_status_type import ArtistStatusType
 from lidarr.models.artist_title_info import ArtistTitleInfo
 from lidarr.models.authentication_required_type import AuthenticationRequiredType
 from lidarr.models.authentication_type import AuthenticationType
+from lidarr.models.auto_tagging_resource import AutoTaggingResource
+from lidarr.models.auto_tagging_specification_schema import AutoTaggingSpecificationSchema
 from lidarr.models.backup_resource import BackupResource
 from lidarr.models.backup_type import BackupType
 from lidarr.models.blocklist_bulk_resource import BlocklistBulkResource
@@ -111,7 +113,6 @@ from lidarr.models.monitoring_options import MonitoringOptions
 from lidarr.models.naming_config_resource import NamingConfigResource
 from lidarr.models.new_item_monitor_types import NewItemMonitorTypes
 from lidarr.models.notification_resource import NotificationResource
-from lidarr.models.paging_resource_filter import PagingResourceFilter
 from lidarr.models.parse_resource import ParseResource
 from lidarr.models.parsed_album_info import ParsedAlbumInfo
 from lidarr.models.parsed_track_info import ParsedTrackInfo

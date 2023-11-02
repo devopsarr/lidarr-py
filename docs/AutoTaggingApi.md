@@ -1,17 +1,19 @@
-# lidarr.HistoryApi
+# lidarr.AutoTaggingApi
 
 All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_history_failed_by_id**](HistoryApi.md#create_history_failed_by_id) | **POST** /api/v1/history/failed/{id} | 
-[**get_history**](HistoryApi.md#get_history) | **GET** /api/v1/history | 
-[**list_history_artist**](HistoryApi.md#list_history_artist) | **GET** /api/v1/history/artist | 
-[**list_history_since**](HistoryApi.md#list_history_since) | **GET** /api/v1/history/since | 
+[**create_auto_tagging**](AutoTaggingApi.md#create_auto_tagging) | **POST** /api/v1/autotagging | 
+[**delete_auto_tagging**](AutoTaggingApi.md#delete_auto_tagging) | **DELETE** /api/v1/autotagging/{id} | 
+[**get_auto_tagging_by_id**](AutoTaggingApi.md#get_auto_tagging_by_id) | **GET** /api/v1/autotagging/{id} | 
+[**get_auto_tagging_schema**](AutoTaggingApi.md#get_auto_tagging_schema) | **GET** /api/v1/autotagging/schema | 
+[**list_auto_tagging**](AutoTaggingApi.md#list_auto_tagging) | **GET** /api/v1/autotagging | 
+[**update_auto_tagging**](AutoTaggingApi.md#update_auto_tagging) | **PUT** /api/v1/autotagging/{id} | 
 
 
-# **create_history_failed_by_id**
-> create_history_failed_by_id(id)
+# **create_auto_tagging**
+> AutoTaggingResource create_auto_tagging(auto_tagging_resource=auto_tagging_resource)
 
 
 
@@ -51,13 +53,15 @@ configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = lidarr.HistoryApi(api_client)
-    id = 56 # int | 
+    api_instance = lidarr.AutoTaggingApi(api_client)
+    auto_tagging_resource = lidarr.AutoTaggingResource() # AutoTaggingResource |  (optional)
 
     try:
-        api_instance.create_history_failed_by_id(id)
+        api_response = api_instance.create_auto_tagging(auto_tagging_resource=auto_tagging_resource)
+        print("The response of AutoTaggingApi->create_auto_tagging:\n")
+        pprint(api_response)
     except Exception as e:
-        print("Exception when calling HistoryApi->create_history_failed_by_id: %s\n" % e)
+        print("Exception when calling AutoTaggingApi->create_auto_tagging: %s\n" % e)
 ```
 
 * Api Key Authentication (X-Api-Key):
@@ -94,13 +98,134 @@ configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = lidarr.HistoryApi(api_client)
+    api_instance = lidarr.AutoTaggingApi(api_client)
+    auto_tagging_resource = lidarr.AutoTaggingResource() # AutoTaggingResource |  (optional)
+
+    try:
+        api_response = api_instance.create_auto_tagging(auto_tagging_resource=auto_tagging_resource)
+        print("The response of AutoTaggingApi->create_auto_tagging:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AutoTaggingApi->create_auto_tagging: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **auto_tagging_resource** | [**AutoTaggingResource**](AutoTaggingResource.md)|  | [optional] 
+
+### Return type
+
+[**AutoTaggingResource**](AutoTaggingResource.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_auto_tagging**
+> delete_auto_tagging(id)
+
+
+
+### Example
+
+* Api Key Authentication (apikey):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.AutoTaggingApi(api_client)
     id = 56 # int | 
 
     try:
-        api_instance.create_history_failed_by_id(id)
+        api_instance.delete_auto_tagging(id)
     except Exception as e:
-        print("Exception when calling HistoryApi->create_history_failed_by_id: %s\n" % e)
+        print("Exception when calling AutoTaggingApi->delete_auto_tagging: %s\n" % e)
+```
+
+* Api Key Authentication (X-Api-Key):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.AutoTaggingApi(api_client)
+    id = 56 # int | 
+
+    try:
+        api_instance.delete_auto_tagging(id)
+    except Exception as e:
+        print("Exception when calling AutoTaggingApi->delete_auto_tagging: %s\n" % e)
 ```
 
 ### Parameters
@@ -129,8 +254,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_history**
-> HistoryResourcePagingResource get_history(page=page, page_size=page_size, sort_key=sort_key, sort_direction=sort_direction, include_artist=include_artist, include_album=include_album, include_track=include_track, event_type=event_type, album_id=album_id, download_id=download_id, artist_ids=artist_ids, quality=quality)
+# **get_auto_tagging_by_id**
+> AutoTaggingResource get_auto_tagging_by_id(id)
 
 
 
@@ -170,26 +295,15 @@ configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = lidarr.HistoryApi(api_client)
-    page = 1 # int |  (optional) (default to 1)
-    page_size = 10 # int |  (optional) (default to 10)
-    sort_key = 'sort_key_example' # str |  (optional)
-    sort_direction = lidarr.SortDirection() # SortDirection |  (optional)
-    include_artist = True # bool |  (optional)
-    include_album = True # bool |  (optional)
-    include_track = True # bool |  (optional)
-    event_type = 56 # int |  (optional)
-    album_id = 56 # int |  (optional)
-    download_id = 'download_id_example' # str |  (optional)
-    artist_ids = [56] # List[int] |  (optional)
-    quality = [56] # List[int] |  (optional)
+    api_instance = lidarr.AutoTaggingApi(api_client)
+    id = 56 # int | 
 
     try:
-        api_response = api_instance.get_history(page=page, page_size=page_size, sort_key=sort_key, sort_direction=sort_direction, include_artist=include_artist, include_album=include_album, include_track=include_track, event_type=event_type, album_id=album_id, download_id=download_id, artist_ids=artist_ids, quality=quality)
-        print("The response of HistoryApi->get_history:\n")
+        api_response = api_instance.get_auto_tagging_by_id(id)
+        print("The response of AutoTaggingApi->get_auto_tagging_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HistoryApi->get_history: %s\n" % e)
+        print("Exception when calling AutoTaggingApi->get_auto_tagging_by_id: %s\n" % e)
 ```
 
 * Api Key Authentication (X-Api-Key):
@@ -226,48 +340,258 @@ configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = lidarr.HistoryApi(api_client)
-    page = 1 # int |  (optional) (default to 1)
-    page_size = 10 # int |  (optional) (default to 10)
-    sort_key = 'sort_key_example' # str |  (optional)
-    sort_direction = lidarr.SortDirection() # SortDirection |  (optional)
-    include_artist = True # bool |  (optional)
-    include_album = True # bool |  (optional)
-    include_track = True # bool |  (optional)
-    event_type = 56 # int |  (optional)
-    album_id = 56 # int |  (optional)
-    download_id = 'download_id_example' # str |  (optional)
-    artist_ids = [56] # List[int] |  (optional)
-    quality = [56] # List[int] |  (optional)
+    api_instance = lidarr.AutoTaggingApi(api_client)
+    id = 56 # int | 
 
     try:
-        api_response = api_instance.get_history(page=page, page_size=page_size, sort_key=sort_key, sort_direction=sort_direction, include_artist=include_artist, include_album=include_album, include_track=include_track, event_type=event_type, album_id=album_id, download_id=download_id, artist_ids=artist_ids, quality=quality)
-        print("The response of HistoryApi->get_history:\n")
+        api_response = api_instance.get_auto_tagging_by_id(id)
+        print("The response of AutoTaggingApi->get_auto_tagging_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HistoryApi->get_history: %s\n" % e)
+        print("Exception when calling AutoTaggingApi->get_auto_tagging_by_id: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**|  | [optional] [default to 1]
- **page_size** | **int**|  | [optional] [default to 10]
- **sort_key** | **str**|  | [optional] 
- **sort_direction** | [**SortDirection**](.md)|  | [optional] 
- **include_artist** | **bool**|  | [optional] 
- **include_album** | **bool**|  | [optional] 
- **include_track** | **bool**|  | [optional] 
- **event_type** | **int**|  | [optional] 
- **album_id** | **int**|  | [optional] 
- **download_id** | **str**|  | [optional] 
- **artist_ids** | [**List[int]**](int.md)|  | [optional] 
- **quality** | [**List[int]**](int.md)|  | [optional] 
+ **id** | **int**|  | 
 
 ### Return type
 
-[**HistoryResourcePagingResource**](HistoryResourcePagingResource.md)
+[**AutoTaggingResource**](AutoTaggingResource.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_auto_tagging_schema**
+> get_auto_tagging_schema()
+
+
+
+### Example
+
+* Api Key Authentication (apikey):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.AutoTaggingApi(api_client)
+
+    try:
+        api_instance.get_auto_tagging_schema()
+    except Exception as e:
+        print("Exception when calling AutoTaggingApi->get_auto_tagging_schema: %s\n" % e)
+```
+
+* Api Key Authentication (X-Api-Key):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.AutoTaggingApi(api_client)
+
+    try:
+        api_instance.get_auto_tagging_schema()
+    except Exception as e:
+        print("Exception when calling AutoTaggingApi->get_auto_tagging_schema: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_auto_tagging**
+> List[AutoTaggingResource] list_auto_tagging()
+
+
+
+### Example
+
+* Api Key Authentication (apikey):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.AutoTaggingApi(api_client)
+
+    try:
+        api_response = api_instance.list_auto_tagging()
+        print("The response of AutoTaggingApi->list_auto_tagging:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AutoTaggingApi->list_auto_tagging: %s\n" % e)
+```
+
+* Api Key Authentication (X-Api-Key):
+```python
+from __future__ import print_function
+import time
+import os
+import lidarr
+from lidarr.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8686
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lidarr.Configuration(
+    host = "http://localhost:8686"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apikey
+configuration.api_key['apikey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+
+# Configure API key authorization: X-Api-Key
+configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with lidarr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lidarr.AutoTaggingApi(api_client)
+
+    try:
+        api_response = api_instance.list_auto_tagging()
+        print("The response of AutoTaggingApi->list_auto_tagging:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AutoTaggingApi->list_auto_tagging: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List[AutoTaggingResource]**](AutoTaggingResource.md)
 
 ### Authorization
 
@@ -285,8 +609,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_history_artist**
-> List[HistoryResource] list_history_artist(artist_id=artist_id, album_id=album_id, event_type=event_type, include_artist=include_artist, include_album=include_album, include_track=include_track)
+# **update_auto_tagging**
+> AutoTaggingResource update_auto_tagging(id, auto_tagging_resource=auto_tagging_resource)
 
 
 
@@ -326,20 +650,16 @@ configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = lidarr.HistoryApi(api_client)
-    artist_id = 56 # int |  (optional)
-    album_id = 56 # int |  (optional)
-    event_type = lidarr.EntityHistoryEventType() # EntityHistoryEventType |  (optional)
-    include_artist = False # bool |  (optional) (default to False)
-    include_album = False # bool |  (optional) (default to False)
-    include_track = False # bool |  (optional) (default to False)
+    api_instance = lidarr.AutoTaggingApi(api_client)
+    id = 'id_example' # str | 
+    auto_tagging_resource = lidarr.AutoTaggingResource() # AutoTaggingResource |  (optional)
 
     try:
-        api_response = api_instance.list_history_artist(artist_id=artist_id, album_id=album_id, event_type=event_type, include_artist=include_artist, include_album=include_album, include_track=include_track)
-        print("The response of HistoryApi->list_history_artist:\n")
+        api_response = api_instance.update_auto_tagging(id, auto_tagging_resource=auto_tagging_resource)
+        print("The response of AutoTaggingApi->update_auto_tagging:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HistoryApi->list_history_artist: %s\n" % e)
+        print("Exception when calling AutoTaggingApi->update_auto_tagging: %s\n" % e)
 ```
 
 * Api Key Authentication (X-Api-Key):
@@ -376,36 +696,28 @@ configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 # Enter a context with an instance of the API client
 with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = lidarr.HistoryApi(api_client)
-    artist_id = 56 # int |  (optional)
-    album_id = 56 # int |  (optional)
-    event_type = lidarr.EntityHistoryEventType() # EntityHistoryEventType |  (optional)
-    include_artist = False # bool |  (optional) (default to False)
-    include_album = False # bool |  (optional) (default to False)
-    include_track = False # bool |  (optional) (default to False)
+    api_instance = lidarr.AutoTaggingApi(api_client)
+    id = 'id_example' # str | 
+    auto_tagging_resource = lidarr.AutoTaggingResource() # AutoTaggingResource |  (optional)
 
     try:
-        api_response = api_instance.list_history_artist(artist_id=artist_id, album_id=album_id, event_type=event_type, include_artist=include_artist, include_album=include_album, include_track=include_track)
-        print("The response of HistoryApi->list_history_artist:\n")
+        api_response = api_instance.update_auto_tagging(id, auto_tagging_resource=auto_tagging_resource)
+        print("The response of AutoTaggingApi->update_auto_tagging:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HistoryApi->list_history_artist: %s\n" % e)
+        print("Exception when calling AutoTaggingApi->update_auto_tagging: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **artist_id** | **int**|  | [optional] 
- **album_id** | **int**|  | [optional] 
- **event_type** | [**EntityHistoryEventType**](.md)|  | [optional] 
- **include_artist** | **bool**|  | [optional] [default to False]
- **include_album** | **bool**|  | [optional] [default to False]
- **include_track** | **bool**|  | [optional] [default to False]
+ **id** | **str**|  | 
+ **auto_tagging_resource** | [**AutoTaggingResource**](AutoTaggingResource.md)|  | [optional] 
 
 ### Return type
 
-[**List[HistoryResource]**](HistoryResource.md)
+[**AutoTaggingResource**](AutoTaggingResource.md)
 
 ### Authorization
 
@@ -413,143 +725,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_history_since**
-> List[HistoryResource] list_history_since(var_date=var_date, event_type=event_type, include_artist=include_artist, include_album=include_album, include_track=include_track)
-
-
-
-### Example
-
-* Api Key Authentication (apikey):
-```python
-from __future__ import print_function
-import time
-import os
-import lidarr
-from lidarr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:8686
-# See configuration.py for a list of all supported configuration parameters.
-configuration = lidarr.Configuration(
-    host = "http://localhost:8686"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apikey
-configuration.api_key['apikey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with lidarr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = lidarr.HistoryApi(api_client)
-    var_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
-    event_type = lidarr.EntityHistoryEventType() # EntityHistoryEventType |  (optional)
-    include_artist = False # bool |  (optional) (default to False)
-    include_album = False # bool |  (optional) (default to False)
-    include_track = False # bool |  (optional) (default to False)
-
-    try:
-        api_response = api_instance.list_history_since(var_date=var_date, event_type=event_type, include_artist=include_artist, include_album=include_album, include_track=include_track)
-        print("The response of HistoryApi->list_history_since:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling HistoryApi->list_history_since: %s\n" % e)
-```
-
-* Api Key Authentication (X-Api-Key):
-```python
-from __future__ import print_function
-import time
-import os
-import lidarr
-from lidarr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:8686
-# See configuration.py for a list of all supported configuration parameters.
-configuration = lidarr.Configuration(
-    host = "http://localhost:8686"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apikey
-configuration.api_key['apikey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-
-# Configure API key authorization: X-Api-Key
-configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with lidarr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = lidarr.HistoryApi(api_client)
-    var_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
-    event_type = lidarr.EntityHistoryEventType() # EntityHistoryEventType |  (optional)
-    include_artist = False # bool |  (optional) (default to False)
-    include_album = False # bool |  (optional) (default to False)
-    include_track = False # bool |  (optional) (default to False)
-
-    try:
-        api_response = api_instance.list_history_since(var_date=var_date, event_type=event_type, include_artist=include_artist, include_album=include_album, include_track=include_track)
-        print("The response of HistoryApi->list_history_since:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling HistoryApi->list_history_since: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **var_date** | **datetime**|  | [optional] 
- **event_type** | [**EntityHistoryEventType**](.md)|  | [optional] 
- **include_artist** | **bool**|  | [optional] [default to False]
- **include_album** | **bool**|  | [optional] [default to False]
- **include_track** | **bool**|  | [optional] [default to False]
-
-### Return type
-
-[**List[HistoryResource]**](HistoryResource.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

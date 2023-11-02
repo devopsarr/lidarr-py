@@ -17,12 +17,13 @@ import re  # noqa: F401
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
-from pydantic import StrictBool, StrictInt
+from pydantic import StrictBool, StrictInt, StrictStr
 
 from typing import Optional
 
 from lidarr.models.album_resource import AlbumResource
 from lidarr.models.album_resource_paging_resource import AlbumResourcePagingResource
+from lidarr.models.sort_direction import SortDirection
 
 from lidarr.api_client import ApiClient
 from lidarr.exceptions import (  # noqa: F401
@@ -44,17 +45,27 @@ class MissingApi(object):
         self.api_client = api_client
 
     @validate_arguments
-    def get_wanted_missing(self, include_artist : Optional[StrictBool] = None, **kwargs) -> AlbumResourcePagingResource:  # noqa: E501
+    def get_wanted_missing(self, page : Optional[StrictInt] = None, page_size : Optional[StrictInt] = None, sort_key : Optional[StrictStr] = None, sort_direction : Optional[SortDirection] = None, include_artist : Optional[StrictBool] = None, monitored : Optional[StrictBool] = None, **kwargs) -> AlbumResourcePagingResource:  # noqa: E501
         """get_wanted_missing  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_wanted_missing(include_artist, async_req=True)
+        >>> thread = api.get_wanted_missing(page, page_size, sort_key, sort_direction, include_artist, monitored, async_req=True)
         >>> result = thread.get()
 
+        :param page:
+        :type page: int
+        :param page_size:
+        :type page_size: int
+        :param sort_key:
+        :type sort_key: str
+        :param sort_direction:
+        :type sort_direction: SortDirection
         :param include_artist:
         :type include_artist: bool
+        :param monitored:
+        :type monitored: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -71,20 +82,30 @@ class MissingApi(object):
         :rtype: AlbumResourcePagingResource
         """
         kwargs['_return_http_data_only'] = True
-        return self.get_wanted_missing_with_http_info(include_artist, **kwargs)  # noqa: E501
+        return self.get_wanted_missing_with_http_info(page, page_size, sort_key, sort_direction, include_artist, monitored, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_wanted_missing_with_http_info(self, include_artist : Optional[StrictBool] = None, **kwargs):  # noqa: E501
+    def get_wanted_missing_with_http_info(self, page : Optional[StrictInt] = None, page_size : Optional[StrictInt] = None, sort_key : Optional[StrictStr] = None, sort_direction : Optional[SortDirection] = None, include_artist : Optional[StrictBool] = None, monitored : Optional[StrictBool] = None, **kwargs):  # noqa: E501
         """get_wanted_missing  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_wanted_missing_with_http_info(include_artist, async_req=True)
+        >>> thread = api.get_wanted_missing_with_http_info(page, page_size, sort_key, sort_direction, include_artist, monitored, async_req=True)
         >>> result = thread.get()
 
+        :param page:
+        :type page: int
+        :param page_size:
+        :type page_size: int
+        :param sort_key:
+        :type sort_key: str
+        :param sort_direction:
+        :type sort_direction: SortDirection
         :param include_artist:
         :type include_artist: bool
+        :param monitored:
+        :type monitored: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -112,7 +133,12 @@ class MissingApi(object):
         _params = locals()
 
         _all_params = [
-            'include_artist'
+            'page',
+            'page_size',
+            'sort_key',
+            'sort_direction',
+            'include_artist',
+            'monitored'
         ]
         _all_params.extend(
             [
@@ -143,8 +169,18 @@ class MissingApi(object):
 
         # process the query parameters
         _query_params = []
+        if _params.get('page') is not None:  # noqa: E501
+            _query_params.append(('page', _params['page']))
+        if _params.get('page_size') is not None:  # noqa: E501
+            _query_params.append(('pageSize', _params['page_size']))
+        if _params.get('sort_key') is not None:  # noqa: E501
+            _query_params.append(('sortKey', _params['sort_key']))
+        if _params.get('sort_direction') is not None:  # noqa: E501
+            _query_params.append(('sortDirection', _params['sort_direction']))
         if _params.get('include_artist') is not None:  # noqa: E501
             _query_params.append(('includeArtist', _params['include_artist']))
+        if _params.get('monitored') is not None:  # noqa: E501
+            _query_params.append(('monitored', _params['monitored']))
 
         # process the header parameters
         _header_params = dict(_params.get('_headers', {}))

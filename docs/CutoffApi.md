@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_wanted_cutoff**
-> AlbumResourcePagingResource get_wanted_cutoff(include_artist=include_artist)
+> AlbumResourcePagingResource get_wanted_cutoff(page=page, page_size=page_size, sort_key=sort_key, sort_direction=sort_direction, include_artist=include_artist, monitored=monitored)
 
 
 
@@ -50,10 +50,15 @@ configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lidarr.CutoffApi(api_client)
+    page = 1 # int |  (optional) (default to 1)
+    page_size = 10 # int |  (optional) (default to 10)
+    sort_key = 'sort_key_example' # str |  (optional)
+    sort_direction = lidarr.SortDirection() # SortDirection |  (optional)
     include_artist = False # bool |  (optional) (default to False)
+    monitored = True # bool |  (optional) (default to True)
 
     try:
-        api_response = api_instance.get_wanted_cutoff(include_artist=include_artist)
+        api_response = api_instance.get_wanted_cutoff(page=page, page_size=page_size, sort_key=sort_key, sort_direction=sort_direction, include_artist=include_artist, monitored=monitored)
         print("The response of CutoffApi->get_wanted_cutoff:\n")
         pprint(api_response)
     except Exception as e:
@@ -95,10 +100,15 @@ configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lidarr.CutoffApi(api_client)
+    page = 1 # int |  (optional) (default to 1)
+    page_size = 10 # int |  (optional) (default to 10)
+    sort_key = 'sort_key_example' # str |  (optional)
+    sort_direction = lidarr.SortDirection() # SortDirection |  (optional)
     include_artist = False # bool |  (optional) (default to False)
+    monitored = True # bool |  (optional) (default to True)
 
     try:
-        api_response = api_instance.get_wanted_cutoff(include_artist=include_artist)
+        api_response = api_instance.get_wanted_cutoff(page=page, page_size=page_size, sort_key=sort_key, sort_direction=sort_direction, include_artist=include_artist, monitored=monitored)
         print("The response of CutoffApi->get_wanted_cutoff:\n")
         pprint(api_response)
     except Exception as e:
@@ -109,7 +119,12 @@ with lidarr.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **page** | **int**|  | [optional] [default to 1]
+ **page_size** | **int**|  | [optional] [default to 10]
+ **sort_key** | **str**|  | [optional] 
+ **sort_direction** | [**SortDirection**](.md)|  | [optional] 
  **include_artist** | **bool**|  | [optional] [default to False]
+ **monitored** | **bool**|  | [optional] [default to True]
 
 ### Return type
 

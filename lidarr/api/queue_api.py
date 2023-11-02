@@ -17,12 +17,14 @@ import re  # noqa: F401
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
-from pydantic import StrictBool, StrictInt
+from pydantic import StrictBool, StrictInt, StrictStr, conlist
 
 from typing import Optional
 
+from lidarr.models.download_protocol import DownloadProtocol
 from lidarr.models.queue_bulk_resource import QueueBulkResource
 from lidarr.models.queue_resource_paging_resource import QueueResourcePagingResource
+from lidarr.models.sort_direction import SortDirection
 
 from lidarr.api_client import ApiClient
 from lidarr.exceptions import (  # noqa: F401
@@ -363,21 +365,35 @@ class QueueApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_queue(self, include_unknown_artist_items : Optional[StrictBool] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, **kwargs) -> QueueResourcePagingResource:  # noqa: E501
+    def get_queue(self, page : Optional[StrictInt] = None, page_size : Optional[StrictInt] = None, sort_key : Optional[StrictStr] = None, sort_direction : Optional[SortDirection] = None, include_unknown_artist_items : Optional[StrictBool] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, artist_ids : Optional[conlist(StrictInt)] = None, protocol : Optional[DownloadProtocol] = None, quality : Optional[StrictInt] = None, **kwargs) -> QueueResourcePagingResource:  # noqa: E501
         """get_queue  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_queue(include_unknown_artist_items, include_artist, include_album, async_req=True)
+        >>> thread = api.get_queue(page, page_size, sort_key, sort_direction, include_unknown_artist_items, include_artist, include_album, artist_ids, protocol, quality, async_req=True)
         >>> result = thread.get()
 
+        :param page:
+        :type page: int
+        :param page_size:
+        :type page_size: int
+        :param sort_key:
+        :type sort_key: str
+        :param sort_direction:
+        :type sort_direction: SortDirection
         :param include_unknown_artist_items:
         :type include_unknown_artist_items: bool
         :param include_artist:
         :type include_artist: bool
         :param include_album:
         :type include_album: bool
+        :param artist_ids:
+        :type artist_ids: List[int]
+        :param protocol:
+        :type protocol: DownloadProtocol
+        :param quality:
+        :type quality: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -394,24 +410,38 @@ class QueueApi(object):
         :rtype: QueueResourcePagingResource
         """
         kwargs['_return_http_data_only'] = True
-        return self.get_queue_with_http_info(include_unknown_artist_items, include_artist, include_album, **kwargs)  # noqa: E501
+        return self.get_queue_with_http_info(page, page_size, sort_key, sort_direction, include_unknown_artist_items, include_artist, include_album, artist_ids, protocol, quality, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_queue_with_http_info(self, include_unknown_artist_items : Optional[StrictBool] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, **kwargs):  # noqa: E501
+    def get_queue_with_http_info(self, page : Optional[StrictInt] = None, page_size : Optional[StrictInt] = None, sort_key : Optional[StrictStr] = None, sort_direction : Optional[SortDirection] = None, include_unknown_artist_items : Optional[StrictBool] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, artist_ids : Optional[conlist(StrictInt)] = None, protocol : Optional[DownloadProtocol] = None, quality : Optional[StrictInt] = None, **kwargs):  # noqa: E501
         """get_queue  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_queue_with_http_info(include_unknown_artist_items, include_artist, include_album, async_req=True)
+        >>> thread = api.get_queue_with_http_info(page, page_size, sort_key, sort_direction, include_unknown_artist_items, include_artist, include_album, artist_ids, protocol, quality, async_req=True)
         >>> result = thread.get()
 
+        :param page:
+        :type page: int
+        :param page_size:
+        :type page_size: int
+        :param sort_key:
+        :type sort_key: str
+        :param sort_direction:
+        :type sort_direction: SortDirection
         :param include_unknown_artist_items:
         :type include_unknown_artist_items: bool
         :param include_artist:
         :type include_artist: bool
         :param include_album:
         :type include_album: bool
+        :param artist_ids:
+        :type artist_ids: List[int]
+        :param protocol:
+        :type protocol: DownloadProtocol
+        :param quality:
+        :type quality: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -439,9 +469,16 @@ class QueueApi(object):
         _params = locals()
 
         _all_params = [
+            'page',
+            'page_size',
+            'sort_key',
+            'sort_direction',
             'include_unknown_artist_items',
             'include_artist',
-            'include_album'
+            'include_album',
+            'artist_ids',
+            'protocol',
+            'quality'
         ]
         _all_params.extend(
             [
@@ -472,12 +509,27 @@ class QueueApi(object):
 
         # process the query parameters
         _query_params = []
+        if _params.get('page') is not None:  # noqa: E501
+            _query_params.append(('page', _params['page']))
+        if _params.get('page_size') is not None:  # noqa: E501
+            _query_params.append(('pageSize', _params['page_size']))
+        if _params.get('sort_key') is not None:  # noqa: E501
+            _query_params.append(('sortKey', _params['sort_key']))
+        if _params.get('sort_direction') is not None:  # noqa: E501
+            _query_params.append(('sortDirection', _params['sort_direction']))
         if _params.get('include_unknown_artist_items') is not None:  # noqa: E501
             _query_params.append(('includeUnknownArtistItems', _params['include_unknown_artist_items']))
         if _params.get('include_artist') is not None:  # noqa: E501
             _query_params.append(('includeArtist', _params['include_artist']))
         if _params.get('include_album') is not None:  # noqa: E501
             _query_params.append(('includeAlbum', _params['include_album']))
+        if _params.get('artist_ids') is not None:  # noqa: E501
+            _query_params.append(('artistIds', _params['artist_ids']))
+            _collection_formats['artistIds'] = 'multi'
+        if _params.get('protocol') is not None:  # noqa: E501
+            _query_params.append(('protocol', _params['protocol']))
+        if _params.get('quality') is not None:  # noqa: E501
+            _query_params.append(('quality', _params['quality']))
 
         # process the header parameters
         _header_params = dict(_params.get('_headers', {}))
