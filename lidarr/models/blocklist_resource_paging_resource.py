@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import Any, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List, Optional
 from pydantic import BaseModel
 from lidarr.models.blocklist_resource import BlocklistResource
 from lidarr.models.sort_direction import SortDirection

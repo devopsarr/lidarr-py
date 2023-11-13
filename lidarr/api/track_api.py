@@ -17,7 +17,7 @@ import re  # noqa: F401
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
-from pydantic import StrictInt, conlist
+from pydantic import StrictInt
 
 from typing import List, Optional
 
@@ -184,7 +184,7 @@ class TrackApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def list_track(self, artist_id : Optional[StrictInt] = None, album_id : Optional[StrictInt] = None, album_release_id : Optional[StrictInt] = None, track_ids : Optional[conlist(StrictInt)] = None, **kwargs) -> List[TrackResource]:  # noqa: E501
+    def list_track(self, artist_id : Optional[StrictInt] = None, album_id : Optional[StrictInt] = None, album_release_id : Optional[StrictInt] = None, track_ids : Optional[List[StrictInt]] = None, **kwargs) -> List[TrackResource]:  # noqa: E501
         """list_track  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -220,7 +220,7 @@ class TrackApi(object):
         return self.list_track_with_http_info(artist_id, album_id, album_release_id, track_ids, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def list_track_with_http_info(self, artist_id : Optional[StrictInt] = None, album_id : Optional[StrictInt] = None, album_release_id : Optional[StrictInt] = None, track_ids : Optional[conlist(StrictInt)] = None, **kwargs):  # noqa: E501
+    def list_track_with_http_info(self, artist_id : Optional[StrictInt] = None, album_id : Optional[StrictInt] = None, album_release_id : Optional[StrictInt] = None, track_ids : Optional[List[StrictInt]] = None, **kwargs):  # noqa: E501
         """list_track  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
