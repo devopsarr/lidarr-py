@@ -17,7 +17,9 @@ import re  # noqa: F401
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
-from pydantic import StrictInt, constr, validator
+from pydantic import Field
+from typing_extensions import Annotated
+from pydantic import StrictInt, field_validator
 
 
 from lidarr.api_client import ApiClient
@@ -40,7 +42,7 @@ class MediaCoverApi(object):
         self.api_client = api_client
 
     @validate_arguments
-    def get_media_cover_album_by_filename(self, album_id : StrictInt, filename : constr(strict=True), **kwargs) -> None:  # noqa: E501
+    def get_media_cover_album_by_filename(self, album_id : StrictInt, filename : Annotated[str, Field(strict=True)], **kwargs) -> None:  # noqa: E501
         """get_media_cover_album_by_filename  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -72,7 +74,7 @@ class MediaCoverApi(object):
         return self.get_media_cover_album_by_filename_with_http_info(album_id, filename, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_media_cover_album_by_filename_with_http_info(self, album_id : StrictInt, filename : constr(strict=True), **kwargs):  # noqa: E501
+    def get_media_cover_album_by_filename_with_http_info(self, album_id : StrictInt, filename : Annotated[str, Field(strict=True)], **kwargs):  # noqa: E501
         """get_media_cover_album_by_filename  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -182,7 +184,7 @@ class MediaCoverApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_media_cover_artist_by_filename(self, artist_id : StrictInt, filename : constr(strict=True), **kwargs) -> None:  # noqa: E501
+    def get_media_cover_artist_by_filename(self, artist_id : StrictInt, filename : Annotated[str, Field(strict=True)], **kwargs) -> None:  # noqa: E501
         """get_media_cover_artist_by_filename  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -214,7 +216,7 @@ class MediaCoverApi(object):
         return self.get_media_cover_artist_by_filename_with_http_info(artist_id, filename, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_media_cover_artist_by_filename_with_http_info(self, artist_id : StrictInt, filename : constr(strict=True), **kwargs):  # noqa: E501
+    def get_media_cover_artist_by_filename_with_http_info(self, artist_id : StrictInt, filename : Annotated[str, Field(strict=True)], **kwargs):  # noqa: E501
         """get_media_cover_artist_by_filename  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an

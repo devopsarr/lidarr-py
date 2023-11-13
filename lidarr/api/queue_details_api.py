@@ -17,7 +17,7 @@ import re  # noqa: F401
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
-from pydantic import StrictBool, StrictInt, conlist
+from pydantic import StrictBool, StrictInt
 
 from typing import List, Optional
 
@@ -43,7 +43,7 @@ class QueueDetailsApi(object):
         self.api_client = api_client
 
     @validate_arguments
-    def list_queue_details(self, artist_id : Optional[StrictInt] = None, album_ids : Optional[conlist(StrictInt)] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, **kwargs) -> List[QueueResource]:  # noqa: E501
+    def list_queue_details(self, artist_id : Optional[StrictInt] = None, album_ids : Optional[List[StrictInt]] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, **kwargs) -> List[QueueResource]:  # noqa: E501
         """list_queue_details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -79,7 +79,7 @@ class QueueDetailsApi(object):
         return self.list_queue_details_with_http_info(artist_id, album_ids, include_artist, include_album, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def list_queue_details_with_http_info(self, artist_id : Optional[StrictInt] = None, album_ids : Optional[conlist(StrictInt)] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, **kwargs):  # noqa: E501
+    def list_queue_details_with_http_info(self, artist_id : Optional[StrictInt] = None, album_ids : Optional[List[StrictInt]] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, **kwargs):  # noqa: E501
         """list_queue_details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an

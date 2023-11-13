@@ -17,7 +17,7 @@ import re  # noqa: F401
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
-from pydantic import StrictBool, StrictInt, StrictStr, conlist
+from pydantic import StrictBool, StrictInt, StrictStr
 
 from typing import List, Optional
 
@@ -482,7 +482,7 @@ class AlbumApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def list_album(self, artist_id : Optional[StrictInt] = None, album_ids : Optional[conlist(StrictInt)] = None, foreign_album_id : Optional[StrictStr] = None, include_all_artist_albums : Optional[StrictBool] = None, **kwargs) -> List[AlbumResource]:  # noqa: E501
+    def list_album(self, artist_id : Optional[StrictInt] = None, album_ids : Optional[List[StrictInt]] = None, foreign_album_id : Optional[StrictStr] = None, include_all_artist_albums : Optional[StrictBool] = None, **kwargs) -> List[AlbumResource]:  # noqa: E501
         """list_album  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -518,7 +518,7 @@ class AlbumApi(object):
         return self.list_album_with_http_info(artist_id, album_ids, foreign_album_id, include_all_artist_albums, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def list_album_with_http_info(self, artist_id : Optional[StrictInt] = None, album_ids : Optional[conlist(StrictInt)] = None, foreign_album_id : Optional[StrictStr] = None, include_all_artist_albums : Optional[StrictBool] = None, **kwargs):  # noqa: E501
+    def list_album_with_http_info(self, artist_id : Optional[StrictInt] = None, album_ids : Optional[List[StrictInt]] = None, foreign_album_id : Optional[StrictStr] = None, include_all_artist_albums : Optional[StrictBool] = None, **kwargs):  # noqa: E501
         """list_album  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an

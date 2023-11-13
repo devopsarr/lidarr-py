@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from typing import Any, Dict, Optional
+from typing import Any, ClassVar, Dict, Optional
 from pydantic import BaseModel
 from lidarr.models.media_info_model import MediaInfoModel
 from lidarr.models.quality_model import QualityModel
