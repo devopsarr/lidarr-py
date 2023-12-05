@@ -22,7 +22,6 @@ from pydantic import BaseModel
 from lidarr.models.add_album_options import AddAlbumOptions
 from lidarr.models.album_release_resource import AlbumReleaseResource
 from lidarr.models.album_statistics_resource import AlbumStatisticsResource
-from lidarr.models.artist_resource import ArtistResource
 from lidarr.models.links import Links
 from lidarr.models.media_cover import MediaCover
 from lidarr.models.medium_resource import MediumResource

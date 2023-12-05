@@ -20,7 +20,6 @@ from datetime import datetime
 from typing import Any, ClassVar, Dict, List, Optional
 from pydantic import BaseModel
 from lidarr.models.add_artist_options import AddArtistOptions
-from lidarr.models.album import Album
 from lidarr.models.artist_statistics_resource import ArtistStatisticsResource
 from lidarr.models.artist_status_type import ArtistStatusType
 from lidarr.models.links import Links
@@ -49,8 +48,8 @@ class ArtistResource(BaseModel):
     artist_type: Optional[str]
     disambiguation: Optional[str]
     links: Optional[List]
-    next_album: Optional[Album]
-    last_album: Optional[Album]
+    next_album: Optional[AlbumResource]
+    last_album: Optional[AlbumResource]
     images: Optional[List]
     members: Optional[List]
     remote_poster: Optional[str]
@@ -233,8 +232,8 @@ class ArtistResource(BaseModel):
             "artist_type": obj.get("artistType"),
             "disambiguation": obj.get("disambiguation"),
             "links": [Links.from_dict(_item) for _item in obj.get("links")] if obj.get("links") is not None else None,
-            "next_album": Album.from_dict(obj.get("nextAlbum")) if obj.get("nextAlbum") is not None else None,
-            "last_album": Album.from_dict(obj.get("lastAlbum")) if obj.get("lastAlbum") is not None else None,
+            "next_album": AlbumResource.from_dict(obj.get("nextAlbum")) if obj.get("nextAlbum") is not None else None,
+            "last_album": AlbumResource.from_dict(obj.get("lastAlbum")) if obj.get("lastAlbum") is not None else None,
             "images": [MediaCover.from_dict(_item) for _item in obj.get("images")] if obj.get("images") is not None else None,
             "members": [Member.from_dict(_item) for _item in obj.get("members")] if obj.get("members") is not None else None,
             "remote_poster": obj.get("remotePoster"),
