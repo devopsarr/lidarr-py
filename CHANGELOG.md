@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/devopsarr/lidarr-py/compare/v0.3.1...v0.3.2) (2023-12-06)
+
+
+### Bug Fixes
+
+* remove middle elements from method name ([e3f59e9](https://github.com/devopsarr/lidarr-py/commit/e3f59e99d71c1b80980869036ef6ff9d0984f502))
+
 ## [0.3.1](https://github.com/devopsarr/lidarr-py/compare/v0.3.0...v0.3.1) (2023-07-21)
 
 
