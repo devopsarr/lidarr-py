@@ -17,13 +17,7 @@ from __future__ import absolute_import
 # import models into model package
 from lidarr.models.add_album_options import AddAlbumOptions
 from lidarr.models.add_artist_options import AddArtistOptions
-from lidarr.models.album import Album
 from lidarr.models.album_add_type import AlbumAddType
-from lidarr.models.album_lazy_loaded import AlbumLazyLoaded
-from lidarr.models.album_list_lazy_loaded import AlbumListLazyLoaded
-from lidarr.models.album_release import AlbumRelease
-from lidarr.models.album_release_lazy_loaded import AlbumReleaseLazyLoaded
-from lidarr.models.album_release_list_lazy_loaded import AlbumReleaseListLazyLoaded
 from lidarr.models.album_release_resource import AlbumReleaseResource
 from lidarr.models.album_resource import AlbumResource
 from lidarr.models.album_resource_paging_resource import AlbumResourcePagingResource
@@ -33,11 +27,7 @@ from lidarr.models.album_studio_resource import AlbumStudioResource
 from lidarr.models.albums_monitored_resource import AlbumsMonitoredResource
 from lidarr.models.allow_fingerprinting import AllowFingerprinting
 from lidarr.models.apply_tags import ApplyTags
-from lidarr.models.artist import Artist
 from lidarr.models.artist_editor_resource import ArtistEditorResource
-from lidarr.models.artist_lazy_loaded import ArtistLazyLoaded
-from lidarr.models.artist_metadata import ArtistMetadata
-from lidarr.models.artist_metadata_lazy_loaded import ArtistMetadataLazyLoaded
 from lidarr.models.artist_resource import ArtistResource
 from lidarr.models.artist_statistics_resource import ArtistStatisticsResource
 from lidarr.models.artist_status_type import ArtistStatusType
@@ -59,7 +49,6 @@ from lidarr.models.command_result import CommandResult
 from lidarr.models.command_status import CommandStatus
 from lidarr.models.command_trigger import CommandTrigger
 from lidarr.models.custom_filter_resource import CustomFilterResource
-from lidarr.models.custom_format import CustomFormat
 from lidarr.models.custom_format_resource import CustomFormatResource
 from lidarr.models.custom_format_specification_schema import CustomFormatSpecificationSchema
 from lidarr.models.database_type import DatabaseType
@@ -77,7 +66,6 @@ from lidarr.models.health_resource import HealthResource
 from lidarr.models.history_resource import HistoryResource
 from lidarr.models.history_resource_paging_resource import HistoryResourcePagingResource
 from lidarr.models.host_config_resource import HostConfigResource
-from lidarr.models.i_custom_format_specification import ICustomFormatSpecification
 from lidarr.models.import_list_bulk_resource import ImportListBulkResource
 from lidarr.models.import_list_exclusion_resource import ImportListExclusionResource
 from lidarr.models.import_list_monitor_type import ImportListMonitorType
@@ -100,11 +88,8 @@ from lidarr.models.media_cover_types import MediaCoverTypes
 from lidarr.models.media_info_model import MediaInfoModel
 from lidarr.models.media_info_resource import MediaInfoResource
 from lidarr.models.media_management_config_resource import MediaManagementConfigResource
-from lidarr.models.medium import Medium
 from lidarr.models.medium_resource import MediumResource
 from lidarr.models.member import Member
-from lidarr.models.metadata_profile import MetadataProfile
-from lidarr.models.metadata_profile_lazy_loaded import MetadataProfileLazyLoaded
 from lidarr.models.metadata_profile_resource import MetadataProfileResource
 from lidarr.models.metadata_provider_config_resource import MetadataProviderConfigResource
 from lidarr.models.metadata_resource import MetadataResource
@@ -119,13 +104,9 @@ from lidarr.models.parsed_track_info import ParsedTrackInfo
 from lidarr.models.ping_resource import PingResource
 from lidarr.models.primary_album_type import PrimaryAlbumType
 from lidarr.models.privacy_level import PrivacyLevel
-from lidarr.models.profile_format_item import ProfileFormatItem
 from lidarr.models.profile_format_item_resource import ProfileFormatItemResource
-from lidarr.models.profile_primary_album_type_item import ProfilePrimaryAlbumTypeItem
 from lidarr.models.profile_primary_album_type_item_resource import ProfilePrimaryAlbumTypeItemResource
-from lidarr.models.profile_release_status_item import ProfileReleaseStatusItem
 from lidarr.models.profile_release_status_item_resource import ProfileReleaseStatusItemResource
-from lidarr.models.profile_secondary_album_type_item import ProfileSecondaryAlbumTypeItem
 from lidarr.models.profile_secondary_album_type_item_resource import ProfileSecondaryAlbumTypeItemResource
 from lidarr.models.proper_download_types import ProperDownloadTypes
 from lidarr.models.provider_message import ProviderMessage
@@ -134,9 +115,6 @@ from lidarr.models.proxy_type import ProxyType
 from lidarr.models.quality import Quality
 from lidarr.models.quality_definition_resource import QualityDefinitionResource
 from lidarr.models.quality_model import QualityModel
-from lidarr.models.quality_profile import QualityProfile
-from lidarr.models.quality_profile_lazy_loaded import QualityProfileLazyLoaded
-from lidarr.models.quality_profile_quality_item import QualityProfileQualityItem
 from lidarr.models.quality_profile_quality_item_resource import QualityProfileQualityItemResource
 from lidarr.models.quality_profile_resource import QualityProfileResource
 from lidarr.models.queue_bulk_resource import QueueBulkResource
@@ -164,12 +142,8 @@ from lidarr.models.tag_details_resource import TagDetailsResource
 from lidarr.models.tag_difference import TagDifference
 from lidarr.models.tag_resource import TagResource
 from lidarr.models.task_resource import TaskResource
-from lidarr.models.track import Track
-from lidarr.models.track_file import TrackFile
-from lidarr.models.track_file_lazy_loaded import TrackFileLazyLoaded
 from lidarr.models.track_file_list_resource import TrackFileListResource
 from lidarr.models.track_file_resource import TrackFileResource
-from lidarr.models.track_list_lazy_loaded import TrackListLazyLoaded
 from lidarr.models.track_resource import TrackResource
 from lidarr.models.tracked_download_state import TrackedDownloadState
 from lidarr.models.tracked_download_status import TrackedDownloadStatus
