@@ -178,7 +178,7 @@ with lidarr.ApiClient(configuration) as api_client:
     include_artist = True # bool |  (optional)
     include_album = True # bool |  (optional)
     include_track = True # bool |  (optional)
-    event_type = 56 # int |  (optional)
+    event_type = [56] # List[int] |  (optional)
     album_id = 56 # int |  (optional)
     download_id = 'download_id_example' # str |  (optional)
     artist_ids = [56] # List[int] |  (optional)
@@ -234,7 +234,7 @@ with lidarr.ApiClient(configuration) as api_client:
     include_artist = True # bool |  (optional)
     include_album = True # bool |  (optional)
     include_track = True # bool |  (optional)
-    event_type = 56 # int |  (optional)
+    event_type = [56] # List[int] |  (optional)
     album_id = 56 # int |  (optional)
     download_id = 'download_id_example' # str |  (optional)
     artist_ids = [56] # List[int] |  (optional)
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
  **include_artist** | **bool**|  | [optional] 
  **include_album** | **bool**|  | [optional] 
  **include_track** | **bool**|  | [optional] 
- **event_type** | **int**|  | [optional] 
+ **event_type** | [**List[int]**](int.md)|  | [optional] 
  **album_id** | **int**|  | [optional] 
  **download_id** | **str**|  | [optional] 
  **artist_ids** | [**List[int]**](int.md)|  | [optional] 

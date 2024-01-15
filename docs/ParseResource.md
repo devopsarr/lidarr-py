@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **parsed_album_info** | [**ParsedAlbumInfo**](ParsedAlbumInfo.md) |  | [optional] 
 **artist** | [**ArtistResource**](ArtistResource.md) |  | [optional] 
 **albums** | [**List[AlbumResource]**](AlbumResource.md) |  | [optional] 
+**custom_formats** | [**List[CustomFormatResource]**](CustomFormatResource.md) |  | [optional] 
+**custom_format_score** | **int** |  | [optional] 
 
 ## Example
 
