@@ -183,7 +183,7 @@ class HistoryApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_history(self, page : Optional[StrictInt] = None, page_size : Optional[StrictInt] = None, sort_key : Optional[StrictStr] = None, sort_direction : Optional[SortDirection] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, include_track : Optional[StrictBool] = None, event_type : Optional[StrictInt] = None, album_id : Optional[StrictInt] = None, download_id : Optional[StrictStr] = None, artist_ids : Optional[List[StrictInt]] = None, quality : Optional[List[StrictInt]] = None, **kwargs) -> HistoryResourcePagingResource:  # noqa: E501
+    def get_history(self, page : Optional[StrictInt] = None, page_size : Optional[StrictInt] = None, sort_key : Optional[StrictStr] = None, sort_direction : Optional[SortDirection] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, include_track : Optional[StrictBool] = None, event_type : Optional[List[StrictInt]] = None, album_id : Optional[StrictInt] = None, download_id : Optional[StrictStr] = None, artist_ids : Optional[List[StrictInt]] = None, quality : Optional[List[StrictInt]] = None, **kwargs) -> HistoryResourcePagingResource:  # noqa: E501
         """get_history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -207,7 +207,7 @@ class HistoryApi(object):
         :param include_track:
         :type include_track: bool
         :param event_type:
-        :type event_type: int
+        :type event_type: List[int]
         :param album_id:
         :type album_id: int
         :param download_id:
@@ -235,7 +235,7 @@ class HistoryApi(object):
         return self.get_history_with_http_info(page, page_size, sort_key, sort_direction, include_artist, include_album, include_track, event_type, album_id, download_id, artist_ids, quality, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_history_with_http_info(self, page : Optional[StrictInt] = None, page_size : Optional[StrictInt] = None, sort_key : Optional[StrictStr] = None, sort_direction : Optional[SortDirection] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, include_track : Optional[StrictBool] = None, event_type : Optional[StrictInt] = None, album_id : Optional[StrictInt] = None, download_id : Optional[StrictStr] = None, artist_ids : Optional[List[StrictInt]] = None, quality : Optional[List[StrictInt]] = None, **kwargs):  # noqa: E501
+    def get_history_with_http_info(self, page : Optional[StrictInt] = None, page_size : Optional[StrictInt] = None, sort_key : Optional[StrictStr] = None, sort_direction : Optional[SortDirection] = None, include_artist : Optional[StrictBool] = None, include_album : Optional[StrictBool] = None, include_track : Optional[StrictBool] = None, event_type : Optional[List[StrictInt]] = None, album_id : Optional[StrictInt] = None, download_id : Optional[StrictStr] = None, artist_ids : Optional[List[StrictInt]] = None, quality : Optional[List[StrictInt]] = None, **kwargs):  # noqa: E501
         """get_history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -259,7 +259,7 @@ class HistoryApi(object):
         :param include_track:
         :type include_track: bool
         :param event_type:
-        :type event_type: int
+        :type event_type: List[int]
         :param album_id:
         :type album_id: int
         :param download_id:
@@ -353,6 +353,7 @@ class HistoryApi(object):
             _query_params.append(('includeTrack', _params['include_track']))
         if _params.get('event_type') is not None:  # noqa: E501
             _query_params.append(('eventType', _params['event_type']))
+            _collection_formats['eventType'] = 'multi'
         if _params.get('album_id') is not None:  # noqa: E501
             _query_params.append(('albumId', _params['album_id']))
         if _params.get('download_id') is not None:  # noqa: E501
