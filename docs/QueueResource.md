@@ -26,8 +26,11 @@ Name | Type | Description | Notes
 **download_id** | **str** |  | [optional] 
 **protocol** | [**DownloadProtocol**](DownloadProtocol.md) |  | [optional] 
 **download_client** | **str** |  | [optional] 
+**download_client_has_post_import_category** | **bool** |  | [optional] 
 **indexer** | **str** |  | [optional] 
 **output_path** | **str** |  | [optional] 
+**track_file_count** | **int** |  | [optional] 
+**track_has_file_count** | **int** |  | [optional] 
 **download_forced** | **bool** |  | [optional] 
 
 ## Example

@@ -56,10 +56,13 @@ class QueueResource(BaseModel):
     download_id: Optional[str]
     protocol: Optional[DownloadProtocol]
     download_client: Optional[str]
+    download_client_has_post_import_category: Optional[bool]
     indexer: Optional[str]
     output_path: Optional[str]
+    track_file_count: Optional[int]
+    track_has_file_count: Optional[int]
     download_forced: Optional[bool]
-    __properties = ["id", "artistId", "albumId", "artist", "album", "quality", "customFormats", "customFormatScore", "size", "title", "sizeleft", "timeleft", "estimatedCompletionTime", "added", "status", "trackedDownloadStatus", "trackedDownloadState", "statusMessages", "errorMessage", "downloadId", "protocol", "downloadClient", "indexer", "outputPath", "downloadForced"]
+    __properties = ["id", "artistId", "albumId", "artist", "album", "quality", "customFormats", "customFormatScore", "size", "title", "sizeleft", "timeleft", "estimatedCompletionTime", "added", "status", "trackedDownloadStatus", "trackedDownloadState", "statusMessages", "errorMessage", "downloadId", "protocol", "downloadClient", "downloadClientHasPostImportCategory", "indexer", "outputPath", "trackFileCount", "trackHasFileCount", "downloadForced"]
 
     class Config:
         allow_population_by_field_name = True
@@ -197,8 +200,11 @@ class QueueResource(BaseModel):
             "download_id": obj.get("downloadId"),
             "protocol": obj.get("protocol"),
             "download_client": obj.get("downloadClient"),
+            "download_client_has_post_import_category": obj.get("downloadClientHasPostImportCategory"),
             "indexer": obj.get("indexer"),
             "output_path": obj.get("outputPath"),
+            "track_file_count": obj.get("trackFileCount"),
+            "track_has_file_count": obj.get("trackHasFileCount"),
             "download_forced": obj.get("downloadForced")
         })
         return _obj
