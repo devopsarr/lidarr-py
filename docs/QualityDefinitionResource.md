@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **weight** | **int** |  | [optional] 
 **min_size** | **float** |  | [optional] 
 **max_size** | **float** |  | [optional] 
-**preferred_size** | **float** |  | [optional] 
 
 ## Example
 

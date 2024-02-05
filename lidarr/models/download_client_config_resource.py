@@ -30,8 +30,7 @@ class DownloadClientConfigResource(BaseModel):
     download_client_working_folders: Optional[str]
     enable_completed_download_handling: Optional[bool]
     auto_redownload_failed: Optional[bool]
-    auto_redownload_failed_from_interactive_search: Optional[bool]
-    __properties = ["id", "downloadClientWorkingFolders", "enableCompletedDownloadHandling", "autoRedownloadFailed", "autoRedownloadFailedFromInteractiveSearch"]
+    __properties = ["id", "downloadClientWorkingFolders", "enableCompletedDownloadHandling", "autoRedownloadFailed"]
 
     class Config:
         allow_population_by_field_name = True
@@ -79,8 +78,7 @@ class DownloadClientConfigResource(BaseModel):
             "id": obj.get("id"),
             "download_client_working_folders": obj.get("downloadClientWorkingFolders"),
             "enable_completed_download_handling": obj.get("enableCompletedDownloadHandling"),
-            "auto_redownload_failed": obj.get("autoRedownloadFailed"),
-            "auto_redownload_failed_from_interactive_search": obj.get("autoRedownloadFailedFromInteractiveSearch")
+            "auto_redownload_failed": obj.get("autoRedownloadFailed")
         })
         return _obj
 

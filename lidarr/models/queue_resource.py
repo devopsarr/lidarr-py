@@ -47,7 +47,6 @@ class QueueResource(BaseModel):
     sizeleft: Optional[float]
     timeleft: Optional[str]
     estimated_completion_time: Optional[datetime]
-    added: Optional[datetime]
     status: Optional[str]
     tracked_download_status: Optional[TrackedDownloadStatus]
     tracked_download_state: Optional[TrackedDownloadState]
@@ -56,13 +55,10 @@ class QueueResource(BaseModel):
     download_id: Optional[str]
     protocol: Optional[DownloadProtocol]
     download_client: Optional[str]
-    download_client_has_post_import_category: Optional[bool]
     indexer: Optional[str]
     output_path: Optional[str]
-    track_file_count: Optional[int]
-    track_has_file_count: Optional[int]
     download_forced: Optional[bool]
-    __properties = ["id", "artistId", "albumId", "artist", "album", "quality", "customFormats", "customFormatScore", "size", "title", "sizeleft", "timeleft", "estimatedCompletionTime", "added", "status", "trackedDownloadStatus", "trackedDownloadState", "statusMessages", "errorMessage", "downloadId", "protocol", "downloadClient", "downloadClientHasPostImportCategory", "indexer", "outputPath", "trackFileCount", "trackHasFileCount", "downloadForced"]
+    __properties = ["id", "artistId", "albumId", "artist", "album", "quality", "customFormats", "customFormatScore", "size", "title", "sizeleft", "timeleft", "estimatedCompletionTime", "status", "trackedDownloadStatus", "trackedDownloadState", "statusMessages", "errorMessage", "downloadId", "protocol", "downloadClient", "indexer", "outputPath", "downloadForced"]
 
     class Config:
         allow_population_by_field_name = True
@@ -134,10 +130,6 @@ class QueueResource(BaseModel):
         if self.estimated_completion_time is None:
             _dict['estimatedCompletionTime'] = None
 
-        # set to None if added (nullable) is None
-        if self.added is None:
-            _dict['added'] = None
-
         # set to None if status (nullable) is None
         if self.status is None:
             _dict['status'] = None
@@ -191,7 +183,6 @@ class QueueResource(BaseModel):
             "sizeleft": obj.get("sizeleft"),
             "timeleft": obj.get("timeleft"),
             "estimated_completion_time": obj.get("estimatedCompletionTime"),
-            "added": obj.get("added"),
             "status": obj.get("status"),
             "tracked_download_status": obj.get("trackedDownloadStatus"),
             "tracked_download_state": obj.get("trackedDownloadState"),
@@ -200,11 +191,8 @@ class QueueResource(BaseModel):
             "download_id": obj.get("downloadId"),
             "protocol": obj.get("protocol"),
             "download_client": obj.get("downloadClient"),
-            "download_client_has_post_import_category": obj.get("downloadClientHasPostImportCategory"),
             "indexer": obj.get("indexer"),
             "output_path": obj.get("outputPath"),
-            "track_file_count": obj.get("trackFileCount"),
-            "track_has_file_count": obj.get("trackHasFileCount"),
             "download_forced": obj.get("downloadForced")
         })
         return _obj

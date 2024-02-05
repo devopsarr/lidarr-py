@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **metadata_source** | **str** |  | [optional] 
 **write_audio_tags** | [**WriteAudioTagsType**](WriteAudioTagsType.md) |  | [optional] 
 **scrub_audio_tags** | **bool** |  | [optional] 
-**embed_cover_art** | **bool** |  | [optional] 
 
 ## Example
 
