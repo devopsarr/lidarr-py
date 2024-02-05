@@ -43,9 +43,8 @@ class NotificationResource(BaseModel):
     on_release_import: Optional[bool]
     on_upgrade: Optional[bool]
     on_rename: Optional[bool]
-    on_artist_add: Optional[bool]
-    on_artist_delete: Optional[bool]
     on_album_delete: Optional[bool]
+    on_artist_delete: Optional[bool]
     on_health_issue: Optional[bool]
     on_health_restored: Optional[bool]
     on_download_failure: Optional[bool]
@@ -56,9 +55,8 @@ class NotificationResource(BaseModel):
     supports_on_release_import: Optional[bool]
     supports_on_upgrade: Optional[bool]
     supports_on_rename: Optional[bool]
-    supports_on_artist_add: Optional[bool]
-    supports_on_artist_delete: Optional[bool]
     supports_on_album_delete: Optional[bool]
+    supports_on_artist_delete: Optional[bool]
     supports_on_health_issue: Optional[bool]
     supports_on_health_restored: Optional[bool]
     include_health_warnings: Optional[bool]
@@ -67,7 +65,7 @@ class NotificationResource(BaseModel):
     supports_on_track_retag: Optional[bool]
     supports_on_application_update: Optional[bool]
     test_command: Optional[str]
-    __properties = ["id", "name", "fields", "implementationName", "implementation", "configContract", "infoLink", "message", "tags", "presets", "link", "onGrab", "onReleaseImport", "onUpgrade", "onRename", "onArtistAdd", "onArtistDelete", "onAlbumDelete", "onHealthIssue", "onHealthRestored", "onDownloadFailure", "onImportFailure", "onTrackRetag", "onApplicationUpdate", "supportsOnGrab", "supportsOnReleaseImport", "supportsOnUpgrade", "supportsOnRename", "supportsOnArtistAdd", "supportsOnArtistDelete", "supportsOnAlbumDelete", "supportsOnHealthIssue", "supportsOnHealthRestored", "includeHealthWarnings", "supportsOnDownloadFailure", "supportsOnImportFailure", "supportsOnTrackRetag", "supportsOnApplicationUpdate", "testCommand"]
+    __properties = ["id", "name", "fields", "implementationName", "implementation", "configContract", "infoLink", "message", "tags", "presets", "link", "onGrab", "onReleaseImport", "onUpgrade", "onRename", "onAlbumDelete", "onArtistDelete", "onHealthIssue", "onHealthRestored", "onDownloadFailure", "onImportFailure", "onTrackRetag", "onApplicationUpdate", "supportsOnGrab", "supportsOnReleaseImport", "supportsOnUpgrade", "supportsOnRename", "supportsOnAlbumDelete", "supportsOnArtistDelete", "supportsOnHealthIssue", "supportsOnHealthRestored", "includeHealthWarnings", "supportsOnDownloadFailure", "supportsOnImportFailure", "supportsOnTrackRetag", "supportsOnApplicationUpdate", "testCommand"]
 
     class Config:
         allow_population_by_field_name = True
@@ -180,9 +178,8 @@ class NotificationResource(BaseModel):
             "on_release_import": obj.get("onReleaseImport"),
             "on_upgrade": obj.get("onUpgrade"),
             "on_rename": obj.get("onRename"),
-            "on_artist_add": obj.get("onArtistAdd"),
-            "on_artist_delete": obj.get("onArtistDelete"),
             "on_album_delete": obj.get("onAlbumDelete"),
+            "on_artist_delete": obj.get("onArtistDelete"),
             "on_health_issue": obj.get("onHealthIssue"),
             "on_health_restored": obj.get("onHealthRestored"),
             "on_download_failure": obj.get("onDownloadFailure"),
@@ -193,9 +190,8 @@ class NotificationResource(BaseModel):
             "supports_on_release_import": obj.get("supportsOnReleaseImport"),
             "supports_on_upgrade": obj.get("supportsOnUpgrade"),
             "supports_on_rename": obj.get("supportsOnRename"),
-            "supports_on_artist_add": obj.get("supportsOnArtistAdd"),
-            "supports_on_artist_delete": obj.get("supportsOnArtistDelete"),
             "supports_on_album_delete": obj.get("supportsOnAlbumDelete"),
+            "supports_on_artist_delete": obj.get("supportsOnArtistDelete"),
             "supports_on_health_issue": obj.get("supportsOnHealthIssue"),
             "supports_on_health_restored": obj.get("supportsOnHealthRestored"),
             "include_health_warnings": obj.get("includeHealthWarnings"),

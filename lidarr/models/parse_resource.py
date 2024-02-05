@@ -21,7 +21,6 @@ from typing import Any, ClassVar, Dict, List, Optional
 from pydantic import BaseModel
 from lidarr.models.album_resource import AlbumResource
 from lidarr.models.artist_resource import ArtistResource
-from lidarr.models.custom_format_resource import CustomFormatResource
 from lidarr.models.parsed_album_info import ParsedAlbumInfo
 
 class ParseResource(BaseModel):
@@ -35,9 +34,7 @@ class ParseResource(BaseModel):
     parsed_album_info: Optional[ParsedAlbumInfo]
     artist: Optional[ArtistResource]
     albums: Optional[List]
-    custom_formats: Optional[List]
-    custom_format_score: Optional[int]
-    __properties = ["id", "title", "parsedAlbumInfo", "artist", "albums", "customFormats", "customFormatScore"]
+    __properties = ["id", "title", "parsedAlbumInfo", "artist", "albums"]
 
     class Config:
         allow_population_by_field_name = True
@@ -79,13 +76,6 @@ class ParseResource(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['albums'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in custom_formats (list)
-        _items = []
-        if self.custom_formats:
-            for _item in self.custom_formats:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['customFormats'] = _items
         # set to None if title (nullable) is None
         if self.title is None:
             _dict['title'] = None
@@ -93,10 +83,6 @@ class ParseResource(BaseModel):
         # set to None if albums (nullable) is None
         if self.albums is None:
             _dict['albums'] = None
-
-        # set to None if custom_formats (nullable) is None
-        if self.custom_formats is None:
-            _dict['customFormats'] = None
 
         return _dict
 
@@ -114,9 +100,7 @@ class ParseResource(BaseModel):
             "title": obj.get("title"),
             "parsed_album_info": ParsedAlbumInfo.from_dict(obj.get("parsedAlbumInfo")) if obj.get("parsedAlbumInfo") is not None else None,
             "artist": ArtistResource.from_dict(obj.get("artist")) if obj.get("artist") is not None else None,
-            "albums": [AlbumResource.from_dict(_item) for _item in obj.get("albums")] if obj.get("albums") is not None else None,
-            "custom_formats": [CustomFormatResource.from_dict(_item) for _item in obj.get("customFormats")] if obj.get("customFormats") is not None else None,
-            "custom_format_score": obj.get("customFormatScore")
+            "albums": [AlbumResource.from_dict(_item) for _item in obj.get("albums")] if obj.get("albums") is not None else None
         })
         return _obj
 

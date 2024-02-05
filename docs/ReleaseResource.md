@@ -42,8 +42,6 @@ Name | Type | Description | Notes
 **protocol** | [**DownloadProtocol**](DownloadProtocol.md) |  | [optional] 
 **artist_id** | **int** |  | [optional] 
 **album_id** | **int** |  | [optional] 
-**download_client_id** | **int** |  | [optional] 
-**download_client** | **str** |  | [optional] 
 
 ## Example
 

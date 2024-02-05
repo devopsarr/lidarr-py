@@ -31,8 +31,7 @@ class MetadataProviderConfigResource(BaseModel):
     metadata_source: Optional[str]
     write_audio_tags: Optional[WriteAudioTagsType]
     scrub_audio_tags: Optional[bool]
-    embed_cover_art: Optional[bool]
-    __properties = ["id", "metadataSource", "writeAudioTags", "scrubAudioTags", "embedCoverArt"]
+    __properties = ["id", "metadataSource", "writeAudioTags", "scrubAudioTags"]
 
     class Config:
         allow_population_by_field_name = True
@@ -80,8 +79,7 @@ class MetadataProviderConfigResource(BaseModel):
             "id": obj.get("id"),
             "metadata_source": obj.get("metadataSource"),
             "write_audio_tags": obj.get("writeAudioTags"),
-            "scrub_audio_tags": obj.get("scrubAudioTags"),
-            "embed_cover_art": obj.get("embedCoverArt")
+            "scrub_audio_tags": obj.get("scrubAudioTags")
         })
         return _obj
 
