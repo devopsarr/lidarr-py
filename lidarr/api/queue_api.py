@@ -18,9 +18,7 @@ from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
 from pydantic import StrictBool, StrictInt, StrictStr
-
 from typing import List, Optional
-
 from lidarr.models.download_protocol import DownloadProtocol
 from lidarr.models.queue_bulk_resource import QueueBulkResource
 from lidarr.models.queue_resource_paging_resource import QueueResourcePagingResource

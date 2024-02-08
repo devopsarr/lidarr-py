@@ -17,8 +17,6 @@ import re  # noqa: F401
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
-from typing import List
-
 from lidarr.models.update_resource import UpdateResource
 
 from lidarr.api_client import ApiClient

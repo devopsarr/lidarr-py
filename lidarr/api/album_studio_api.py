@@ -18,7 +18,6 @@ from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
 from typing import Optional
-
 from lidarr.models.album_studio_resource import AlbumStudioResource
 
 from lidarr.api_client import ApiClient

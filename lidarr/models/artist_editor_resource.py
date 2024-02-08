@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import Any, ClassVar, Dict, List, Optional
+
 from pydantic import BaseModel
 from lidarr.models.apply_tags import ApplyTags
 from lidarr.models.new_item_monitor_types import NewItemMonitorTypes

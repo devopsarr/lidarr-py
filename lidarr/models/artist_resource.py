@@ -16,8 +16,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
-from typing import Any, ClassVar, Dict, List, Optional
+
+
 from pydantic import BaseModel
 from lidarr.models.add_artist_options import AddArtistOptions
 from lidarr.models.artist_statistics_resource import ArtistStatisticsResource

@@ -18,9 +18,7 @@ from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
 from pydantic import StrictInt
-
 from typing import List, Optional
-
 from lidarr.models.track_resource import TrackResource
 
 from lidarr.api_client import ApiClient
