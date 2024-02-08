@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import Any, ClassVar, Dict, List, Optional
+
 from pydantic import BaseModel
 from lidarr.models.album_resource import AlbumResource
 from lidarr.models.artist_resource import ArtistResource

@@ -18,9 +18,7 @@ from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
 from pydantic import StrictInt, StrictStr
-
 from typing import Optional
-
 from lidarr.models.blocklist_bulk_resource import BlocklistBulkResource
 from lidarr.models.blocklist_resource_paging_resource import BlocklistResourcePagingResource
 from lidarr.models.sort_direction import SortDirection

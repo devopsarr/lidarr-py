@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import Any, ClassVar, Dict, Optional
+
 from pydantic import BaseModel
 from lidarr.models.secondary_album_type import SecondaryAlbumType
 

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **var_date** | **datetime** |  | [optional] 
 **download_id** | **str** |  | [optional] 
 **event_type** | [**EntityHistoryEventType**](EntityHistoryEventType.md) |  | [optional] 
-**data** | **Dict[str, str]** |  | [optional] 
+**data** | **Dict[str, Optional[str]]** |  | [optional] 
 **album** | [**AlbumResource**](AlbumResource.md) |  | [optional] 
 **artist** | [**ArtistResource**](ArtistResource.md) |  | [optional] 
 **track** | [**TrackResource**](TrackResource.md) |  | [optional] 

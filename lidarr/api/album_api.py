@@ -18,9 +18,7 @@ from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
 from pydantic import StrictBool, StrictInt, StrictStr
-
 from typing import List, Optional
-
 from lidarr.models.album_resource import AlbumResource
 from lidarr.models.albums_monitored_resource import AlbumsMonitoredResource
 
