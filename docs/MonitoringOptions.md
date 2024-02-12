@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **monitor** | [**MonitorTypes**](MonitorTypes.md) |  | [optional] 
