@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **artist** | [**List[AlbumStudioArtistResource]**](AlbumStudioArtistResource.md) |  | [optional] 
