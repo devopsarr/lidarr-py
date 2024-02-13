@@ -33,7 +33,8 @@ class QualityDefinitionResource(BaseModel):
     weight: Optional[StrictInt] = None
     min_size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="minSize")
     max_size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="maxSize")
-    __properties: ClassVar[List[str]] = ["id", "quality", "title", "weight", "minSize", "maxSize"]
+    preferred_size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="preferredSize")
+    __properties: ClassVar[List[str]] = ["id", "quality", "title", "weight", "minSize", "maxSize", "preferredSize"]
 
     model_config = {
         "populate_by_name": True,
@@ -92,6 +93,11 @@ class QualityDefinitionResource(BaseModel):
         if self.max_size is None and "max_size" in self.model_fields_set:
             _dict['maxSize'] = None
 
+        # set to None if preferred_size (nullable) is None
+        # and model_fields_set contains the field
+        if self.preferred_size is None and "preferred_size" in self.model_fields_set:
+            _dict['preferredSize'] = None
+
         return _dict
 
     @classmethod
@@ -109,7 +115,8 @@ class QualityDefinitionResource(BaseModel):
             "title": obj.get("title"),
             "weight": obj.get("weight"),
             "minSize": obj.get("minSize"),
-            "maxSize": obj.get("maxSize")
+            "maxSize": obj.get("maxSize"),
+            "preferredSize": obj.get("preferredSize")
         })
         return _obj
 

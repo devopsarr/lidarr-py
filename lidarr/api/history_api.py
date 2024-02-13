@@ -302,7 +302,7 @@ class HistoryApi:
         include_artist: Optional[StrictBool] = None,
         include_album: Optional[StrictBool] = None,
         include_track: Optional[StrictBool] = None,
-        event_type: Optional[StrictInt] = None,
+        event_type: Optional[List[StrictInt]] = None,
         album_id: Optional[StrictInt] = None,
         download_id: Optional[StrictStr] = None,
         artist_ids: Optional[List[StrictInt]] = None,
@@ -338,7 +338,7 @@ class HistoryApi:
         :param include_track:
         :type include_track: bool
         :param event_type:
-        :type event_type: int
+        :type event_type: List[int]
         :param album_id:
         :type album_id: int
         :param download_id:
@@ -412,7 +412,7 @@ class HistoryApi:
         include_artist: Optional[StrictBool] = None,
         include_album: Optional[StrictBool] = None,
         include_track: Optional[StrictBool] = None,
-        event_type: Optional[StrictInt] = None,
+        event_type: Optional[List[StrictInt]] = None,
         album_id: Optional[StrictInt] = None,
         download_id: Optional[StrictStr] = None,
         artist_ids: Optional[List[StrictInt]] = None,
@@ -448,7 +448,7 @@ class HistoryApi:
         :param include_track:
         :type include_track: bool
         :param event_type:
-        :type event_type: int
+        :type event_type: List[int]
         :param album_id:
         :type album_id: int
         :param download_id:
@@ -522,7 +522,7 @@ class HistoryApi:
         include_artist: Optional[StrictBool] = None,
         include_album: Optional[StrictBool] = None,
         include_track: Optional[StrictBool] = None,
-        event_type: Optional[StrictInt] = None,
+        event_type: Optional[List[StrictInt]] = None,
         album_id: Optional[StrictInt] = None,
         download_id: Optional[StrictStr] = None,
         artist_ids: Optional[List[StrictInt]] = None,
@@ -558,7 +558,7 @@ class HistoryApi:
         :param include_track:
         :type include_track: bool
         :param event_type:
-        :type event_type: int
+        :type event_type: List[int]
         :param album_id:
         :type album_id: int
         :param download_id:
@@ -641,6 +641,7 @@ class HistoryApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'eventType': 'multi',
             'artistIds': 'multi',
             'quality': 'multi',
         }

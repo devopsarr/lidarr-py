@@ -43,8 +43,9 @@ class NotificationResource(BaseModel):
     on_release_import: Optional[StrictBool] = Field(default=None, alias="onReleaseImport")
     on_upgrade: Optional[StrictBool] = Field(default=None, alias="onUpgrade")
     on_rename: Optional[StrictBool] = Field(default=None, alias="onRename")
-    on_album_delete: Optional[StrictBool] = Field(default=None, alias="onAlbumDelete")
+    on_artist_add: Optional[StrictBool] = Field(default=None, alias="onArtistAdd")
     on_artist_delete: Optional[StrictBool] = Field(default=None, alias="onArtistDelete")
+    on_album_delete: Optional[StrictBool] = Field(default=None, alias="onAlbumDelete")
     on_health_issue: Optional[StrictBool] = Field(default=None, alias="onHealthIssue")
     on_health_restored: Optional[StrictBool] = Field(default=None, alias="onHealthRestored")
     on_download_failure: Optional[StrictBool] = Field(default=None, alias="onDownloadFailure")
@@ -55,8 +56,9 @@ class NotificationResource(BaseModel):
     supports_on_release_import: Optional[StrictBool] = Field(default=None, alias="supportsOnReleaseImport")
     supports_on_upgrade: Optional[StrictBool] = Field(default=None, alias="supportsOnUpgrade")
     supports_on_rename: Optional[StrictBool] = Field(default=None, alias="supportsOnRename")
-    supports_on_album_delete: Optional[StrictBool] = Field(default=None, alias="supportsOnAlbumDelete")
+    supports_on_artist_add: Optional[StrictBool] = Field(default=None, alias="supportsOnArtistAdd")
     supports_on_artist_delete: Optional[StrictBool] = Field(default=None, alias="supportsOnArtistDelete")
+    supports_on_album_delete: Optional[StrictBool] = Field(default=None, alias="supportsOnAlbumDelete")
     supports_on_health_issue: Optional[StrictBool] = Field(default=None, alias="supportsOnHealthIssue")
     supports_on_health_restored: Optional[StrictBool] = Field(default=None, alias="supportsOnHealthRestored")
     include_health_warnings: Optional[StrictBool] = Field(default=None, alias="includeHealthWarnings")
@@ -65,7 +67,7 @@ class NotificationResource(BaseModel):
     supports_on_track_retag: Optional[StrictBool] = Field(default=None, alias="supportsOnTrackRetag")
     supports_on_application_update: Optional[StrictBool] = Field(default=None, alias="supportsOnApplicationUpdate")
     test_command: Optional[StrictStr] = Field(default=None, alias="testCommand")
-    __properties: ClassVar[List[str]] = ["id", "name", "fields", "implementationName", "implementation", "configContract", "infoLink", "message", "tags", "presets", "link", "onGrab", "onReleaseImport", "onUpgrade", "onRename", "onAlbumDelete", "onArtistDelete", "onHealthIssue", "onHealthRestored", "onDownloadFailure", "onImportFailure", "onTrackRetag", "onApplicationUpdate", "supportsOnGrab", "supportsOnReleaseImport", "supportsOnUpgrade", "supportsOnRename", "supportsOnAlbumDelete", "supportsOnArtistDelete", "supportsOnHealthIssue", "supportsOnHealthRestored", "includeHealthWarnings", "supportsOnDownloadFailure", "supportsOnImportFailure", "supportsOnTrackRetag", "supportsOnApplicationUpdate", "testCommand"]
+    __properties: ClassVar[List[str]] = ["id", "name", "fields", "implementationName", "implementation", "configContract", "infoLink", "message", "tags", "presets", "link", "onGrab", "onReleaseImport", "onUpgrade", "onRename", "onArtistAdd", "onArtistDelete", "onAlbumDelete", "onHealthIssue", "onHealthRestored", "onDownloadFailure", "onImportFailure", "onTrackRetag", "onApplicationUpdate", "supportsOnGrab", "supportsOnReleaseImport", "supportsOnUpgrade", "supportsOnRename", "supportsOnArtistAdd", "supportsOnArtistDelete", "supportsOnAlbumDelete", "supportsOnHealthIssue", "supportsOnHealthRestored", "includeHealthWarnings", "supportsOnDownloadFailure", "supportsOnImportFailure", "supportsOnTrackRetag", "supportsOnApplicationUpdate", "testCommand"]
 
     model_config = {
         "populate_by_name": True,
@@ -200,8 +202,9 @@ class NotificationResource(BaseModel):
             "onReleaseImport": obj.get("onReleaseImport"),
             "onUpgrade": obj.get("onUpgrade"),
             "onRename": obj.get("onRename"),
-            "onAlbumDelete": obj.get("onAlbumDelete"),
+            "onArtistAdd": obj.get("onArtistAdd"),
             "onArtistDelete": obj.get("onArtistDelete"),
+            "onAlbumDelete": obj.get("onAlbumDelete"),
             "onHealthIssue": obj.get("onHealthIssue"),
             "onHealthRestored": obj.get("onHealthRestored"),
             "onDownloadFailure": obj.get("onDownloadFailure"),
@@ -212,8 +215,9 @@ class NotificationResource(BaseModel):
             "supportsOnReleaseImport": obj.get("supportsOnReleaseImport"),
             "supportsOnUpgrade": obj.get("supportsOnUpgrade"),
             "supportsOnRename": obj.get("supportsOnRename"),
-            "supportsOnAlbumDelete": obj.get("supportsOnAlbumDelete"),
+            "supportsOnArtistAdd": obj.get("supportsOnArtistAdd"),
             "supportsOnArtistDelete": obj.get("supportsOnArtistDelete"),
+            "supportsOnAlbumDelete": obj.get("supportsOnAlbumDelete"),
             "supportsOnHealthIssue": obj.get("supportsOnHealthIssue"),
             "supportsOnHealthRestored": obj.get("supportsOnHealthRestored"),
             "includeHealthWarnings": obj.get("includeHealthWarnings"),

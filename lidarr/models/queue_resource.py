@@ -48,6 +48,7 @@ class QueueResource(BaseModel):
     sizeleft: Optional[Union[StrictFloat, StrictInt]] = None
     timeleft: Optional[StrictStr] = None
     estimated_completion_time: Optional[datetime] = Field(default=None, alias="estimatedCompletionTime")
+    added: Optional[datetime] = None
     status: Optional[StrictStr] = None
     tracked_download_status: Optional[TrackedDownloadStatus] = Field(default=None, alias="trackedDownloadStatus")
     tracked_download_state: Optional[TrackedDownloadState] = Field(default=None, alias="trackedDownloadState")
@@ -56,10 +57,13 @@ class QueueResource(BaseModel):
     download_id: Optional[StrictStr] = Field(default=None, alias="downloadId")
     protocol: Optional[DownloadProtocol] = None
     download_client: Optional[StrictStr] = Field(default=None, alias="downloadClient")
+    download_client_has_post_import_category: Optional[StrictBool] = Field(default=None, alias="downloadClientHasPostImportCategory")
     indexer: Optional[StrictStr] = None
     output_path: Optional[StrictStr] = Field(default=None, alias="outputPath")
+    track_file_count: Optional[StrictInt] = Field(default=None, alias="trackFileCount")
+    track_has_file_count: Optional[StrictInt] = Field(default=None, alias="trackHasFileCount")
     download_forced: Optional[StrictBool] = Field(default=None, alias="downloadForced")
-    __properties: ClassVar[List[str]] = ["id", "artistId", "albumId", "artist", "album", "quality", "customFormats", "customFormatScore", "size", "title", "sizeleft", "timeleft", "estimatedCompletionTime", "status", "trackedDownloadStatus", "trackedDownloadState", "statusMessages", "errorMessage", "downloadId", "protocol", "downloadClient", "indexer", "outputPath", "downloadForced"]
+    __properties: ClassVar[List[str]] = ["id", "artistId", "albumId", "artist", "album", "quality", "customFormats", "customFormatScore", "size", "title", "sizeleft", "timeleft", "estimatedCompletionTime", "added", "status", "trackedDownloadStatus", "trackedDownloadState", "statusMessages", "errorMessage", "downloadId", "protocol", "downloadClient", "downloadClientHasPostImportCategory", "indexer", "outputPath", "trackFileCount", "trackHasFileCount", "downloadForced"]
 
     model_config = {
         "populate_by_name": True,
@@ -148,6 +152,11 @@ class QueueResource(BaseModel):
         if self.estimated_completion_time is None and "estimated_completion_time" in self.model_fields_set:
             _dict['estimatedCompletionTime'] = None
 
+        # set to None if added (nullable) is None
+        # and model_fields_set contains the field
+        if self.added is None and "added" in self.model_fields_set:
+            _dict['added'] = None
+
         # set to None if status (nullable) is None
         # and model_fields_set contains the field
         if self.status is None and "status" in self.model_fields_set:
@@ -208,6 +217,7 @@ class QueueResource(BaseModel):
             "sizeleft": obj.get("sizeleft"),
             "timeleft": obj.get("timeleft"),
             "estimatedCompletionTime": obj.get("estimatedCompletionTime"),
+            "added": obj.get("added"),
             "status": obj.get("status"),
             "trackedDownloadStatus": obj.get("trackedDownloadStatus"),
             "trackedDownloadState": obj.get("trackedDownloadState"),
@@ -216,8 +226,11 @@ class QueueResource(BaseModel):
             "downloadId": obj.get("downloadId"),
             "protocol": obj.get("protocol"),
             "downloadClient": obj.get("downloadClient"),
+            "downloadClientHasPostImportCategory": obj.get("downloadClientHasPostImportCategory"),
             "indexer": obj.get("indexer"),
             "outputPath": obj.get("outputPath"),
+            "trackFileCount": obj.get("trackFileCount"),
+            "trackHasFileCount": obj.get("trackHasFileCount"),
             "downloadForced": obj.get("downloadForced")
         })
         return _obj

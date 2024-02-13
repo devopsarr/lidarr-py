@@ -31,7 +31,8 @@ class MetadataProviderConfigResource(BaseModel):
     metadata_source: Optional[StrictStr] = Field(default=None, alias="metadataSource")
     write_audio_tags: Optional[WriteAudioTagsType] = Field(default=None, alias="writeAudioTags")
     scrub_audio_tags: Optional[StrictBool] = Field(default=None, alias="scrubAudioTags")
-    __properties: ClassVar[List[str]] = ["id", "metadataSource", "writeAudioTags", "scrubAudioTags"]
+    embed_cover_art: Optional[StrictBool] = Field(default=None, alias="embedCoverArt")
+    __properties: ClassVar[List[str]] = ["id", "metadataSource", "writeAudioTags", "scrubAudioTags", "embedCoverArt"]
 
     model_config = {
         "populate_by_name": True,
@@ -92,7 +93,8 @@ class MetadataProviderConfigResource(BaseModel):
             "id": obj.get("id"),
             "metadataSource": obj.get("metadataSource"),
             "writeAudioTags": obj.get("writeAudioTags"),
-            "scrubAudioTags": obj.get("scrubAudioTags")
+            "scrubAudioTags": obj.get("scrubAudioTags"),
+            "embedCoverArt": obj.get("embedCoverArt")
         })
         return _obj
 

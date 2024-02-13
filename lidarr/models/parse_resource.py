@@ -21,6 +21,7 @@ from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from lidarr.models.album_resource import AlbumResource
 from lidarr.models.artist_resource import ArtistResource
+from lidarr.models.custom_format_resource import CustomFormatResource
 from lidarr.models.parsed_album_info import ParsedAlbumInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -34,7 +35,9 @@ class ParseResource(BaseModel):
     parsed_album_info: Optional[ParsedAlbumInfo] = Field(default=None, alias="parsedAlbumInfo")
     artist: Optional[ArtistResource] = None
     albums: Optional[List[AlbumResource]] = None
-    __properties: ClassVar[List[str]] = ["id", "title", "parsedAlbumInfo", "artist", "albums"]
+    custom_formats: Optional[List[CustomFormatResource]] = Field(default=None, alias="customFormats")
+    custom_format_score: Optional[StrictInt] = Field(default=None, alias="customFormatScore")
+    __properties: ClassVar[List[str]] = ["id", "title", "parsedAlbumInfo", "artist", "albums", "customFormats", "customFormatScore"]
 
     model_config = {
         "populate_by_name": True,
@@ -88,6 +91,13 @@ class ParseResource(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['albums'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in custom_formats (list)
+        _items = []
+        if self.custom_formats:
+            for _item in self.custom_formats:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['customFormats'] = _items
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
         if self.title is None and "title" in self.model_fields_set:
@@ -97,6 +107,11 @@ class ParseResource(BaseModel):
         # and model_fields_set contains the field
         if self.albums is None and "albums" in self.model_fields_set:
             _dict['albums'] = None
+
+        # set to None if custom_formats (nullable) is None
+        # and model_fields_set contains the field
+        if self.custom_formats is None and "custom_formats" in self.model_fields_set:
+            _dict['customFormats'] = None
 
         return _dict
 
@@ -114,7 +129,9 @@ class ParseResource(BaseModel):
             "title": obj.get("title"),
             "parsedAlbumInfo": ParsedAlbumInfo.from_dict(obj["parsedAlbumInfo"]) if obj.get("parsedAlbumInfo") is not None else None,
             "artist": ArtistResource.from_dict(obj["artist"]) if obj.get("artist") is not None else None,
-            "albums": [AlbumResource.from_dict(_item) for _item in obj["albums"]] if obj.get("albums") is not None else None
+            "albums": [AlbumResource.from_dict(_item) for _item in obj["albums"]] if obj.get("albums") is not None else None,
+            "customFormats": [CustomFormatResource.from_dict(_item) for _item in obj["customFormats"]] if obj.get("customFormats") is not None else None,
+            "customFormatScore": obj.get("customFormatScore")
         })
         return _obj
 
