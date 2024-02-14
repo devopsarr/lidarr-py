@@ -68,7 +68,9 @@ class ReleaseResource(BaseModel):
     protocol: Optional[DownloadProtocol] = None
     artist_id: Optional[StrictInt] = Field(default=None, alias="artistId")
     album_id: Optional[StrictInt] = Field(default=None, alias="albumId")
-    __properties: ClassVar[List[str]] = ["id", "guid", "quality", "qualityWeight", "age", "ageHours", "ageMinutes", "size", "indexerId", "indexer", "releaseGroup", "subGroup", "releaseHash", "title", "discography", "sceneSource", "airDate", "artistName", "albumTitle", "approved", "temporarilyRejected", "rejected", "rejections", "publishDate", "commentUrl", "downloadUrl", "infoUrl", "downloadAllowed", "releaseWeight", "customFormats", "customFormatScore", "magnetUrl", "infoHash", "seeders", "leechers", "protocol", "artistId", "albumId"]
+    download_client_id: Optional[StrictInt] = Field(default=None, alias="downloadClientId")
+    download_client: Optional[StrictStr] = Field(default=None, alias="downloadClient")
+    __properties: ClassVar[List[str]] = ["id", "guid", "quality", "qualityWeight", "age", "ageHours", "ageMinutes", "size", "indexerId", "indexer", "releaseGroup", "subGroup", "releaseHash", "title", "discography", "sceneSource", "airDate", "artistName", "albumTitle", "approved", "temporarilyRejected", "rejected", "rejections", "publishDate", "commentUrl", "downloadUrl", "infoUrl", "downloadAllowed", "releaseWeight", "customFormats", "customFormatScore", "magnetUrl", "infoHash", "seeders", "leechers", "protocol", "artistId", "albumId", "downloadClientId", "downloadClient"]
 
     model_config = {
         "populate_by_name": True,
@@ -219,6 +221,16 @@ class ReleaseResource(BaseModel):
         if self.album_id is None and "album_id" in self.model_fields_set:
             _dict['albumId'] = None
 
+        # set to None if download_client_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.download_client_id is None and "download_client_id" in self.model_fields_set:
+            _dict['downloadClientId'] = None
+
+        # set to None if download_client (nullable) is None
+        # and model_fields_set contains the field
+        if self.download_client is None and "download_client" in self.model_fields_set:
+            _dict['downloadClient'] = None
+
         return _dict
 
     @classmethod
@@ -268,7 +280,9 @@ class ReleaseResource(BaseModel):
             "leechers": obj.get("leechers"),
             "protocol": obj.get("protocol"),
             "artistId": obj.get("artistId"),
-            "albumId": obj.get("albumId")
+            "albumId": obj.get("albumId"),
+            "downloadClientId": obj.get("downloadClientId"),
+            "downloadClient": obj.get("downloadClient")
         })
         return _obj
 

@@ -30,7 +30,8 @@ class DownloadClientConfigResource(BaseModel):
     download_client_working_folders: Optional[StrictStr] = Field(default=None, alias="downloadClientWorkingFolders")
     enable_completed_download_handling: Optional[StrictBool] = Field(default=None, alias="enableCompletedDownloadHandling")
     auto_redownload_failed: Optional[StrictBool] = Field(default=None, alias="autoRedownloadFailed")
-    __properties: ClassVar[List[str]] = ["id", "downloadClientWorkingFolders", "enableCompletedDownloadHandling", "autoRedownloadFailed"]
+    auto_redownload_failed_from_interactive_search: Optional[StrictBool] = Field(default=None, alias="autoRedownloadFailedFromInteractiveSearch")
+    __properties: ClassVar[List[str]] = ["id", "downloadClientWorkingFolders", "enableCompletedDownloadHandling", "autoRedownloadFailed", "autoRedownloadFailedFromInteractiveSearch"]
 
     model_config = {
         "populate_by_name": True,
@@ -91,7 +92,8 @@ class DownloadClientConfigResource(BaseModel):
             "id": obj.get("id"),
             "downloadClientWorkingFolders": obj.get("downloadClientWorkingFolders"),
             "enableCompletedDownloadHandling": obj.get("enableCompletedDownloadHandling"),
-            "autoRedownloadFailed": obj.get("autoRedownloadFailed")
+            "autoRedownloadFailed": obj.get("autoRedownloadFailed"),
+            "autoRedownloadFailedFromInteractiveSearch": obj.get("autoRedownloadFailedFromInteractiveSearch")
         })
         return _obj
 
