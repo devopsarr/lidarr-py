@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.0.0](https://github.com/devopsarr/lidarr-py/compare/v0.3.2...v1.0.0) (2024-02-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **devopsarr/prowlarr-py#39:** update sdk generator to use pydantic 2.x
+
+### Features
+
+* **devopsarr/prowlarr-py#39:** update sdk generator to use pydantic 2.x ([bfbadb5](https://github.com/devopsarr/lidarr-py/commit/bfbadb533d4204a252f5cde0b6fdc3beb0ab3ce3))
+* inject api version into readme ([55b1505](https://github.com/devopsarr/lidarr-py/commit/55b150591f9b1a5a0f280f6df06d1f996054b717))
+
+
+### Bug Fixes
+
+* **python:** wrong release versioning on configuration.py ([c14ab75](https://github.com/devopsarr/lidarr-py/commit/c14ab75033b6286cdc2d2add49ed5b36d40290ac))
+* release please commented lines ([56ff0cc](https://github.com/devopsarr/lidarr-py/commit/56ff0cc5b7e2c54b7fa4b202d8924e7658134dad))
+
 ## [0.3.2](https://github.com/devopsarr/lidarr-py/compare/v0.3.1...v0.3.2) (2023-12-06)
 
 

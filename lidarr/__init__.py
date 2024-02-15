@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.3.2" # x-release-please-version
+__version__ = "1.0.0" # x-release-please-version
 
 # import apis into sdk package
 from lidarr.api.album_api import AlbumApi
