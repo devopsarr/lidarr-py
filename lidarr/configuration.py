@@ -399,7 +399,6 @@ conf = lidarr.Configuration(
             }
         return auth
 
-# x-release-please-start-version$
     def to_debug_report(self):
         """Gets the essential information for debugging.
 
@@ -409,10 +408,9 @@ conf = lidarr.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: v2.1.7.4030\n"\
-               "SDK Package Version: 0.3.2".\
-               format(env=sys.platform, pyversion=sys.version)
+               "SDK Package Version:  {v}".\
+               format(env=sys.platform, pyversion=sys.version, v="0.3.2") # x-release-please-version
 
-# x-release-please-end$
     def get_host_settings(self):
         """Gets an array of host settings
 
