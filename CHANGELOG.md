@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://github.com/devopsarr/lidarr-py/compare/v1.0.0...v1.0.0) (2024-02-20)
+
+
+### Miscellaneous Chores
+
+* release 1.0.0 ([cd637f2](https://github.com/devopsarr/lidarr-py/commit/cd637f294cc90dd945b17360a624b91559361ee6))
+
 ## [1.0.0](https://github.com/devopsarr/lidarr-py/compare/v0.3.2...v1.0.0) (2024-02-15)
 
 
