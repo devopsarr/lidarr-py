@@ -47,6 +47,7 @@ from lidarr.models.command_resource import CommandResource
 from lidarr.models.command_result import CommandResult
 from lidarr.models.command_status import CommandStatus
 from lidarr.models.command_trigger import CommandTrigger
+from lidarr.models.contract_field import ContractField
 from lidarr.models.custom_filter_resource import CustomFilterResource
 from lidarr.models.custom_format_resource import CustomFormatResource
 from lidarr.models.custom_format_specification_schema import CustomFormatSpecificationSchema
@@ -58,7 +59,6 @@ from lidarr.models.download_client_config_resource import DownloadClientConfigRe
 from lidarr.models.download_client_resource import DownloadClientResource
 from lidarr.models.download_protocol import DownloadProtocol
 from lidarr.models.entity_history_event_type import EntityHistoryEventType
-from lidarr.models.field import Field
 from lidarr.models.file_date_type import FileDateType
 from lidarr.models.health_check_result import HealthCheckResult
 from lidarr.models.health_resource import HealthResource
