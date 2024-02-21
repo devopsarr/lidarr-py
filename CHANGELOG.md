@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/devopsarr/lidarr-py/compare/v1.0.0...v1.0.1) (2024-02-21)
+
+
+### Bug Fixes
+
+* map Field to ContractField to avoid pydantic issue ([94186e5](https://github.com/devopsarr/lidarr-py/commit/94186e5f6ff0ec3decc13a4114927dab78903d08))
+
 ## [1.0.0](https://github.com/devopsarr/lidarr-py/compare/v1.0.0...v1.0.0) (2024-02-20)
 
 
