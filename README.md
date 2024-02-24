@@ -121,8 +121,8 @@ Class | Method | HTTP request | Description
 *AutoTaggingApi* | [**create_auto_tagging**](docs/AutoTaggingApi.md#create_auto_tagging) | **POST** /api/v1/autotagging | 
 *AutoTaggingApi* | [**delete_auto_tagging**](docs/AutoTaggingApi.md#delete_auto_tagging) | **DELETE** /api/v1/autotagging/{id} | 
 *AutoTaggingApi* | [**get_auto_tagging_by_id**](docs/AutoTaggingApi.md#get_auto_tagging_by_id) | **GET** /api/v1/autotagging/{id} | 
-*AutoTaggingApi* | [**get_auto_tagging_schema**](docs/AutoTaggingApi.md#get_auto_tagging_schema) | **GET** /api/v1/autotagging/schema | 
 *AutoTaggingApi* | [**list_auto_tagging**](docs/AutoTaggingApi.md#list_auto_tagging) | **GET** /api/v1/autotagging | 
+*AutoTaggingApi* | [**list_auto_tagging_schema**](docs/AutoTaggingApi.md#list_auto_tagging_schema) | **GET** /api/v1/autotagging/schema | 
 *AutoTaggingApi* | [**update_auto_tagging**](docs/AutoTaggingApi.md#update_auto_tagging) | **PUT** /api/v1/autotagging/{id} | 
 *BackupApi* | [**create_system_backup_restore_by_id**](docs/BackupApi.md#create_system_backup_restore_by_id) | **POST** /api/v1/system/backup/restore/{id} | 
 *BackupApi* | [**create_system_backup_restore_upload**](docs/BackupApi.md#create_system_backup_restore_upload) | **POST** /api/v1/system/backup/restore/upload | 
@@ -146,8 +146,8 @@ Class | Method | HTTP request | Description
 *CustomFormatApi* | [**create_custom_format**](docs/CustomFormatApi.md#create_custom_format) | **POST** /api/v1/customformat | 
 *CustomFormatApi* | [**delete_custom_format**](docs/CustomFormatApi.md#delete_custom_format) | **DELETE** /api/v1/customformat/{id} | 
 *CustomFormatApi* | [**get_custom_format_by_id**](docs/CustomFormatApi.md#get_custom_format_by_id) | **GET** /api/v1/customformat/{id} | 
-*CustomFormatApi* | [**get_custom_format_schema**](docs/CustomFormatApi.md#get_custom_format_schema) | **GET** /api/v1/customformat/schema | 
 *CustomFormatApi* | [**list_custom_format**](docs/CustomFormatApi.md#list_custom_format) | **GET** /api/v1/customformat | 
+*CustomFormatApi* | [**list_custom_format_schema**](docs/CustomFormatApi.md#list_custom_format_schema) | **GET** /api/v1/customformat/schema | 
 *CustomFormatApi* | [**update_custom_format**](docs/CustomFormatApi.md#update_custom_format) | **PUT** /api/v1/customformat/{id} | 
 *CutoffApi* | [**get_wanted_cutoff**](docs/CutoffApi.md#get_wanted_cutoff) | **GET** /api/v1/wanted/cutoff | 
 *CutoffApi* | [**get_wanted_cutoff_by_id**](docs/CutoffApi.md#get_wanted_cutoff_by_id) | **GET** /api/v1/wanted/cutoff/{id} | 
