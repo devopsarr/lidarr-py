@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/devopsarr/lidarr-py/compare/v1.0.1...v1.1.0) (2024-02-24)
+
+
+### Features
+
+* add response to lidarr custom format and auto tag schemas ([bc577ff](https://github.com/devopsarr/lidarr-py/commit/bc577ff69ce44baa909a62b6b7e3b07abbbc000d))
+
 ## [1.0.1](https://github.com/devopsarr/lidarr-py/compare/v1.0.0...v1.0.1) (2024-02-21)
 
 
