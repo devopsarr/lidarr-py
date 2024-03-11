@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of TagDifference from a JSON string
 tag_difference_instance = TagDifference.from_json(json)
 # print the JSON string representation of the object
-print TagDifference.to_json()
+print(TagDifference.to_json())
 
 # convert the object into a dict
 tag_difference_dict = tag_difference_instance.to_dict()

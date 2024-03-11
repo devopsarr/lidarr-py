@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of ArtistTitleInfo from a JSON string
 artist_title_info_instance = ArtistTitleInfo.from_json(json)
 # print the JSON string representation of the object
-print ArtistTitleInfo.to_json()
+print(ArtistTitleInfo.to_json())
 
 # convert the object into a dict
 artist_title_info_dict = artist_title_info_instance.to_dict()

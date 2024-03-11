@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of TrackFileListResource from a JSON string
 track_file_list_resource_instance = TrackFileListResource.from_json(json)
 # print the JSON string representation of the object
-print TrackFileListResource.to_json()
+print(TrackFileListResource.to_json())
 
 # convert the object into a dict
 track_file_list_resource_dict = track_file_list_resource_instance.to_dict()

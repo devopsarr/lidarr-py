@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of AlbumStudioResource from a JSON string
 album_studio_resource_instance = AlbumStudioResource.from_json(json)
 # print the JSON string representation of the object
-print AlbumStudioResource.to_json()
+print(AlbumStudioResource.to_json())
 
 # convert the object into a dict
 album_studio_resource_dict = album_studio_resource_instance.to_dict()

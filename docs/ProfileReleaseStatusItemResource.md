@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of ProfileReleaseStatusItemResource from a JSON string
 profile_release_status_item_resource_instance = ProfileReleaseStatusItemResource.from_json(json)
 # print the JSON string representation of the object
-print ProfileReleaseStatusItemResource.to_json()
+print(ProfileReleaseStatusItemResource.to_json())
 
 # convert the object into a dict
 profile_release_status_item_resource_dict = profile_release_status_item_resource_instance.to_dict()

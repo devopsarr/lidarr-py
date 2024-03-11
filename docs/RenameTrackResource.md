@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of RenameTrackResource from a JSON string
 rename_track_resource_instance = RenameTrackResource.from_json(json)
 # print the JSON string representation of the object
-print RenameTrackResource.to_json()
+print(RenameTrackResource.to_json())
 
 # convert the object into a dict
 rename_track_resource_dict = rename_track_resource_instance.to_dict()

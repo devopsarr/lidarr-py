@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of ProfileSecondaryAlbumTypeItemResource from a JSON string
 profile_secondary_album_type_item_resource_instance = ProfileSecondaryAlbumTypeItemResource.from_json(json)
 # print the JSON string representation of the object
-print ProfileSecondaryAlbumTypeItemResource.to_json()
+print(ProfileSecondaryAlbumTypeItemResource.to_json())
 
 # convert the object into a dict
 profile_secondary_album_type_item_resource_dict = profile_secondary_album_type_item_resource_instance.to_dict()

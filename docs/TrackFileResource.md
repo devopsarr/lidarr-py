@@ -31,7 +31,7 @@ json = "{}"
 # create an instance of TrackFileResource from a JSON string
 track_file_resource_instance = TrackFileResource.from_json(json)
 # print the JSON string representation of the object
-print TrackFileResource.to_json()
+print(TrackFileResource.to_json())
 
 # convert the object into a dict
 track_file_resource_dict = track_file_resource_instance.to_dict()

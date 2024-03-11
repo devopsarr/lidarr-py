@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of ArtistStatisticsResource from a JSON string
 artist_statistics_resource_instance = ArtistStatisticsResource.from_json(json)
 # print the JSON string representation of the object
-print ArtistStatisticsResource.to_json()
+print(ArtistStatisticsResource.to_json())
 
 # convert the object into a dict
 artist_statistics_resource_dict = artist_statistics_resource_instance.to_dict()

@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of IsoCountry from a JSON string
 iso_country_instance = IsoCountry.from_json(json)
 # print the JSON string representation of the object
-print IsoCountry.to_json()
+print(IsoCountry.to_json())
 
 # convert the object into a dict
 iso_country_dict = iso_country_instance.to_dict()

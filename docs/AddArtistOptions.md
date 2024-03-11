@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of AddArtistOptions from a JSON string
 add_artist_options_instance = AddArtistOptions.from_json(json)
 # print the JSON string representation of the object
-print AddArtistOptions.to_json()
+print(AddArtistOptions.to_json())
 
 # convert the object into a dict
 add_artist_options_dict = add_artist_options_instance.to_dict()

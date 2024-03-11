@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of AlbumStatisticsResource from a JSON string
 album_statistics_resource_instance = AlbumStatisticsResource.from_json(json)
 # print the JSON string representation of the object
-print AlbumStatisticsResource.to_json()
+print(AlbumStatisticsResource.to_json())
 
 # convert the object into a dict
 album_statistics_resource_dict = album_statistics_resource_instance.to_dict()
