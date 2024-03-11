@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of MediumResource from a JSON string
 medium_resource_instance = MediumResource.from_json(json)
 # print the JSON string representation of the object
-print MediumResource.to_json()
+print(MediumResource.to_json())
 
 # convert the object into a dict
 medium_resource_dict = medium_resource_instance.to_dict()

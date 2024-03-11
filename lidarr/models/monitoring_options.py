@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from lidarr.models.monitor_types import MonitorTypes
 from typing import Optional, Set
@@ -32,11 +32,11 @@ class MonitoringOptions(BaseModel):
     monitored: Optional[StrictBool] = None
     __properties: ClassVar[List[str]] = ["monitor", "albumsToMonitor", "monitored"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

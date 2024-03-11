@@ -50,7 +50,7 @@ json = "{}"
 # create an instance of ArtistResource from a JSON string
 artist_resource_instance = ArtistResource.from_json(json)
 # print the JSON string representation of the object
-print ArtistResource.to_json()
+print(ArtistResource.to_json())
 
 # convert the object into a dict
 artist_resource_dict = artist_resource_instance.to_dict()

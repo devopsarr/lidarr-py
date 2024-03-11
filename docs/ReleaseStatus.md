@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of ReleaseStatus from a JSON string
 release_status_instance = ReleaseStatus.from_json(json)
 # print the JSON string representation of the object
-print ReleaseStatus.to_json()
+print(ReleaseStatus.to_json())
 
 # convert the object into a dict
 release_status_dict = release_status_instance.to_dict()

@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of RetagTrackResource from a JSON string
 retag_track_resource_instance = RetagTrackResource.from_json(json)
 # print the JSON string representation of the object
-print RetagTrackResource.to_json()
+print(RetagTrackResource.to_json())
 
 # convert the object into a dict
 retag_track_resource_dict = retag_track_resource_instance.to_dict()

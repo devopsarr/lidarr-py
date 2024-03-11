@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, Optional
 from lidarr.models.artist_title_info import ArtistTitleInfo
 from lidarr.models.quality_model import QualityModel
@@ -43,11 +43,11 @@ class ParsedAlbumInfo(BaseModel):
     release_title: Optional[StrictStr] = Field(default=None, alias="releaseTitle")
     __properties: ClassVar[List[str]] = ["albumTitle", "artistName", "albumType", "artistTitleInfo", "quality", "releaseDate", "discography", "discographyStart", "discographyEnd", "releaseGroup", "releaseHash", "releaseVersion", "releaseTitle"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

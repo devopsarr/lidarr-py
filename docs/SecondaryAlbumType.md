@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of SecondaryAlbumType from a JSON string
 secondary_album_type_instance = SecondaryAlbumType.from_json(json)
 # print the JSON string representation of the object
-print SecondaryAlbumType.to_json()
+print(SecondaryAlbumType.to_json())
 
 # convert the object into a dict
 secondary_album_type_dict = secondary_album_type_instance.to_dict()

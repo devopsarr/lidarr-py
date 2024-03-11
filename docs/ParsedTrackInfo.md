@@ -39,7 +39,7 @@ json = "{}"
 # create an instance of ParsedTrackInfo from a JSON string
 parsed_track_info_instance = ParsedTrackInfo.from_json(json)
 # print the JSON string representation of the object
-print ParsedTrackInfo.to_json()
+print(ParsedTrackInfo.to_json())
 
 # convert the object into a dict
 parsed_track_info_dict = parsed_track_info_instance.to_dict()

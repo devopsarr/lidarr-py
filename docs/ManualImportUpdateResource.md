@@ -31,7 +31,7 @@ json = "{}"
 # create an instance of ManualImportUpdateResource from a JSON string
 manual_import_update_resource_instance = ManualImportUpdateResource.from_json(json)
 # print the JSON string representation of the object
-print ManualImportUpdateResource.to_json()
+print(ManualImportUpdateResource.to_json())
 
 # convert the object into a dict
 manual_import_update_resource_dict = manual_import_update_resource_instance.to_dict()

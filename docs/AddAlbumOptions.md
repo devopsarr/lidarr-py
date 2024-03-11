@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of AddAlbumOptions from a JSON string
 add_album_options_instance = AddAlbumOptions.from_json(json)
 # print the JSON string representation of the object
-print AddAlbumOptions.to_json()
+print(AddAlbumOptions.to_json())
 
 # convert the object into a dict
 add_album_options_dict = add_album_options_instance.to_dict()

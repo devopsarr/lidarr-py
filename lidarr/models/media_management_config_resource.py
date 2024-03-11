@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, Optional
 from lidarr.models.allow_fingerprinting import AllowFingerprinting
 from lidarr.models.file_date_type import FileDateType
@@ -51,11 +51,11 @@ class MediaManagementConfigResource(BaseModel):
     extra_file_extensions: Optional[StrictStr] = Field(default=None, alias="extraFileExtensions")
     __properties: ClassVar[List[str]] = ["id", "autoUnmonitorPreviouslyDownloadedTracks", "recycleBin", "recycleBinCleanupDays", "downloadPropersAndRepacks", "createEmptyArtistFolders", "deleteEmptyFolders", "fileDate", "watchLibraryForChanges", "rescanAfterRefresh", "allowFingerprinting", "setPermissionsLinux", "chmodFolder", "chownGroup", "skipFreeSpaceCheckWhenImporting", "minimumFreeSpaceWhenImporting", "copyUsingHardlinks", "importExtraFiles", "extraFileExtensions"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

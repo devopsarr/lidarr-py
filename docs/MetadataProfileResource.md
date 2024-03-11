@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of MetadataProfileResource from a JSON string
 metadata_profile_resource_instance = MetadataProfileResource.from_json(json)
 # print the JSON string representation of the object
-print MetadataProfileResource.to_json()
+print(MetadataProfileResource.to_json())
 
 # convert the object into a dict
 metadata_profile_resource_dict = metadata_profile_resource_instance.to_dict()

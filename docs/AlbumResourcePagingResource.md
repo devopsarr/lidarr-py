@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of AlbumResourcePagingResource from a JSON string
 album_resource_paging_resource_instance = AlbumResourcePagingResource.from_json(json)
 # print the JSON string representation of the object
-print AlbumResourcePagingResource.to_json()
+print(AlbumResourcePagingResource.to_json())
 
 # convert the object into a dict
 album_resource_paging_resource_dict = album_resource_paging_resource_instance.to_dict()

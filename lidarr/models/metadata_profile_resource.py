@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from lidarr.models.profile_primary_album_type_item_resource import ProfilePrimaryAlbumTypeItemResource
 from lidarr.models.profile_release_status_item_resource import ProfileReleaseStatusItemResource
@@ -36,11 +36,11 @@ class MetadataProfileResource(BaseModel):
     release_statuses: Optional[List[ProfileReleaseStatusItemResource]] = Field(default=None, alias="releaseStatuses")
     __properties: ClassVar[List[str]] = ["id", "name", "primaryAlbumTypes", "secondaryAlbumTypes", "releaseStatuses"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

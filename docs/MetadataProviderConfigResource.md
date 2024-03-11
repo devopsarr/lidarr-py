@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of MetadataProviderConfigResource from a JSON string
 metadata_provider_config_resource_instance = MetadataProviderConfigResource.from_json(json)
 # print the JSON string representation of the object
-print MetadataProviderConfigResource.to_json()
+print(MetadataProviderConfigResource.to_json())
 
 # convert the object into a dict
 metadata_provider_config_resource_dict = metadata_provider_config_resource_instance.to_dict()

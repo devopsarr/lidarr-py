@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of Member from a JSON string
 member_instance = Member.from_json(json)
 # print the JSON string representation of the object
-print Member.to_json()
+print(Member.to_json())
 
 # convert the object into a dict
 member_dict = member_instance.to_dict()

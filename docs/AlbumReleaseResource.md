@@ -30,7 +30,7 @@ json = "{}"
 # create an instance of AlbumReleaseResource from a JSON string
 album_release_resource_instance = AlbumReleaseResource.from_json(json)
 # print the JSON string representation of the object
-print AlbumReleaseResource.to_json()
+print(AlbumReleaseResource.to_json())
 
 # convert the object into a dict
 album_release_resource_dict = album_release_resource_instance.to_dict()

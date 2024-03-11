@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of MediaInfoModel from a JSON string
 media_info_model_instance = MediaInfoModel.from_json(json)
 # print the JSON string representation of the object
-print MediaInfoModel.to_json()
+print(MediaInfoModel.to_json())
 
 # convert the object into a dict
 media_info_model_dict = media_info_model_instance.to_dict()
