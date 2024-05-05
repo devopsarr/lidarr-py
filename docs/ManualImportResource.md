@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **release_group** | **str** |  | [optional] 
 **quality_weight** | **int** |  | [optional] 
 **download_id** | **str** |  | [optional] 
+**indexer_flags** | **int** |  | [optional] 
 **rejections** | [**List[Rejection]**](Rejection.md) |  | [optional] 
 **audio_tags** | [**ParsedTrackInfo**](ParsedTrackInfo.md) |  | [optional] 
 **additional_file** | **bool** |  | [optional] 

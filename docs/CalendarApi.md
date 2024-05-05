@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_calendar**
-> List[AlbumResource] list_calendar(start=start, end=end, unmonitored=unmonitored, include_artist=include_artist)
+> List[AlbumResource] list_calendar(start=start, end=end, unmonitored=unmonitored, include_artist=include_artist, tags=tags)
 
 
 
@@ -138,9 +138,10 @@ with lidarr.ApiClient(configuration) as api_client:
     end = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     unmonitored = False # bool |  (optional) (default to False)
     include_artist = False # bool |  (optional) (default to False)
+    tags = '' # str |  (optional) (default to '')
 
     try:
-        api_response = api_instance.list_calendar(start=start, end=end, unmonitored=unmonitored, include_artist=include_artist)
+        api_response = api_instance.list_calendar(start=start, end=end, unmonitored=unmonitored, include_artist=include_artist, tags=tags)
         print("The response of CalendarApi->list_calendar:\n")
         pprint(api_response)
     except Exception as e:
@@ -158,6 +159,7 @@ Name | Type | Description  | Notes
  **end** | **datetime**|  | [optional] 
  **unmonitored** | **bool**|  | [optional] [default to False]
  **include_artist** | **bool**|  | [optional] [default to False]
+ **tags** | **str**|  | [optional] [default to &#39;&#39;]
 
 ### Return type
 
@@ -170,7 +172,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
