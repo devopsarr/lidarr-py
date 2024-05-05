@@ -24,7 +24,7 @@ print(ProfilePrimaryAlbumTypeItemResource.to_json())
 # convert the object into a dict
 profile_primary_album_type_item_resource_dict = profile_primary_album_type_item_resource_instance.to_dict()
 # create an instance of ProfilePrimaryAlbumTypeItemResource from a dict
-profile_primary_album_type_item_resource_form_dict = profile_primary_album_type_item_resource.from_dict(profile_primary_album_type_item_resource_dict)
+profile_primary_album_type_item_resource_from_dict = ProfilePrimaryAlbumTypeItemResource.from_dict(profile_primary_album_type_item_resource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

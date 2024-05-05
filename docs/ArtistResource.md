@@ -55,7 +55,7 @@ print(ArtistResource.to_json())
 # convert the object into a dict
 artist_resource_dict = artist_resource_instance.to_dict()
 # create an instance of ArtistResource from a dict
-artist_resource_form_dict = artist_resource.from_dict(artist_resource_dict)
+artist_resource_from_dict = ArtistResource.from_dict(artist_resource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

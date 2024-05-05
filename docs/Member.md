@@ -24,7 +24,7 @@ print(Member.to_json())
 # convert the object into a dict
 member_dict = member_instance.to_dict()
 # create an instance of Member from a dict
-member_form_dict = member.from_dict(member_dict)
+member_from_dict = Member.from_dict(member_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

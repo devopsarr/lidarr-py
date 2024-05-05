@@ -23,7 +23,7 @@ print(IsoCountry.to_json())
 # convert the object into a dict
 iso_country_dict = iso_country_instance.to_dict()
 # create an instance of IsoCountry from a dict
-iso_country_form_dict = iso_country.from_dict(iso_country_dict)
+iso_country_from_dict = IsoCountry.from_dict(iso_country_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

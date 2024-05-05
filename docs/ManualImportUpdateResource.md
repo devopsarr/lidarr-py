@@ -37,7 +37,7 @@ print(ManualImportUpdateResource.to_json())
 # convert the object into a dict
 manual_import_update_resource_dict = manual_import_update_resource_instance.to_dict()
 # create an instance of ManualImportUpdateResource from a dict
-manual_import_update_resource_form_dict = manual_import_update_resource.from_dict(manual_import_update_resource_dict)
+manual_import_update_resource_from_dict = ManualImportUpdateResource.from_dict(manual_import_update_resource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

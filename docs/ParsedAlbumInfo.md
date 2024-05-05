@@ -34,7 +34,7 @@ print(ParsedAlbumInfo.to_json())
 # convert the object into a dict
 parsed_album_info_dict = parsed_album_info_instance.to_dict()
 # create an instance of ParsedAlbumInfo from a dict
-parsed_album_info_form_dict = parsed_album_info.from_dict(parsed_album_info_dict)
+parsed_album_info_from_dict = ParsedAlbumInfo.from_dict(parsed_album_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

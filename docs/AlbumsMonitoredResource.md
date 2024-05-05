@@ -23,7 +23,7 @@ print(AlbumsMonitoredResource.to_json())
 # convert the object into a dict
 albums_monitored_resource_dict = albums_monitored_resource_instance.to_dict()
 # create an instance of AlbumsMonitoredResource from a dict
-albums_monitored_resource_form_dict = albums_monitored_resource.from_dict(albums_monitored_resource_dict)
+albums_monitored_resource_from_dict = AlbumsMonitoredResource.from_dict(albums_monitored_resource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

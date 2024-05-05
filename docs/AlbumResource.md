@@ -46,7 +46,7 @@ print(AlbumResource.to_json())
 # convert the object into a dict
 album_resource_dict = album_resource_instance.to_dict()
 # create an instance of AlbumResource from a dict
-album_resource_form_dict = album_resource.from_dict(album_resource_dict)
+album_resource_from_dict = AlbumResource.from_dict(album_resource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

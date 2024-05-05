@@ -24,7 +24,7 @@ print(ProfileReleaseStatusItemResource.to_json())
 # convert the object into a dict
 profile_release_status_item_resource_dict = profile_release_status_item_resource_instance.to_dict()
 # create an instance of ProfileReleaseStatusItemResource from a dict
-profile_release_status_item_resource_form_dict = profile_release_status_item_resource.from_dict(profile_release_status_item_resource_dict)
+profile_release_status_item_resource_from_dict = ProfileReleaseStatusItemResource.from_dict(profile_release_status_item_resource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

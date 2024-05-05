@@ -26,7 +26,7 @@ print(MetadataProfileResource.to_json())
 # convert the object into a dict
 metadata_profile_resource_dict = metadata_profile_resource_instance.to_dict()
 # create an instance of MetadataProfileResource from a dict
-metadata_profile_resource_form_dict = metadata_profile_resource.from_dict(metadata_profile_resource_dict)
+metadata_profile_resource_from_dict = MetadataProfileResource.from_dict(metadata_profile_resource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

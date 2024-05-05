@@ -24,7 +24,7 @@ print(MediumResource.to_json())
 # convert the object into a dict
 medium_resource_dict = medium_resource_instance.to_dict()
 # create an instance of MediumResource from a dict
-medium_resource_form_dict = medium_resource.from_dict(medium_resource_dict)
+medium_resource_from_dict = MediumResource.from_dict(medium_resource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
