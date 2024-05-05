@@ -32,7 +32,7 @@ print(ArtistEditorResource.to_json())
 # convert the object into a dict
 artist_editor_resource_dict = artist_editor_resource_instance.to_dict()
 # create an instance of ArtistEditorResource from a dict
-artist_editor_resource_form_dict = artist_editor_resource.from_dict(artist_editor_resource_dict)
+artist_editor_resource_from_dict = ArtistEditorResource.from_dict(artist_editor_resource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

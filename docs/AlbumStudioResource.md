@@ -24,7 +24,7 @@ print(AlbumStudioResource.to_json())
 # convert the object into a dict
 album_studio_resource_dict = album_studio_resource_instance.to_dict()
 # create an instance of AlbumStudioResource from a dict
-album_studio_resource_form_dict = album_studio_resource.from_dict(album_studio_resource_dict)
+album_studio_resource_from_dict = AlbumStudioResource.from_dict(album_studio_resource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

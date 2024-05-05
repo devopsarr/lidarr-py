@@ -26,7 +26,7 @@ class TagDifference(BaseModel):
     """
     TagDifference
     """ # noqa: E501
-    field: Optional[StrictStr] = None
+    var_field: Optional[StrictStr] = Field(default=None, alias="field")
     old_value: Optional[StrictStr] = Field(default=None, alias="oldValue")
     new_value: Optional[StrictStr] = Field(default=None, alias="newValue")
     __properties: ClassVar[List[str]] = ["field", "oldValue", "newValue"]
@@ -70,9 +70,9 @@ class TagDifference(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if field (nullable) is None
+        # set to None if var_field (nullable) is None
         # and model_fields_set contains the field
-        if self.field is None and "field" in self.model_fields_set:
+        if self.var_field is None and "var_field" in self.model_fields_set:
             _dict['field'] = None
 
         # set to None if old_value (nullable) is None

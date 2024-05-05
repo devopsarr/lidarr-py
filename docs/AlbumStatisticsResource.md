@@ -26,7 +26,7 @@ print(AlbumStatisticsResource.to_json())
 # convert the object into a dict
 album_statistics_resource_dict = album_statistics_resource_instance.to_dict()
 # create an instance of AlbumStatisticsResource from a dict
-album_statistics_resource_form_dict = album_statistics_resource.from_dict(album_statistics_resource_dict)
+album_statistics_resource_from_dict = AlbumStatisticsResource.from_dict(album_statistics_resource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

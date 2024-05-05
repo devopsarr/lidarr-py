@@ -28,7 +28,7 @@ print(RetagTrackResource.to_json())
 # convert the object into a dict
 retag_track_resource_dict = retag_track_resource_instance.to_dict()
 # create an instance of RetagTrackResource from a dict
-retag_track_resource_form_dict = retag_track_resource.from_dict(retag_track_resource_dict)
+retag_track_resource_from_dict = RetagTrackResource.from_dict(retag_track_resource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

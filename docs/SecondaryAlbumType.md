@@ -23,7 +23,7 @@ print(SecondaryAlbumType.to_json())
 # convert the object into a dict
 secondary_album_type_dict = secondary_album_type_instance.to_dict()
 # create an instance of SecondaryAlbumType from a dict
-secondary_album_type_form_dict = secondary_album_type.from_dict(secondary_album_type_dict)
+secondary_album_type_from_dict = SecondaryAlbumType.from_dict(secondary_album_type_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -27,7 +27,7 @@ print(AlbumResourcePagingResource.to_json())
 # convert the object into a dict
 album_resource_paging_resource_dict = album_resource_paging_resource_instance.to_dict()
 # create an instance of AlbumResourcePagingResource from a dict
-album_resource_paging_resource_form_dict = album_resource_paging_resource.from_dict(album_resource_paging_resource_dict)
+album_resource_paging_resource_from_dict = AlbumResourcePagingResource.from_dict(album_resource_paging_resource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

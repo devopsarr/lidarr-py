@@ -37,7 +37,7 @@ print(TrackFileResource.to_json())
 # convert the object into a dict
 track_file_resource_dict = track_file_resource_instance.to_dict()
 # create an instance of TrackFileResource from a dict
-track_file_resource_form_dict = track_file_resource.from_dict(track_file_resource_dict)
+track_file_resource_from_dict = TrackFileResource.from_dict(track_file_resource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

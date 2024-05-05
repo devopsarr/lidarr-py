@@ -44,7 +44,7 @@ print(ParsedTrackInfo.to_json())
 # convert the object into a dict
 parsed_track_info_dict = parsed_track_info_instance.to_dict()
 # create an instance of ParsedTrackInfo from a dict
-parsed_track_info_form_dict = parsed_track_info.from_dict(parsed_track_info_dict)
+parsed_track_info_from_dict = ParsedTrackInfo.from_dict(parsed_track_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

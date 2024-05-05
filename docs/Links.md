@@ -23,7 +23,7 @@ print(Links.to_json())
 # convert the object into a dict
 links_dict = links_instance.to_dict()
 # create an instance of Links from a dict
-links_form_dict = links.from_dict(links_dict)
+links_from_dict = Links.from_dict(links_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
