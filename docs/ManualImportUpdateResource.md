@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **track_ids** | **List[int]** |  | [optional] 
 **quality** | [**QualityModel**](QualityModel.md) |  | [optional] 
 **release_group** | **str** |  | [optional] 
+**indexer_flags** | **int** |  | [optional] 
 **download_id** | **str** |  | [optional] 
 **additional_file** | **bool** |  | [optional] 
 **replace_existing_files** | **bool** |  | [optional] 

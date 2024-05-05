@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 **seeders** | **int** |  | [optional] 
 **leechers** | **int** |  | [optional] 
 **protocol** | [**DownloadProtocol**](DownloadProtocol.md) |  | [optional] 
+**indexer_flags** | **int** |  | [optional] 
 **artist_id** | **int** |  | [optional] 
 **album_id** | **int** |  | [optional] 
 **download_client_id** | **int** |  | [optional] 
