@@ -1,10 +1,13 @@
 # ImportListMonitorType
 
 
-## Properties
+## Enum
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+* `NONE` (value: `'none'`)
+
+* `SPECIFICALBUM` (value: `'specificAlbum'`)
+
+* `ENTIREARTIST` (value: `'entireArtist'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,10 +1,13 @@
 # AllowFingerprinting
 
 
-## Properties
+## Enum
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+* `NEVER` (value: `'never'`)
+
+* `NEWFILES` (value: `'newFiles'`)
+
+* `ALLFILES` (value: `'allFiles'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
