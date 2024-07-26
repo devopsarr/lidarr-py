@@ -29,7 +29,6 @@ Name | Type | Description | Notes
 **statistics** | [**AlbumStatisticsResource**](AlbumStatisticsResource.md) |  | [optional] 
 **add_options** | [**AddAlbumOptions**](AddAlbumOptions.md) |  | [optional] 
 **remote_cover** | **str** |  | [optional] 
-**grabbed** | **bool** |  | [optional] 
 
 ## Example
 

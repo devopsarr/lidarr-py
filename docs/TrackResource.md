@@ -21,7 +21,6 @@ Name | Type | Description | Notes
 **has_file** | **bool** |  | [optional] 
 **artist** | [**ArtistResource**](ArtistResource.md) |  | [optional] 
 **ratings** | [**Ratings**](Ratings.md) |  | [optional] 
-**grabbed** | **bool** |  | [optional] 
 
 ## Example
 

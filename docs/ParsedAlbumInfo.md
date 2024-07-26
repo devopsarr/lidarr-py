@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**release_title** | **str** |  | [optional] 
 **album_title** | **str** |  | [optional] 
 **artist_name** | **str** |  | [optional] 
 **album_type** | **str** |  | [optional] 
@@ -17,7 +18,6 @@ Name | Type | Description | Notes
 **release_group** | **str** |  | [optional] 
 **release_hash** | **str** |  | [optional] 
 **release_version** | **str** |  | [optional] 
-**release_title** | **str** |  | [optional] 
 
 ## Example
 
