@@ -89,9 +89,9 @@ class ManualImportUpdateResource(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in tracks (list)
         _items = []
         if self.tracks:
-            for _item in self.tracks:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_tracks in self.tracks:
+                if _item_tracks:
+                    _items.append(_item_tracks.to_dict())
             _dict['tracks'] = _items
         # override the default output from pydantic by calling `to_dict()` of quality
         if self.quality:
@@ -99,9 +99,9 @@ class ManualImportUpdateResource(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in rejections (list)
         _items = []
         if self.rejections:
-            for _item in self.rejections:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_rejections in self.rejections:
+                if _item_rejections:
+                    _items.append(_item_rejections.to_dict())
             _dict['rejections'] = _items
         # set to None if path (nullable) is None
         # and model_fields_set contains the field

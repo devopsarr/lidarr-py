@@ -78,9 +78,9 @@ class RetagTrackResource(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in changes (list)
         _items = []
         if self.changes:
-            for _item in self.changes:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_changes in self.changes:
+                if _item_changes:
+                    _items.append(_item_changes.to_dict())
             _dict['changes'] = _items
         # set to None if track_numbers (nullable) is None
         # and model_fields_set contains the field
