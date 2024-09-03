@@ -17,24 +17,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, Optional
-from lidarr.models.backup_type import BackupType
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class BackupResource(BaseModel):
+class CustomFormatBulkResource(BaseModel):
     """
-    BackupResource
+    CustomFormatBulkResource
     """ # noqa: E501
-    id: Optional[StrictInt] = None
-    name: Optional[StrictStr] = None
-    path: Optional[StrictStr] = None
-    type: Optional[BackupType] = None
-    size: Optional[StrictInt] = None
-    time: Optional[datetime] = None
-    __properties: ClassVar[List[str]] = ["id", "name", "path", "type", "size", "time"]
+    ids: Optional[List[StrictInt]] = None
+    include_custom_format_when_renaming: Optional[StrictBool] = Field(default=None, alias="includeCustomFormatWhenRenaming")
+    __properties: ClassVar[List[str]] = ["ids", "includeCustomFormatWhenRenaming"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -54,7 +48,7 @@ class BackupResource(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of BackupResource from a JSON string"""
+        """Create an instance of CustomFormatBulkResource from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,21 +69,21 @@ class BackupResource(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if name (nullable) is None
+        # set to None if ids (nullable) is None
         # and model_fields_set contains the field
-        if self.name is None and "name" in self.model_fields_set:
-            _dict['name'] = None
+        if self.ids is None and "ids" in self.model_fields_set:
+            _dict['ids'] = None
 
-        # set to None if path (nullable) is None
+        # set to None if include_custom_format_when_renaming (nullable) is None
         # and model_fields_set contains the field
-        if self.path is None and "path" in self.model_fields_set:
-            _dict['path'] = None
+        if self.include_custom_format_when_renaming is None and "include_custom_format_when_renaming" in self.model_fields_set:
+            _dict['includeCustomFormatWhenRenaming'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of BackupResource from a dict"""
+        """Create an instance of CustomFormatBulkResource from a dict"""
         if obj is None:
             return None
 
@@ -97,12 +91,8 @@ class BackupResource(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "name": obj.get("name"),
-            "path": obj.get("path"),
-            "type": obj.get("type"),
-            "size": obj.get("size"),
-            "time": obj.get("time")
+            "ids": obj.get("ids"),
+            "includeCustomFormatWhenRenaming": obj.get("includeCustomFormatWhenRenaming")
         })
         return _obj
 

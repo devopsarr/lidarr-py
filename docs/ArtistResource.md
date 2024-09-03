@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**artist_metadata_id** | **int** |  | [optional] 
 **status** | [**ArtistStatusType**](ArtistStatusType.md) |  | [optional] 
 **ended** | **bool** |  | [optional] [readonly] 
 **artist_name** | **str** |  | [optional] 
