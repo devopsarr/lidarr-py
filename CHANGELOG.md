@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/devopsarr/lidarr-py/compare/v1.1.0...v1.1.1) (2024-10-08)
+
+
+### Bug Fixes
+
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.9.0 ([2ace35c](https://github.com/devopsarr/lidarr-py/commit/2ace35ce5fdf4f1184e9c08820787b335b11c23a))
+
 ## [1.1.0](https://github.com/devopsarr/lidarr-py/compare/v1.0.1...v1.1.0) (2024-02-24)
 
 
