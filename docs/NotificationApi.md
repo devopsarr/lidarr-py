@@ -706,7 +706,7 @@ configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lidarr.NotificationApi(api_client)
-    id = 'id_example' # str | 
+    id = 56 # int | 
     force_save = False # bool |  (optional) (default to False)
     notification_resource = lidarr.NotificationResource() # NotificationResource |  (optional)
 
@@ -725,7 +725,7 @@ with lidarr.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **id** | **int**|  | 
  **force_save** | **bool**|  | [optional] [default to False]
  **notification_resource** | [**NotificationResource**](NotificationResource.md)|  | [optional] 
 

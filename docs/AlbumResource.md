@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **artist** | [**ArtistResource**](ArtistResource.md) |  | [optional] 
 **images** | [**List[MediaCover]**](MediaCover.md) |  | [optional] 
 **links** | [**List[Links]**](Links.md) |  | [optional] 
+**last_search_time** | **datetime** |  | [optional] 
 **statistics** | [**AlbumStatisticsResource**](AlbumStatisticsResource.md) |  | [optional] 
 **add_options** | [**AddAlbumOptions**](AddAlbumOptions.md) |  | [optional] 
 **remote_cover** | **str** |  | [optional] 
