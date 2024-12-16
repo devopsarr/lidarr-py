@@ -240,7 +240,7 @@ with lidarr.ApiClient(configuration) as api_client:
     include_album = False # bool |  (optional) (default to False)
     artist_ids = [56] # List[int] |  (optional)
     protocol = lidarr.DownloadProtocol() # DownloadProtocol |  (optional)
-    quality = 56 # int |  (optional)
+    quality = [56] # List[int] |  (optional)
 
     try:
         api_response = api_instance.get_queue(page=page, page_size=page_size, sort_key=sort_key, sort_direction=sort_direction, include_unknown_artist_items=include_unknown_artist_items, include_artist=include_artist, include_album=include_album, artist_ids=artist_ids, protocol=protocol, quality=quality)
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
  **include_album** | **bool**|  | [optional] [default to False]
  **artist_ids** | [**List[int]**](int.md)|  | [optional] 
  **protocol** | [**DownloadProtocol**](.md)|  | [optional] 
- **quality** | **int**|  | [optional] 
+ **quality** | [**List[int]**](int.md)|  | [optional] 
 
 ### Return type
 
