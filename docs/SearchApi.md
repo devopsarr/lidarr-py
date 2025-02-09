@@ -4,11 +4,11 @@ All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_search**](SearchApi.md#get_search) | **GET** /api/v1/search | 
+[**list_search**](SearchApi.md#list_search) | **GET** /api/v1/search | 
 
 
-# **get_search**
-> get_search(term=term)
+# **list_search**
+> List[SearchResource] list_search(term=term)
 
 
 
@@ -19,6 +19,7 @@ Method | HTTP request | Description
 
 ```python
 import lidarr
+from lidarr.models.search_resource import SearchResource
 from lidarr.rest import ApiException
 from pprint import pprint
 
@@ -52,9 +53,11 @@ with lidarr.ApiClient(configuration) as api_client:
     term = 'term_example' # str |  (optional)
 
     try:
-        api_instance.get_search(term=term)
+        api_response = api_instance.list_search(term=term)
+        print("The response of SearchApi->list_search:\n")
+        pprint(api_response)
     except Exception as e:
-        print("Exception when calling SearchApi->get_search: %s\n" % e)
+        print("Exception when calling SearchApi->list_search: %s\n" % e)
 ```
 
 
@@ -68,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**List[SearchResource]**](SearchResource.md)
 
 ### Authorization
 
@@ -77,7 +80,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 

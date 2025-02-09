@@ -17,22 +17,22 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, Optional
-from lidarr.models.write_audio_tags_type import WriteAudioTagsType
+from lidarr.models.album_resource import AlbumResource
+from lidarr.models.artist_resource import ArtistResource
 from typing import Optional, Set
 from typing_extensions import Self
 
-class MetadataProviderConfigResource(BaseModel):
+class SearchResource(BaseModel):
     """
-    MetadataProviderConfigResource
+    SearchResource
     """ # noqa: E501
     id: Optional[StrictInt] = None
-    metadata_source: Optional[StrictStr] = Field(default=None, alias="metadataSource")
-    write_audio_tags: Optional[WriteAudioTagsType] = Field(default=None, alias="writeAudioTags")
-    scrub_audio_tags: Optional[StrictBool] = Field(default=None, alias="scrubAudioTags")
-    embed_cover_art: Optional[StrictBool] = Field(default=None, alias="embedCoverArt")
-    __properties: ClassVar[List[str]] = ["id", "metadataSource", "writeAudioTags", "scrubAudioTags", "embedCoverArt"]
+    foreign_id: Optional[StrictStr] = Field(default=None, alias="foreignId")
+    artist: Optional[ArtistResource] = None
+    album: Optional[AlbumResource] = None
+    __properties: ClassVar[List[str]] = ["id", "foreignId", "artist", "album"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -52,7 +52,7 @@ class MetadataProviderConfigResource(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of MetadataProviderConfigResource from a JSON string"""
+        """Create an instance of SearchResource from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,16 +73,22 @@ class MetadataProviderConfigResource(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if metadata_source (nullable) is None
+        # override the default output from pydantic by calling `to_dict()` of artist
+        if self.artist:
+            _dict['artist'] = self.artist.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of album
+        if self.album:
+            _dict['album'] = self.album.to_dict()
+        # set to None if foreign_id (nullable) is None
         # and model_fields_set contains the field
-        if self.metadata_source is None and "metadata_source" in self.model_fields_set:
-            _dict['metadataSource'] = None
+        if self.foreign_id is None and "foreign_id" in self.model_fields_set:
+            _dict['foreignId'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of MetadataProviderConfigResource from a dict"""
+        """Create an instance of SearchResource from a dict"""
         if obj is None:
             return None
 
@@ -91,10 +97,9 @@ class MetadataProviderConfigResource(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
-            "metadataSource": obj.get("metadataSource"),
-            "writeAudioTags": obj.get("writeAudioTags"),
-            "scrubAudioTags": obj.get("scrubAudioTags"),
-            "embedCoverArt": obj.get("embedCoverArt")
+            "foreignId": obj.get("foreignId"),
+            "artist": ArtistResource.from_dict(obj["artist"]) if obj.get("artist") is not None else None,
+            "album": AlbumResource.from_dict(obj["album"]) if obj.get("album") is not None else None
         })
         return _obj
 

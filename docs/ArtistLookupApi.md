@@ -4,11 +4,11 @@ All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_artist_lookup**](ArtistLookupApi.md#get_artist_lookup) | **GET** /api/v1/artist/lookup | 
+[**list_artist_lookup**](ArtistLookupApi.md#list_artist_lookup) | **GET** /api/v1/artist/lookup | 
 
 
-# **get_artist_lookup**
-> get_artist_lookup(term=term)
+# **list_artist_lookup**
+> List[ArtistResource] list_artist_lookup(term=term)
 
 
 
@@ -19,6 +19,7 @@ Method | HTTP request | Description
 
 ```python
 import lidarr
+from lidarr.models.artist_resource import ArtistResource
 from lidarr.rest import ApiException
 from pprint import pprint
 
@@ -52,9 +53,11 @@ with lidarr.ApiClient(configuration) as api_client:
     term = 'term_example' # str |  (optional)
 
     try:
-        api_instance.get_artist_lookup(term=term)
+        api_response = api_instance.list_artist_lookup(term=term)
+        print("The response of ArtistLookupApi->list_artist_lookup:\n")
+        pprint(api_response)
     except Exception as e:
-        print("Exception when calling ArtistLookupApi->get_artist_lookup: %s\n" % e)
+        print("Exception when calling ArtistLookupApi->list_artist_lookup: %s\n" % e)
 ```
 
 
@@ -68,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**List[ArtistResource]**](ArtistResource.md)
 
 ### Authorization
 
@@ -77,7 +80,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
