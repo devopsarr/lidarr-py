@@ -10,8 +10,6 @@ Method | HTTP request | Description
 # **create_album_studio**
 > create_album_studio(album_studio_resource=album_studio_resource)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):

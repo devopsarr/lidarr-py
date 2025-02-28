@@ -11,8 +11,6 @@ Method | HTTP request | Description
 # **get_media_cover_album_by_filename**
 > get_media_cover_album_by_filename(album_id, filename)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -92,8 +90,6 @@ void (empty response body)
 
 # **get_media_cover_artist_by_filename**
 > get_media_cover_artist_by_filename(artist_id, filename)
-
-
 
 ### Example
 

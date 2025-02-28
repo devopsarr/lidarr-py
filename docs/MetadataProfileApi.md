@@ -14,8 +14,6 @@ Method | HTTP request | Description
 # **create_metadata_profile**
 > MetadataProfileResource create_metadata_profile(metadata_profile_resource=metadata_profile_resource)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -97,8 +95,6 @@ Name | Type | Description  | Notes
 # **delete_metadata_profile**
 > delete_metadata_profile(id)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -176,8 +172,6 @@ void (empty response body)
 
 # **get_metadata_profile_by_id**
 > MetadataProfileResource get_metadata_profile_by_id(id)
-
-
 
 ### Example
 
@@ -260,8 +254,6 @@ Name | Type | Description  | Notes
 # **list_metadata_profile**
 > List[MetadataProfileResource] list_metadata_profile()
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -338,8 +330,6 @@ This endpoint does not need any parameter.
 
 # **update_metadata_profile**
 > MetadataProfileResource update_metadata_profile(id, metadata_profile_resource=metadata_profile_resource)
-
-
 
 ### Example
 

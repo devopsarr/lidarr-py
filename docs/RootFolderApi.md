@@ -14,8 +14,6 @@ Method | HTTP request | Description
 # **create_root_folder**
 > RootFolderResource create_root_folder(root_folder_resource=root_folder_resource)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -97,8 +95,6 @@ Name | Type | Description  | Notes
 # **delete_root_folder**
 > delete_root_folder(id)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -176,8 +172,6 @@ void (empty response body)
 
 # **get_root_folder_by_id**
 > RootFolderResource get_root_folder_by_id(id)
-
-
 
 ### Example
 
@@ -260,8 +254,6 @@ Name | Type | Description  | Notes
 # **list_root_folder**
 > List[RootFolderResource] list_root_folder()
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -338,8 +330,6 @@ This endpoint does not need any parameter.
 
 # **update_root_folder**
 > RootFolderResource update_root_folder(id, root_folder_resource=root_folder_resource)
-
-
 
 ### Example
 

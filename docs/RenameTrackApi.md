@@ -10,8 +10,6 @@ Method | HTTP request | Description
 # **list_rename**
 > List[RenameTrackResource] list_rename(artist_id=artist_id, album_id=album_id)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):

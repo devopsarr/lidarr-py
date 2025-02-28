@@ -10,8 +10,6 @@ Method | HTTP request | Description
 # **list_search**
 > List[SearchResource] list_search(term=term)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):

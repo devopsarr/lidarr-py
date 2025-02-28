@@ -10,8 +10,6 @@ Method | HTTP request | Description
 # **get_metadataprofile_schema**
 > MetadataProfileResource get_metadataprofile_schema()
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
