@@ -10,8 +10,6 @@ Method | HTTP request | Description
 # **list_artist_lookup**
 > List[ArtistResource] list_artist_lookup(term=term)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):

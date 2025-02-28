@@ -15,8 +15,6 @@ Method | HTTP request | Description
 # **delete_track_file**
 > delete_track_file(id)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -94,8 +92,6 @@ void (empty response body)
 
 # **delete_track_file_bulk**
 > delete_track_file_bulk(track_file_list_resource=track_file_list_resource)
-
-
 
 ### Example
 
@@ -175,8 +171,6 @@ void (empty response body)
 
 # **get_track_file_by_id**
 > TrackFileResource get_track_file_by_id(id)
-
-
 
 ### Example
 
@@ -258,8 +252,6 @@ Name | Type | Description  | Notes
 
 # **list_track_file**
 > List[TrackFileResource] list_track_file(artist_id=artist_id, track_file_ids=track_file_ids, album_id=album_id, unmapped=unmapped)
-
-
 
 ### Example
 
@@ -348,8 +340,6 @@ Name | Type | Description  | Notes
 # **put_track_file_editor**
 > put_track_file_editor(track_file_list_resource=track_file_list_resource)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -428,8 +418,6 @@ void (empty response body)
 
 # **update_track_file**
 > TrackFileResource update_track_file(id, track_file_resource=track_file_resource)
-
-
 
 ### Example
 
