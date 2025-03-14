@@ -11,8 +11,6 @@ Method | HTTP request | Description
 # **create_manual_import**
 > create_manual_import(manual_import_update_resource=manual_import_update_resource)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -91,8 +89,6 @@ void (empty response body)
 
 # **list_manual_import**
 > List[ManualImportResource] list_manual_import(folder=folder, download_id=download_id, artist_id=artist_id, filter_existing_files=filter_existing_files, replace_existing_files=replace_existing_files)
-
-
 
 ### Example
 

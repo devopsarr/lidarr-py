@@ -14,8 +14,6 @@ Method | HTTP request | Description
 # **create_artist**
 > ArtistResource create_artist(artist_resource=artist_resource)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -96,8 +94,6 @@ Name | Type | Description  | Notes
 
 # **delete_artist**
 > delete_artist(id, delete_files=delete_files, add_import_list_exclusion=add_import_list_exclusion)
-
-
 
 ### Example
 
@@ -181,8 +177,6 @@ void (empty response body)
 # **get_artist_by_id**
 > ArtistResource get_artist_by_id(id)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -264,8 +258,6 @@ Name | Type | Description  | Notes
 # **list_artist**
 > List[ArtistResource] list_artist(mb_id=mb_id)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -346,8 +338,6 @@ Name | Type | Description  | Notes
 
 # **update_artist**
 > ArtistResource update_artist(id, move_files=move_files, artist_resource=artist_resource)
-
-
 
 ### Example
 
