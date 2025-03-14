@@ -11,8 +11,6 @@ Method | HTTP request | Description
 # **create_release**
 > ReleaseResource create_release(release_resource=release_resource)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -93,8 +91,6 @@ Name | Type | Description  | Notes
 
 # **list_release**
 > List[ReleaseResource] list_release(album_id=album_id, artist_id=artist_id)
-
-
 
 ### Example
 

@@ -15,8 +15,6 @@ Method | HTTP request | Description
 # **create_album**
 > AlbumResource create_album(album_resource=album_resource)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -97,8 +95,6 @@ Name | Type | Description  | Notes
 
 # **delete_album**
 > delete_album(id, delete_files=delete_files, add_import_list_exclusion=add_import_list_exclusion)
-
-
 
 ### Example
 
@@ -182,8 +178,6 @@ void (empty response body)
 # **get_album_by_id**
 > AlbumResource get_album_by_id(id)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -264,8 +258,6 @@ Name | Type | Description  | Notes
 
 # **list_album**
 > List[AlbumResource] list_album(artist_id=artist_id, album_ids=album_ids, foreign_album_id=foreign_album_id, include_all_artist_albums=include_all_artist_albums)
-
-
 
 ### Example
 
@@ -354,8 +346,6 @@ Name | Type | Description  | Notes
 # **put_album_monitor**
 > put_album_monitor(albums_monitored_resource=albums_monitored_resource)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -434,8 +424,6 @@ void (empty response body)
 
 # **update_album**
 > AlbumResource update_album(id, album_resource=album_resource)
-
-
 
 ### Example
 

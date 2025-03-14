@@ -10,8 +10,6 @@ Method | HTTP request | Description
 # **list_retag**
 > List[RetagTrackResource] list_retag(artist_id=artist_id, album_id=album_id)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):

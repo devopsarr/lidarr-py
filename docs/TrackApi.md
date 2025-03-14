@@ -11,8 +11,6 @@ Method | HTTP request | Description
 # **get_track_by_id**
 > TrackResource get_track_by_id(id)
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
@@ -93,8 +91,6 @@ Name | Type | Description  | Notes
 
 # **list_track**
 > List[TrackResource] list_track(artist_id=artist_id, album_id=album_id, album_release_id=album_release_id, track_ids=track_ids)
-
-
 
 ### Example
 

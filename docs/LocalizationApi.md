@@ -10,8 +10,6 @@ Method | HTTP request | Description
 # **get_localization**
 > LocalizationResource get_localization()
 
-
-
 ### Example
 
 * Api Key Authentication (apikey):
