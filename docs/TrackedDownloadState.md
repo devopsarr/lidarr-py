@@ -9,6 +9,8 @@
 
 * `DOWNLOADFAILEDPENDING` (value: `'downloadFailedPending'`)
 
+* `IMPORTBLOCKED` (value: `'importBlocked'`)
+
 * `IMPORTPENDING` (value: `'importPending'`)
 
 * `IMPORTING` (value: `'importing'`)
