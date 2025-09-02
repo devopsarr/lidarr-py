@@ -16,229 +16,696 @@
 
 __version__ = "1.2.0" # x-release-please-version
 
-# import apis into sdk package
-from lidarr.api.album_api import AlbumApi
-from lidarr.api.album_lookup_api import AlbumLookupApi
-from lidarr.api.album_studio_api import AlbumStudioApi
-from lidarr.api.api_info_api import ApiInfoApi
-from lidarr.api.artist_api import ArtistApi
-from lidarr.api.artist_editor_api import ArtistEditorApi
-from lidarr.api.artist_lookup_api import ArtistLookupApi
-from lidarr.api.authentication_api import AuthenticationApi
-from lidarr.api.auto_tagging_api import AutoTaggingApi
-from lidarr.api.backup_api import BackupApi
-from lidarr.api.blocklist_api import BlocklistApi
-from lidarr.api.calendar_api import CalendarApi
-from lidarr.api.calendar_feed_api import CalendarFeedApi
-from lidarr.api.command_api import CommandApi
-from lidarr.api.custom_filter_api import CustomFilterApi
-from lidarr.api.custom_format_api import CustomFormatApi
-from lidarr.api.cutoff_api import CutoffApi
-from lidarr.api.delay_profile_api import DelayProfileApi
-from lidarr.api.disk_space_api import DiskSpaceApi
-from lidarr.api.download_client_api import DownloadClientApi
-from lidarr.api.download_client_config_api import DownloadClientConfigApi
-from lidarr.api.file_system_api import FileSystemApi
-from lidarr.api.health_api import HealthApi
-from lidarr.api.history_api import HistoryApi
-from lidarr.api.host_config_api import HostConfigApi
-from lidarr.api.import_list_api import ImportListApi
-from lidarr.api.import_list_exclusion_api import ImportListExclusionApi
-from lidarr.api.indexer_api import IndexerApi
-from lidarr.api.indexer_config_api import IndexerConfigApi
-from lidarr.api.indexer_flag_api import IndexerFlagApi
-from lidarr.api.language_api import LanguageApi
-from lidarr.api.localization_api import LocalizationApi
-from lidarr.api.log_api import LogApi
-from lidarr.api.log_file_api import LogFileApi
-from lidarr.api.manual_import_api import ManualImportApi
-from lidarr.api.media_cover_api import MediaCoverApi
-from lidarr.api.media_management_config_api import MediaManagementConfigApi
-from lidarr.api.metadata_api import MetadataApi
-from lidarr.api.metadata_profile_api import MetadataProfileApi
-from lidarr.api.metadata_profile_schema_api import MetadataProfileSchemaApi
-from lidarr.api.metadata_provider_config_api import MetadataProviderConfigApi
-from lidarr.api.missing_api import MissingApi
-from lidarr.api.naming_config_api import NamingConfigApi
-from lidarr.api.notification_api import NotificationApi
-from lidarr.api.parse_api import ParseApi
-from lidarr.api.ping_api import PingApi
-from lidarr.api.quality_definition_api import QualityDefinitionApi
-from lidarr.api.quality_profile_api import QualityProfileApi
-from lidarr.api.quality_profile_schema_api import QualityProfileSchemaApi
-from lidarr.api.queue_api import QueueApi
-from lidarr.api.queue_action_api import QueueActionApi
-from lidarr.api.queue_details_api import QueueDetailsApi
-from lidarr.api.queue_status_api import QueueStatusApi
-from lidarr.api.release_api import ReleaseApi
-from lidarr.api.release_profile_api import ReleaseProfileApi
-from lidarr.api.release_push_api import ReleasePushApi
-from lidarr.api.remote_path_mapping_api import RemotePathMappingApi
-from lidarr.api.rename_track_api import RenameTrackApi
-from lidarr.api.retag_track_api import RetagTrackApi
-from lidarr.api.root_folder_api import RootFolderApi
-from lidarr.api.search_api import SearchApi
-from lidarr.api.static_resource_api import StaticResourceApi
-from lidarr.api.system_api import SystemApi
-from lidarr.api.tag_api import TagApi
-from lidarr.api.tag_details_api import TagDetailsApi
-from lidarr.api.task_api import TaskApi
-from lidarr.api.track_api import TrackApi
-from lidarr.api.track_file_api import TrackFileApi
-from lidarr.api.ui_config_api import UiConfigApi
-from lidarr.api.update_api import UpdateApi
-from lidarr.api.update_log_file_api import UpdateLogFileApi
+# Define package exports
+__all__ = [
+    "AlbumApi",
+    "AlbumLookupApi",
+    "AlbumStudioApi",
+    "ApiInfoApi",
+    "ArtistApi",
+    "ArtistEditorApi",
+    "ArtistLookupApi",
+    "AuthenticationApi",
+    "AutoTaggingApi",
+    "BackupApi",
+    "BlocklistApi",
+    "CalendarApi",
+    "CalendarFeedApi",
+    "CommandApi",
+    "CustomFilterApi",
+    "CustomFormatApi",
+    "CutoffApi",
+    "DelayProfileApi",
+    "DiskSpaceApi",
+    "DownloadClientApi",
+    "DownloadClientConfigApi",
+    "FileSystemApi",
+    "HealthApi",
+    "HistoryApi",
+    "HostConfigApi",
+    "ImportListApi",
+    "ImportListExclusionApi",
+    "IndexerApi",
+    "IndexerConfigApi",
+    "IndexerFlagApi",
+    "LanguageApi",
+    "LocalizationApi",
+    "LogApi",
+    "LogFileApi",
+    "ManualImportApi",
+    "MediaCoverApi",
+    "MediaManagementConfigApi",
+    "MetadataApi",
+    "MetadataProfileApi",
+    "MetadataProfileSchemaApi",
+    "MetadataProviderConfigApi",
+    "MissingApi",
+    "NamingConfigApi",
+    "NotificationApi",
+    "ParseApi",
+    "PingApi",
+    "QualityDefinitionApi",
+    "QualityProfileApi",
+    "QualityProfileSchemaApi",
+    "QueueApi",
+    "QueueActionApi",
+    "QueueDetailsApi",
+    "QueueStatusApi",
+    "ReleaseApi",
+    "ReleaseProfileApi",
+    "ReleasePushApi",
+    "RemotePathMappingApi",
+    "RenameTrackApi",
+    "RetagTrackApi",
+    "RootFolderApi",
+    "SearchApi",
+    "StaticResourceApi",
+    "SystemApi",
+    "TagApi",
+    "TagDetailsApi",
+    "TaskApi",
+    "TrackApi",
+    "TrackFileApi",
+    "UiConfigApi",
+    "UpdateApi",
+    "UpdateLogFileApi",
+    "ApiResponse",
+    "ApiClient",
+    "Configuration",
+    "OpenApiException",
+    "ApiTypeError",
+    "ApiValueError",
+    "ApiKeyError",
+    "ApiAttributeError",
+    "ApiException",
+    "AddAlbumOptions",
+    "AddArtistOptions",
+    "AlbumAddType",
+    "AlbumReleaseResource",
+    "AlbumResource",
+    "AlbumResourcePagingResource",
+    "AlbumStatisticsResource",
+    "AlbumStudioArtistResource",
+    "AlbumStudioResource",
+    "AlbumsMonitoredResource",
+    "AllowFingerprinting",
+    "ApplyTags",
+    "ArtistEditorResource",
+    "ArtistResource",
+    "ArtistStatisticsResource",
+    "ArtistStatusType",
+    "ArtistTitleInfo",
+    "AuthenticationRequiredType",
+    "AuthenticationType",
+    "AutoTaggingResource",
+    "AutoTaggingSpecificationSchema",
+    "BackupResource",
+    "BackupType",
+    "BlocklistBulkResource",
+    "BlocklistResource",
+    "BlocklistResourcePagingResource",
+    "CertificateValidationType",
+    "Command",
+    "CommandPriority",
+    "CommandResource",
+    "CommandResult",
+    "CommandStatus",
+    "CommandTrigger",
+    "ContractField",
+    "CustomFilterResource",
+    "CustomFormatBulkResource",
+    "CustomFormatResource",
+    "CustomFormatSpecificationSchema",
+    "DatabaseType",
+    "DelayProfileResource",
+    "DiskSpaceResource",
+    "DownloadClientBulkResource",
+    "DownloadClientConfigResource",
+    "DownloadClientResource",
+    "DownloadProtocol",
+    "EntityHistoryEventType",
+    "FileDateType",
+    "HealthCheckResult",
+    "HealthResource",
+    "HistoryResource",
+    "HistoryResourcePagingResource",
+    "HostConfigResource",
+    "ImportListBulkResource",
+    "ImportListExclusionResource",
+    "ImportListMonitorType",
+    "ImportListResource",
+    "ImportListType",
+    "IndexerBulkResource",
+    "IndexerConfigResource",
+    "IndexerFlagResource",
+    "IndexerResource",
+    "IsoCountry",
+    "LanguageResource",
+    "Links",
+    "LocalizationResource",
+    "LogFileResource",
+    "LogResource",
+    "LogResourcePagingResource",
+    "ManualImportResource",
+    "ManualImportUpdateResource",
+    "MediaCover",
+    "MediaCoverTypes",
+    "MediaInfoModel",
+    "MediaInfoResource",
+    "MediaManagementConfigResource",
+    "MediumResource",
+    "Member",
+    "MetadataProfileResource",
+    "MetadataProviderConfigResource",
+    "MetadataResource",
+    "MonitorTypes",
+    "MonitoringOptions",
+    "NamingConfigResource",
+    "NewItemMonitorTypes",
+    "NotificationResource",
+    "ParseResource",
+    "ParsedAlbumInfo",
+    "ParsedTrackInfo",
+    "PingResource",
+    "PrimaryAlbumType",
+    "PrivacyLevel",
+    "ProfileFormatItemResource",
+    "ProfilePrimaryAlbumTypeItemResource",
+    "ProfileReleaseStatusItemResource",
+    "ProfileSecondaryAlbumTypeItemResource",
+    "ProperDownloadTypes",
+    "ProviderMessage",
+    "ProviderMessageType",
+    "ProxyType",
+    "Quality",
+    "QualityDefinitionResource",
+    "QualityModel",
+    "QualityProfileQualityItemResource",
+    "QualityProfileResource",
+    "QueueBulkResource",
+    "QueueResource",
+    "QueueResourcePagingResource",
+    "QueueStatusResource",
+    "Ratings",
+    "Rejection",
+    "RejectionType",
+    "ReleaseProfileResource",
+    "ReleaseResource",
+    "ReleaseStatus",
+    "RemotePathMappingResource",
+    "RenameTrackResource",
+    "RescanAfterRefreshType",
+    "RetagTrackResource",
+    "Revision",
+    "RootFolderResource",
+    "RuntimeMode",
+    "SearchResource",
+    "SecondaryAlbumType",
+    "SelectOption",
+    "SortDirection",
+    "SystemResource",
+    "TagDetailsResource",
+    "TagDifference",
+    "TagResource",
+    "TaskResource",
+    "TrackFileListResource",
+    "TrackFileResource",
+    "TrackResource",
+    "TrackedDownloadState",
+    "TrackedDownloadStatus",
+    "TrackedDownloadStatusMessage",
+    "UiConfigResource",
+    "UpdateChanges",
+    "UpdateMechanism",
+    "UpdateResource",
+    "WriteAudioTagsType",
+]
+
+if __import__("typing").TYPE_CHECKING:
+    # import apis into sdk package
+    from lidarr.api.album_api import AlbumApi as AlbumApi
+    from lidarr.api.album_lookup_api import AlbumLookupApi as AlbumLookupApi
+    from lidarr.api.album_studio_api import AlbumStudioApi as AlbumStudioApi
+    from lidarr.api.api_info_api import ApiInfoApi as ApiInfoApi
+    from lidarr.api.artist_api import ArtistApi as ArtistApi
+    from lidarr.api.artist_editor_api import ArtistEditorApi as ArtistEditorApi
+    from lidarr.api.artist_lookup_api import ArtistLookupApi as ArtistLookupApi
+    from lidarr.api.authentication_api import AuthenticationApi as AuthenticationApi
+    from lidarr.api.auto_tagging_api import AutoTaggingApi as AutoTaggingApi
+    from lidarr.api.backup_api import BackupApi as BackupApi
+    from lidarr.api.blocklist_api import BlocklistApi as BlocklistApi
+    from lidarr.api.calendar_api import CalendarApi as CalendarApi
+    from lidarr.api.calendar_feed_api import CalendarFeedApi as CalendarFeedApi
+    from lidarr.api.command_api import CommandApi as CommandApi
+    from lidarr.api.custom_filter_api import CustomFilterApi as CustomFilterApi
+    from lidarr.api.custom_format_api import CustomFormatApi as CustomFormatApi
+    from lidarr.api.cutoff_api import CutoffApi as CutoffApi
+    from lidarr.api.delay_profile_api import DelayProfileApi as DelayProfileApi
+    from lidarr.api.disk_space_api import DiskSpaceApi as DiskSpaceApi
+    from lidarr.api.download_client_api import DownloadClientApi as DownloadClientApi
+    from lidarr.api.download_client_config_api import DownloadClientConfigApi as DownloadClientConfigApi
+    from lidarr.api.file_system_api import FileSystemApi as FileSystemApi
+    from lidarr.api.health_api import HealthApi as HealthApi
+    from lidarr.api.history_api import HistoryApi as HistoryApi
+    from lidarr.api.host_config_api import HostConfigApi as HostConfigApi
+    from lidarr.api.import_list_api import ImportListApi as ImportListApi
+    from lidarr.api.import_list_exclusion_api import ImportListExclusionApi as ImportListExclusionApi
+    from lidarr.api.indexer_api import IndexerApi as IndexerApi
+    from lidarr.api.indexer_config_api import IndexerConfigApi as IndexerConfigApi
+    from lidarr.api.indexer_flag_api import IndexerFlagApi as IndexerFlagApi
+    from lidarr.api.language_api import LanguageApi as LanguageApi
+    from lidarr.api.localization_api import LocalizationApi as LocalizationApi
+    from lidarr.api.log_api import LogApi as LogApi
+    from lidarr.api.log_file_api import LogFileApi as LogFileApi
+    from lidarr.api.manual_import_api import ManualImportApi as ManualImportApi
+    from lidarr.api.media_cover_api import MediaCoverApi as MediaCoverApi
+    from lidarr.api.media_management_config_api import MediaManagementConfigApi as MediaManagementConfigApi
+    from lidarr.api.metadata_api import MetadataApi as MetadataApi
+    from lidarr.api.metadata_profile_api import MetadataProfileApi as MetadataProfileApi
+    from lidarr.api.metadata_profile_schema_api import MetadataProfileSchemaApi as MetadataProfileSchemaApi
+    from lidarr.api.metadata_provider_config_api import MetadataProviderConfigApi as MetadataProviderConfigApi
+    from lidarr.api.missing_api import MissingApi as MissingApi
+    from lidarr.api.naming_config_api import NamingConfigApi as NamingConfigApi
+    from lidarr.api.notification_api import NotificationApi as NotificationApi
+    from lidarr.api.parse_api import ParseApi as ParseApi
+    from lidarr.api.ping_api import PingApi as PingApi
+    from lidarr.api.quality_definition_api import QualityDefinitionApi as QualityDefinitionApi
+    from lidarr.api.quality_profile_api import QualityProfileApi as QualityProfileApi
+    from lidarr.api.quality_profile_schema_api import QualityProfileSchemaApi as QualityProfileSchemaApi
+    from lidarr.api.queue_api import QueueApi as QueueApi
+    from lidarr.api.queue_action_api import QueueActionApi as QueueActionApi
+    from lidarr.api.queue_details_api import QueueDetailsApi as QueueDetailsApi
+    from lidarr.api.queue_status_api import QueueStatusApi as QueueStatusApi
+    from lidarr.api.release_api import ReleaseApi as ReleaseApi
+    from lidarr.api.release_profile_api import ReleaseProfileApi as ReleaseProfileApi
+    from lidarr.api.release_push_api import ReleasePushApi as ReleasePushApi
+    from lidarr.api.remote_path_mapping_api import RemotePathMappingApi as RemotePathMappingApi
+    from lidarr.api.rename_track_api import RenameTrackApi as RenameTrackApi
+    from lidarr.api.retag_track_api import RetagTrackApi as RetagTrackApi
+    from lidarr.api.root_folder_api import RootFolderApi as RootFolderApi
+    from lidarr.api.search_api import SearchApi as SearchApi
+    from lidarr.api.static_resource_api import StaticResourceApi as StaticResourceApi
+    from lidarr.api.system_api import SystemApi as SystemApi
+    from lidarr.api.tag_api import TagApi as TagApi
+    from lidarr.api.tag_details_api import TagDetailsApi as TagDetailsApi
+    from lidarr.api.task_api import TaskApi as TaskApi
+    from lidarr.api.track_api import TrackApi as TrackApi
+    from lidarr.api.track_file_api import TrackFileApi as TrackFileApi
+    from lidarr.api.ui_config_api import UiConfigApi as UiConfigApi
+    from lidarr.api.update_api import UpdateApi as UpdateApi
+    from lidarr.api.update_log_file_api import UpdateLogFileApi as UpdateLogFileApi
+    
+    # import ApiClient
+    from lidarr.api_response import ApiResponse as ApiResponse
+    from lidarr.api_client import ApiClient as ApiClient
+    from lidarr.configuration import Configuration as Configuration
+    from lidarr.exceptions import OpenApiException as OpenApiException
+    from lidarr.exceptions import ApiTypeError as ApiTypeError
+    from lidarr.exceptions import ApiValueError as ApiValueError
+    from lidarr.exceptions import ApiKeyError as ApiKeyError
+    from lidarr.exceptions import ApiAttributeError as ApiAttributeError
+    from lidarr.exceptions import ApiException as ApiException
+    
+    # import models into sdk package
+    from lidarr.models.add_album_options import AddAlbumOptions as AddAlbumOptions
+    from lidarr.models.add_artist_options import AddArtistOptions as AddArtistOptions
+    from lidarr.models.album_add_type import AlbumAddType as AlbumAddType
+    from lidarr.models.album_release_resource import AlbumReleaseResource as AlbumReleaseResource
+    from lidarr.models.album_resource import AlbumResource as AlbumResource
+    from lidarr.models.album_resource_paging_resource import AlbumResourcePagingResource as AlbumResourcePagingResource
+    from lidarr.models.album_statistics_resource import AlbumStatisticsResource as AlbumStatisticsResource
+    from lidarr.models.album_studio_artist_resource import AlbumStudioArtistResource as AlbumStudioArtistResource
+    from lidarr.models.album_studio_resource import AlbumStudioResource as AlbumStudioResource
+    from lidarr.models.albums_monitored_resource import AlbumsMonitoredResource as AlbumsMonitoredResource
+    from lidarr.models.allow_fingerprinting import AllowFingerprinting as AllowFingerprinting
+    from lidarr.models.apply_tags import ApplyTags as ApplyTags
+    from lidarr.models.artist_editor_resource import ArtistEditorResource as ArtistEditorResource
+    from lidarr.models.artist_resource import ArtistResource as ArtistResource
+    from lidarr.models.artist_statistics_resource import ArtistStatisticsResource as ArtistStatisticsResource
+    from lidarr.models.artist_status_type import ArtistStatusType as ArtistStatusType
+    from lidarr.models.artist_title_info import ArtistTitleInfo as ArtistTitleInfo
+    from lidarr.models.authentication_required_type import AuthenticationRequiredType as AuthenticationRequiredType
+    from lidarr.models.authentication_type import AuthenticationType as AuthenticationType
+    from lidarr.models.auto_tagging_resource import AutoTaggingResource as AutoTaggingResource
+    from lidarr.models.auto_tagging_specification_schema import AutoTaggingSpecificationSchema as AutoTaggingSpecificationSchema
+    from lidarr.models.backup_resource import BackupResource as BackupResource
+    from lidarr.models.backup_type import BackupType as BackupType
+    from lidarr.models.blocklist_bulk_resource import BlocklistBulkResource as BlocklistBulkResource
+    from lidarr.models.blocklist_resource import BlocklistResource as BlocklistResource
+    from lidarr.models.blocklist_resource_paging_resource import BlocklistResourcePagingResource as BlocklistResourcePagingResource
+    from lidarr.models.certificate_validation_type import CertificateValidationType as CertificateValidationType
+    from lidarr.models.command import Command as Command
+    from lidarr.models.command_priority import CommandPriority as CommandPriority
+    from lidarr.models.command_resource import CommandResource as CommandResource
+    from lidarr.models.command_result import CommandResult as CommandResult
+    from lidarr.models.command_status import CommandStatus as CommandStatus
+    from lidarr.models.command_trigger import CommandTrigger as CommandTrigger
+    from lidarr.models.contract_field import ContractField as ContractField
+    from lidarr.models.custom_filter_resource import CustomFilterResource as CustomFilterResource
+    from lidarr.models.custom_format_bulk_resource import CustomFormatBulkResource as CustomFormatBulkResource
+    from lidarr.models.custom_format_resource import CustomFormatResource as CustomFormatResource
+    from lidarr.models.custom_format_specification_schema import CustomFormatSpecificationSchema as CustomFormatSpecificationSchema
+    from lidarr.models.database_type import DatabaseType as DatabaseType
+    from lidarr.models.delay_profile_resource import DelayProfileResource as DelayProfileResource
+    from lidarr.models.disk_space_resource import DiskSpaceResource as DiskSpaceResource
+    from lidarr.models.download_client_bulk_resource import DownloadClientBulkResource as DownloadClientBulkResource
+    from lidarr.models.download_client_config_resource import DownloadClientConfigResource as DownloadClientConfigResource
+    from lidarr.models.download_client_resource import DownloadClientResource as DownloadClientResource
+    from lidarr.models.download_protocol import DownloadProtocol as DownloadProtocol
+    from lidarr.models.entity_history_event_type import EntityHistoryEventType as EntityHistoryEventType
+    from lidarr.models.file_date_type import FileDateType as FileDateType
+    from lidarr.models.health_check_result import HealthCheckResult as HealthCheckResult
+    from lidarr.models.health_resource import HealthResource as HealthResource
+    from lidarr.models.history_resource import HistoryResource as HistoryResource
+    from lidarr.models.history_resource_paging_resource import HistoryResourcePagingResource as HistoryResourcePagingResource
+    from lidarr.models.host_config_resource import HostConfigResource as HostConfigResource
+    from lidarr.models.import_list_bulk_resource import ImportListBulkResource as ImportListBulkResource
+    from lidarr.models.import_list_exclusion_resource import ImportListExclusionResource as ImportListExclusionResource
+    from lidarr.models.import_list_monitor_type import ImportListMonitorType as ImportListMonitorType
+    from lidarr.models.import_list_resource import ImportListResource as ImportListResource
+    from lidarr.models.import_list_type import ImportListType as ImportListType
+    from lidarr.models.indexer_bulk_resource import IndexerBulkResource as IndexerBulkResource
+    from lidarr.models.indexer_config_resource import IndexerConfigResource as IndexerConfigResource
+    from lidarr.models.indexer_flag_resource import IndexerFlagResource as IndexerFlagResource
+    from lidarr.models.indexer_resource import IndexerResource as IndexerResource
+    from lidarr.models.iso_country import IsoCountry as IsoCountry
+    from lidarr.models.language_resource import LanguageResource as LanguageResource
+    from lidarr.models.links import Links as Links
+    from lidarr.models.localization_resource import LocalizationResource as LocalizationResource
+    from lidarr.models.log_file_resource import LogFileResource as LogFileResource
+    from lidarr.models.log_resource import LogResource as LogResource
+    from lidarr.models.log_resource_paging_resource import LogResourcePagingResource as LogResourcePagingResource
+    from lidarr.models.manual_import_resource import ManualImportResource as ManualImportResource
+    from lidarr.models.manual_import_update_resource import ManualImportUpdateResource as ManualImportUpdateResource
+    from lidarr.models.media_cover import MediaCover as MediaCover
+    from lidarr.models.media_cover_types import MediaCoverTypes as MediaCoverTypes
+    from lidarr.models.media_info_model import MediaInfoModel as MediaInfoModel
+    from lidarr.models.media_info_resource import MediaInfoResource as MediaInfoResource
+    from lidarr.models.media_management_config_resource import MediaManagementConfigResource as MediaManagementConfigResource
+    from lidarr.models.medium_resource import MediumResource as MediumResource
+    from lidarr.models.member import Member as Member
+    from lidarr.models.metadata_profile_resource import MetadataProfileResource as MetadataProfileResource
+    from lidarr.models.metadata_provider_config_resource import MetadataProviderConfigResource as MetadataProviderConfigResource
+    from lidarr.models.metadata_resource import MetadataResource as MetadataResource
+    from lidarr.models.monitor_types import MonitorTypes as MonitorTypes
+    from lidarr.models.monitoring_options import MonitoringOptions as MonitoringOptions
+    from lidarr.models.naming_config_resource import NamingConfigResource as NamingConfigResource
+    from lidarr.models.new_item_monitor_types import NewItemMonitorTypes as NewItemMonitorTypes
+    from lidarr.models.notification_resource import NotificationResource as NotificationResource
+    from lidarr.models.parse_resource import ParseResource as ParseResource
+    from lidarr.models.parsed_album_info import ParsedAlbumInfo as ParsedAlbumInfo
+    from lidarr.models.parsed_track_info import ParsedTrackInfo as ParsedTrackInfo
+    from lidarr.models.ping_resource import PingResource as PingResource
+    from lidarr.models.primary_album_type import PrimaryAlbumType as PrimaryAlbumType
+    from lidarr.models.privacy_level import PrivacyLevel as PrivacyLevel
+    from lidarr.models.profile_format_item_resource import ProfileFormatItemResource as ProfileFormatItemResource
+    from lidarr.models.profile_primary_album_type_item_resource import ProfilePrimaryAlbumTypeItemResource as ProfilePrimaryAlbumTypeItemResource
+    from lidarr.models.profile_release_status_item_resource import ProfileReleaseStatusItemResource as ProfileReleaseStatusItemResource
+    from lidarr.models.profile_secondary_album_type_item_resource import ProfileSecondaryAlbumTypeItemResource as ProfileSecondaryAlbumTypeItemResource
+    from lidarr.models.proper_download_types import ProperDownloadTypes as ProperDownloadTypes
+    from lidarr.models.provider_message import ProviderMessage as ProviderMessage
+    from lidarr.models.provider_message_type import ProviderMessageType as ProviderMessageType
+    from lidarr.models.proxy_type import ProxyType as ProxyType
+    from lidarr.models.quality import Quality as Quality
+    from lidarr.models.quality_definition_resource import QualityDefinitionResource as QualityDefinitionResource
+    from lidarr.models.quality_model import QualityModel as QualityModel
+    from lidarr.models.quality_profile_quality_item_resource import QualityProfileQualityItemResource as QualityProfileQualityItemResource
+    from lidarr.models.quality_profile_resource import QualityProfileResource as QualityProfileResource
+    from lidarr.models.queue_bulk_resource import QueueBulkResource as QueueBulkResource
+    from lidarr.models.queue_resource import QueueResource as QueueResource
+    from lidarr.models.queue_resource_paging_resource import QueueResourcePagingResource as QueueResourcePagingResource
+    from lidarr.models.queue_status_resource import QueueStatusResource as QueueStatusResource
+    from lidarr.models.ratings import Ratings as Ratings
+    from lidarr.models.rejection import Rejection as Rejection
+    from lidarr.models.rejection_type import RejectionType as RejectionType
+    from lidarr.models.release_profile_resource import ReleaseProfileResource as ReleaseProfileResource
+    from lidarr.models.release_resource import ReleaseResource as ReleaseResource
+    from lidarr.models.release_status import ReleaseStatus as ReleaseStatus
+    from lidarr.models.remote_path_mapping_resource import RemotePathMappingResource as RemotePathMappingResource
+    from lidarr.models.rename_track_resource import RenameTrackResource as RenameTrackResource
+    from lidarr.models.rescan_after_refresh_type import RescanAfterRefreshType as RescanAfterRefreshType
+    from lidarr.models.retag_track_resource import RetagTrackResource as RetagTrackResource
+    from lidarr.models.revision import Revision as Revision
+    from lidarr.models.root_folder_resource import RootFolderResource as RootFolderResource
+    from lidarr.models.runtime_mode import RuntimeMode as RuntimeMode
+    from lidarr.models.search_resource import SearchResource as SearchResource
+    from lidarr.models.secondary_album_type import SecondaryAlbumType as SecondaryAlbumType
+    from lidarr.models.select_option import SelectOption as SelectOption
+    from lidarr.models.sort_direction import SortDirection as SortDirection
+    from lidarr.models.system_resource import SystemResource as SystemResource
+    from lidarr.models.tag_details_resource import TagDetailsResource as TagDetailsResource
+    from lidarr.models.tag_difference import TagDifference as TagDifference
+    from lidarr.models.tag_resource import TagResource as TagResource
+    from lidarr.models.task_resource import TaskResource as TaskResource
+    from lidarr.models.track_file_list_resource import TrackFileListResource as TrackFileListResource
+    from lidarr.models.track_file_resource import TrackFileResource as TrackFileResource
+    from lidarr.models.track_resource import TrackResource as TrackResource
+    from lidarr.models.tracked_download_state import TrackedDownloadState as TrackedDownloadState
+    from lidarr.models.tracked_download_status import TrackedDownloadStatus as TrackedDownloadStatus
+    from lidarr.models.tracked_download_status_message import TrackedDownloadStatusMessage as TrackedDownloadStatusMessage
+    from lidarr.models.ui_config_resource import UiConfigResource as UiConfigResource
+    from lidarr.models.update_changes import UpdateChanges as UpdateChanges
+    from lidarr.models.update_mechanism import UpdateMechanism as UpdateMechanism
+    from lidarr.models.update_resource import UpdateResource as UpdateResource
+    from lidarr.models.write_audio_tags_type import WriteAudioTagsType as WriteAudioTagsType
+    
+else:
+    from lazy_imports import LazyModule, as_package, load
+
+    load(
+        LazyModule(
+            *as_package(__file__),
+            ("__version__", __version__),
+            ("__all__", __all__),
+            """# import apis into sdk package
+from lidarr.api.album_api import AlbumApi as AlbumApi
+from lidarr.api.album_lookup_api import AlbumLookupApi as AlbumLookupApi
+from lidarr.api.album_studio_api import AlbumStudioApi as AlbumStudioApi
+from lidarr.api.api_info_api import ApiInfoApi as ApiInfoApi
+from lidarr.api.artist_api import ArtistApi as ArtistApi
+from lidarr.api.artist_editor_api import ArtistEditorApi as ArtistEditorApi
+from lidarr.api.artist_lookup_api import ArtistLookupApi as ArtistLookupApi
+from lidarr.api.authentication_api import AuthenticationApi as AuthenticationApi
+from lidarr.api.auto_tagging_api import AutoTaggingApi as AutoTaggingApi
+from lidarr.api.backup_api import BackupApi as BackupApi
+from lidarr.api.blocklist_api import BlocklistApi as BlocklistApi
+from lidarr.api.calendar_api import CalendarApi as CalendarApi
+from lidarr.api.calendar_feed_api import CalendarFeedApi as CalendarFeedApi
+from lidarr.api.command_api import CommandApi as CommandApi
+from lidarr.api.custom_filter_api import CustomFilterApi as CustomFilterApi
+from lidarr.api.custom_format_api import CustomFormatApi as CustomFormatApi
+from lidarr.api.cutoff_api import CutoffApi as CutoffApi
+from lidarr.api.delay_profile_api import DelayProfileApi as DelayProfileApi
+from lidarr.api.disk_space_api import DiskSpaceApi as DiskSpaceApi
+from lidarr.api.download_client_api import DownloadClientApi as DownloadClientApi
+from lidarr.api.download_client_config_api import DownloadClientConfigApi as DownloadClientConfigApi
+from lidarr.api.file_system_api import FileSystemApi as FileSystemApi
+from lidarr.api.health_api import HealthApi as HealthApi
+from lidarr.api.history_api import HistoryApi as HistoryApi
+from lidarr.api.host_config_api import HostConfigApi as HostConfigApi
+from lidarr.api.import_list_api import ImportListApi as ImportListApi
+from lidarr.api.import_list_exclusion_api import ImportListExclusionApi as ImportListExclusionApi
+from lidarr.api.indexer_api import IndexerApi as IndexerApi
+from lidarr.api.indexer_config_api import IndexerConfigApi as IndexerConfigApi
+from lidarr.api.indexer_flag_api import IndexerFlagApi as IndexerFlagApi
+from lidarr.api.language_api import LanguageApi as LanguageApi
+from lidarr.api.localization_api import LocalizationApi as LocalizationApi
+from lidarr.api.log_api import LogApi as LogApi
+from lidarr.api.log_file_api import LogFileApi as LogFileApi
+from lidarr.api.manual_import_api import ManualImportApi as ManualImportApi
+from lidarr.api.media_cover_api import MediaCoverApi as MediaCoverApi
+from lidarr.api.media_management_config_api import MediaManagementConfigApi as MediaManagementConfigApi
+from lidarr.api.metadata_api import MetadataApi as MetadataApi
+from lidarr.api.metadata_profile_api import MetadataProfileApi as MetadataProfileApi
+from lidarr.api.metadata_profile_schema_api import MetadataProfileSchemaApi as MetadataProfileSchemaApi
+from lidarr.api.metadata_provider_config_api import MetadataProviderConfigApi as MetadataProviderConfigApi
+from lidarr.api.missing_api import MissingApi as MissingApi
+from lidarr.api.naming_config_api import NamingConfigApi as NamingConfigApi
+from lidarr.api.notification_api import NotificationApi as NotificationApi
+from lidarr.api.parse_api import ParseApi as ParseApi
+from lidarr.api.ping_api import PingApi as PingApi
+from lidarr.api.quality_definition_api import QualityDefinitionApi as QualityDefinitionApi
+from lidarr.api.quality_profile_api import QualityProfileApi as QualityProfileApi
+from lidarr.api.quality_profile_schema_api import QualityProfileSchemaApi as QualityProfileSchemaApi
+from lidarr.api.queue_api import QueueApi as QueueApi
+from lidarr.api.queue_action_api import QueueActionApi as QueueActionApi
+from lidarr.api.queue_details_api import QueueDetailsApi as QueueDetailsApi
+from lidarr.api.queue_status_api import QueueStatusApi as QueueStatusApi
+from lidarr.api.release_api import ReleaseApi as ReleaseApi
+from lidarr.api.release_profile_api import ReleaseProfileApi as ReleaseProfileApi
+from lidarr.api.release_push_api import ReleasePushApi as ReleasePushApi
+from lidarr.api.remote_path_mapping_api import RemotePathMappingApi as RemotePathMappingApi
+from lidarr.api.rename_track_api import RenameTrackApi as RenameTrackApi
+from lidarr.api.retag_track_api import RetagTrackApi as RetagTrackApi
+from lidarr.api.root_folder_api import RootFolderApi as RootFolderApi
+from lidarr.api.search_api import SearchApi as SearchApi
+from lidarr.api.static_resource_api import StaticResourceApi as StaticResourceApi
+from lidarr.api.system_api import SystemApi as SystemApi
+from lidarr.api.tag_api import TagApi as TagApi
+from lidarr.api.tag_details_api import TagDetailsApi as TagDetailsApi
+from lidarr.api.task_api import TaskApi as TaskApi
+from lidarr.api.track_api import TrackApi as TrackApi
+from lidarr.api.track_file_api import TrackFileApi as TrackFileApi
+from lidarr.api.ui_config_api import UiConfigApi as UiConfigApi
+from lidarr.api.update_api import UpdateApi as UpdateApi
+from lidarr.api.update_log_file_api import UpdateLogFileApi as UpdateLogFileApi
 
 # import ApiClient
-from lidarr.api_response import ApiResponse
-from lidarr.api_client import ApiClient
-from lidarr.configuration import Configuration
-from lidarr.exceptions import OpenApiException
-from lidarr.exceptions import ApiTypeError
-from lidarr.exceptions import ApiValueError
-from lidarr.exceptions import ApiKeyError
-from lidarr.exceptions import ApiAttributeError
-from lidarr.exceptions import ApiException
+from lidarr.api_response import ApiResponse as ApiResponse
+from lidarr.api_client import ApiClient as ApiClient
+from lidarr.configuration import Configuration as Configuration
+from lidarr.exceptions import OpenApiException as OpenApiException
+from lidarr.exceptions import ApiTypeError as ApiTypeError
+from lidarr.exceptions import ApiValueError as ApiValueError
+from lidarr.exceptions import ApiKeyError as ApiKeyError
+from lidarr.exceptions import ApiAttributeError as ApiAttributeError
+from lidarr.exceptions import ApiException as ApiException
 
 # import models into sdk package
-from lidarr.models.add_album_options import AddAlbumOptions
-from lidarr.models.add_artist_options import AddArtistOptions
-from lidarr.models.album_add_type import AlbumAddType
-from lidarr.models.album_release_resource import AlbumReleaseResource
-from lidarr.models.album_resource import AlbumResource
-from lidarr.models.album_resource_paging_resource import AlbumResourcePagingResource
-from lidarr.models.album_statistics_resource import AlbumStatisticsResource
-from lidarr.models.album_studio_artist_resource import AlbumStudioArtistResource
-from lidarr.models.album_studio_resource import AlbumStudioResource
-from lidarr.models.albums_monitored_resource import AlbumsMonitoredResource
-from lidarr.models.allow_fingerprinting import AllowFingerprinting
-from lidarr.models.apply_tags import ApplyTags
-from lidarr.models.artist_editor_resource import ArtistEditorResource
-from lidarr.models.artist_resource import ArtistResource
-from lidarr.models.artist_statistics_resource import ArtistStatisticsResource
-from lidarr.models.artist_status_type import ArtistStatusType
-from lidarr.models.artist_title_info import ArtistTitleInfo
-from lidarr.models.authentication_required_type import AuthenticationRequiredType
-from lidarr.models.authentication_type import AuthenticationType
-from lidarr.models.auto_tagging_resource import AutoTaggingResource
-from lidarr.models.auto_tagging_specification_schema import AutoTaggingSpecificationSchema
-from lidarr.models.backup_resource import BackupResource
-from lidarr.models.backup_type import BackupType
-from lidarr.models.blocklist_bulk_resource import BlocklistBulkResource
-from lidarr.models.blocklist_resource import BlocklistResource
-from lidarr.models.blocklist_resource_paging_resource import BlocklistResourcePagingResource
-from lidarr.models.certificate_validation_type import CertificateValidationType
-from lidarr.models.command import Command
-from lidarr.models.command_priority import CommandPriority
-from lidarr.models.command_resource import CommandResource
-from lidarr.models.command_result import CommandResult
-from lidarr.models.command_status import CommandStatus
-from lidarr.models.command_trigger import CommandTrigger
-from lidarr.models.contract_field import ContractField
-from lidarr.models.custom_filter_resource import CustomFilterResource
-from lidarr.models.custom_format_bulk_resource import CustomFormatBulkResource
-from lidarr.models.custom_format_resource import CustomFormatResource
-from lidarr.models.custom_format_specification_schema import CustomFormatSpecificationSchema
-from lidarr.models.database_type import DatabaseType
-from lidarr.models.delay_profile_resource import DelayProfileResource
-from lidarr.models.disk_space_resource import DiskSpaceResource
-from lidarr.models.download_client_bulk_resource import DownloadClientBulkResource
-from lidarr.models.download_client_config_resource import DownloadClientConfigResource
-from lidarr.models.download_client_resource import DownloadClientResource
-from lidarr.models.download_protocol import DownloadProtocol
-from lidarr.models.entity_history_event_type import EntityHistoryEventType
-from lidarr.models.file_date_type import FileDateType
-from lidarr.models.health_check_result import HealthCheckResult
-from lidarr.models.health_resource import HealthResource
-from lidarr.models.history_resource import HistoryResource
-from lidarr.models.history_resource_paging_resource import HistoryResourcePagingResource
-from lidarr.models.host_config_resource import HostConfigResource
-from lidarr.models.import_list_bulk_resource import ImportListBulkResource
-from lidarr.models.import_list_exclusion_resource import ImportListExclusionResource
-from lidarr.models.import_list_monitor_type import ImportListMonitorType
-from lidarr.models.import_list_resource import ImportListResource
-from lidarr.models.import_list_type import ImportListType
-from lidarr.models.indexer_bulk_resource import IndexerBulkResource
-from lidarr.models.indexer_config_resource import IndexerConfigResource
-from lidarr.models.indexer_flag_resource import IndexerFlagResource
-from lidarr.models.indexer_resource import IndexerResource
-from lidarr.models.iso_country import IsoCountry
-from lidarr.models.language_resource import LanguageResource
-from lidarr.models.links import Links
-from lidarr.models.localization_resource import LocalizationResource
-from lidarr.models.log_file_resource import LogFileResource
-from lidarr.models.log_resource import LogResource
-from lidarr.models.log_resource_paging_resource import LogResourcePagingResource
-from lidarr.models.manual_import_resource import ManualImportResource
-from lidarr.models.manual_import_update_resource import ManualImportUpdateResource
-from lidarr.models.media_cover import MediaCover
-from lidarr.models.media_cover_types import MediaCoverTypes
-from lidarr.models.media_info_model import MediaInfoModel
-from lidarr.models.media_info_resource import MediaInfoResource
-from lidarr.models.media_management_config_resource import MediaManagementConfigResource
-from lidarr.models.medium_resource import MediumResource
-from lidarr.models.member import Member
-from lidarr.models.metadata_profile_resource import MetadataProfileResource
-from lidarr.models.metadata_provider_config_resource import MetadataProviderConfigResource
-from lidarr.models.metadata_resource import MetadataResource
-from lidarr.models.monitor_types import MonitorTypes
-from lidarr.models.monitoring_options import MonitoringOptions
-from lidarr.models.naming_config_resource import NamingConfigResource
-from lidarr.models.new_item_monitor_types import NewItemMonitorTypes
-from lidarr.models.notification_resource import NotificationResource
-from lidarr.models.parse_resource import ParseResource
-from lidarr.models.parsed_album_info import ParsedAlbumInfo
-from lidarr.models.parsed_track_info import ParsedTrackInfo
-from lidarr.models.ping_resource import PingResource
-from lidarr.models.primary_album_type import PrimaryAlbumType
-from lidarr.models.privacy_level import PrivacyLevel
-from lidarr.models.profile_format_item_resource import ProfileFormatItemResource
-from lidarr.models.profile_primary_album_type_item_resource import ProfilePrimaryAlbumTypeItemResource
-from lidarr.models.profile_release_status_item_resource import ProfileReleaseStatusItemResource
-from lidarr.models.profile_secondary_album_type_item_resource import ProfileSecondaryAlbumTypeItemResource
-from lidarr.models.proper_download_types import ProperDownloadTypes
-from lidarr.models.provider_message import ProviderMessage
-from lidarr.models.provider_message_type import ProviderMessageType
-from lidarr.models.proxy_type import ProxyType
-from lidarr.models.quality import Quality
-from lidarr.models.quality_definition_resource import QualityDefinitionResource
-from lidarr.models.quality_model import QualityModel
-from lidarr.models.quality_profile_quality_item_resource import QualityProfileQualityItemResource
-from lidarr.models.quality_profile_resource import QualityProfileResource
-from lidarr.models.queue_bulk_resource import QueueBulkResource
-from lidarr.models.queue_resource import QueueResource
-from lidarr.models.queue_resource_paging_resource import QueueResourcePagingResource
-from lidarr.models.queue_status_resource import QueueStatusResource
-from lidarr.models.ratings import Ratings
-from lidarr.models.rejection import Rejection
-from lidarr.models.rejection_type import RejectionType
-from lidarr.models.release_profile_resource import ReleaseProfileResource
-from lidarr.models.release_resource import ReleaseResource
-from lidarr.models.release_status import ReleaseStatus
-from lidarr.models.remote_path_mapping_resource import RemotePathMappingResource
-from lidarr.models.rename_track_resource import RenameTrackResource
-from lidarr.models.rescan_after_refresh_type import RescanAfterRefreshType
-from lidarr.models.retag_track_resource import RetagTrackResource
-from lidarr.models.revision import Revision
-from lidarr.models.root_folder_resource import RootFolderResource
-from lidarr.models.runtime_mode import RuntimeMode
-from lidarr.models.search_resource import SearchResource
-from lidarr.models.secondary_album_type import SecondaryAlbumType
-from lidarr.models.select_option import SelectOption
-from lidarr.models.sort_direction import SortDirection
-from lidarr.models.system_resource import SystemResource
-from lidarr.models.tag_details_resource import TagDetailsResource
-from lidarr.models.tag_difference import TagDifference
-from lidarr.models.tag_resource import TagResource
-from lidarr.models.task_resource import TaskResource
-from lidarr.models.track_file_list_resource import TrackFileListResource
-from lidarr.models.track_file_resource import TrackFileResource
-from lidarr.models.track_resource import TrackResource
-from lidarr.models.tracked_download_state import TrackedDownloadState
-from lidarr.models.tracked_download_status import TrackedDownloadStatus
-from lidarr.models.tracked_download_status_message import TrackedDownloadStatusMessage
-from lidarr.models.ui_config_resource import UiConfigResource
-from lidarr.models.update_changes import UpdateChanges
-from lidarr.models.update_mechanism import UpdateMechanism
-from lidarr.models.update_resource import UpdateResource
-from lidarr.models.write_audio_tags_type import WriteAudioTagsType
+from lidarr.models.add_album_options import AddAlbumOptions as AddAlbumOptions
+from lidarr.models.add_artist_options import AddArtistOptions as AddArtistOptions
+from lidarr.models.album_add_type import AlbumAddType as AlbumAddType
+from lidarr.models.album_release_resource import AlbumReleaseResource as AlbumReleaseResource
+from lidarr.models.album_resource import AlbumResource as AlbumResource
+from lidarr.models.album_resource_paging_resource import AlbumResourcePagingResource as AlbumResourcePagingResource
+from lidarr.models.album_statistics_resource import AlbumStatisticsResource as AlbumStatisticsResource
+from lidarr.models.album_studio_artist_resource import AlbumStudioArtistResource as AlbumStudioArtistResource
+from lidarr.models.album_studio_resource import AlbumStudioResource as AlbumStudioResource
+from lidarr.models.albums_monitored_resource import AlbumsMonitoredResource as AlbumsMonitoredResource
+from lidarr.models.allow_fingerprinting import AllowFingerprinting as AllowFingerprinting
+from lidarr.models.apply_tags import ApplyTags as ApplyTags
+from lidarr.models.artist_editor_resource import ArtistEditorResource as ArtistEditorResource
+from lidarr.models.artist_resource import ArtistResource as ArtistResource
+from lidarr.models.artist_statistics_resource import ArtistStatisticsResource as ArtistStatisticsResource
+from lidarr.models.artist_status_type import ArtistStatusType as ArtistStatusType
+from lidarr.models.artist_title_info import ArtistTitleInfo as ArtistTitleInfo
+from lidarr.models.authentication_required_type import AuthenticationRequiredType as AuthenticationRequiredType
+from lidarr.models.authentication_type import AuthenticationType as AuthenticationType
+from lidarr.models.auto_tagging_resource import AutoTaggingResource as AutoTaggingResource
+from lidarr.models.auto_tagging_specification_schema import AutoTaggingSpecificationSchema as AutoTaggingSpecificationSchema
+from lidarr.models.backup_resource import BackupResource as BackupResource
+from lidarr.models.backup_type import BackupType as BackupType
+from lidarr.models.blocklist_bulk_resource import BlocklistBulkResource as BlocklistBulkResource
+from lidarr.models.blocklist_resource import BlocklistResource as BlocklistResource
+from lidarr.models.blocklist_resource_paging_resource import BlocklistResourcePagingResource as BlocklistResourcePagingResource
+from lidarr.models.certificate_validation_type import CertificateValidationType as CertificateValidationType
+from lidarr.models.command import Command as Command
+from lidarr.models.command_priority import CommandPriority as CommandPriority
+from lidarr.models.command_resource import CommandResource as CommandResource
+from lidarr.models.command_result import CommandResult as CommandResult
+from lidarr.models.command_status import CommandStatus as CommandStatus
+from lidarr.models.command_trigger import CommandTrigger as CommandTrigger
+from lidarr.models.contract_field import ContractField as ContractField
+from lidarr.models.custom_filter_resource import CustomFilterResource as CustomFilterResource
+from lidarr.models.custom_format_bulk_resource import CustomFormatBulkResource as CustomFormatBulkResource
+from lidarr.models.custom_format_resource import CustomFormatResource as CustomFormatResource
+from lidarr.models.custom_format_specification_schema import CustomFormatSpecificationSchema as CustomFormatSpecificationSchema
+from lidarr.models.database_type import DatabaseType as DatabaseType
+from lidarr.models.delay_profile_resource import DelayProfileResource as DelayProfileResource
+from lidarr.models.disk_space_resource import DiskSpaceResource as DiskSpaceResource
+from lidarr.models.download_client_bulk_resource import DownloadClientBulkResource as DownloadClientBulkResource
+from lidarr.models.download_client_config_resource import DownloadClientConfigResource as DownloadClientConfigResource
+from lidarr.models.download_client_resource import DownloadClientResource as DownloadClientResource
+from lidarr.models.download_protocol import DownloadProtocol as DownloadProtocol
+from lidarr.models.entity_history_event_type import EntityHistoryEventType as EntityHistoryEventType
+from lidarr.models.file_date_type import FileDateType as FileDateType
+from lidarr.models.health_check_result import HealthCheckResult as HealthCheckResult
+from lidarr.models.health_resource import HealthResource as HealthResource
+from lidarr.models.history_resource import HistoryResource as HistoryResource
+from lidarr.models.history_resource_paging_resource import HistoryResourcePagingResource as HistoryResourcePagingResource
+from lidarr.models.host_config_resource import HostConfigResource as HostConfigResource
+from lidarr.models.import_list_bulk_resource import ImportListBulkResource as ImportListBulkResource
+from lidarr.models.import_list_exclusion_resource import ImportListExclusionResource as ImportListExclusionResource
+from lidarr.models.import_list_monitor_type import ImportListMonitorType as ImportListMonitorType
+from lidarr.models.import_list_resource import ImportListResource as ImportListResource
+from lidarr.models.import_list_type import ImportListType as ImportListType
+from lidarr.models.indexer_bulk_resource import IndexerBulkResource as IndexerBulkResource
+from lidarr.models.indexer_config_resource import IndexerConfigResource as IndexerConfigResource
+from lidarr.models.indexer_flag_resource import IndexerFlagResource as IndexerFlagResource
+from lidarr.models.indexer_resource import IndexerResource as IndexerResource
+from lidarr.models.iso_country import IsoCountry as IsoCountry
+from lidarr.models.language_resource import LanguageResource as LanguageResource
+from lidarr.models.links import Links as Links
+from lidarr.models.localization_resource import LocalizationResource as LocalizationResource
+from lidarr.models.log_file_resource import LogFileResource as LogFileResource
+from lidarr.models.log_resource import LogResource as LogResource
+from lidarr.models.log_resource_paging_resource import LogResourcePagingResource as LogResourcePagingResource
+from lidarr.models.manual_import_resource import ManualImportResource as ManualImportResource
+from lidarr.models.manual_import_update_resource import ManualImportUpdateResource as ManualImportUpdateResource
+from lidarr.models.media_cover import MediaCover as MediaCover
+from lidarr.models.media_cover_types import MediaCoverTypes as MediaCoverTypes
+from lidarr.models.media_info_model import MediaInfoModel as MediaInfoModel
+from lidarr.models.media_info_resource import MediaInfoResource as MediaInfoResource
+from lidarr.models.media_management_config_resource import MediaManagementConfigResource as MediaManagementConfigResource
+from lidarr.models.medium_resource import MediumResource as MediumResource
+from lidarr.models.member import Member as Member
+from lidarr.models.metadata_profile_resource import MetadataProfileResource as MetadataProfileResource
+from lidarr.models.metadata_provider_config_resource import MetadataProviderConfigResource as MetadataProviderConfigResource
+from lidarr.models.metadata_resource import MetadataResource as MetadataResource
+from lidarr.models.monitor_types import MonitorTypes as MonitorTypes
+from lidarr.models.monitoring_options import MonitoringOptions as MonitoringOptions
+from lidarr.models.naming_config_resource import NamingConfigResource as NamingConfigResource
+from lidarr.models.new_item_monitor_types import NewItemMonitorTypes as NewItemMonitorTypes
+from lidarr.models.notification_resource import NotificationResource as NotificationResource
+from lidarr.models.parse_resource import ParseResource as ParseResource
+from lidarr.models.parsed_album_info import ParsedAlbumInfo as ParsedAlbumInfo
+from lidarr.models.parsed_track_info import ParsedTrackInfo as ParsedTrackInfo
+from lidarr.models.ping_resource import PingResource as PingResource
+from lidarr.models.primary_album_type import PrimaryAlbumType as PrimaryAlbumType
+from lidarr.models.privacy_level import PrivacyLevel as PrivacyLevel
+from lidarr.models.profile_format_item_resource import ProfileFormatItemResource as ProfileFormatItemResource
+from lidarr.models.profile_primary_album_type_item_resource import ProfilePrimaryAlbumTypeItemResource as ProfilePrimaryAlbumTypeItemResource
+from lidarr.models.profile_release_status_item_resource import ProfileReleaseStatusItemResource as ProfileReleaseStatusItemResource
+from lidarr.models.profile_secondary_album_type_item_resource import ProfileSecondaryAlbumTypeItemResource as ProfileSecondaryAlbumTypeItemResource
+from lidarr.models.proper_download_types import ProperDownloadTypes as ProperDownloadTypes
+from lidarr.models.provider_message import ProviderMessage as ProviderMessage
+from lidarr.models.provider_message_type import ProviderMessageType as ProviderMessageType
+from lidarr.models.proxy_type import ProxyType as ProxyType
+from lidarr.models.quality import Quality as Quality
+from lidarr.models.quality_definition_resource import QualityDefinitionResource as QualityDefinitionResource
+from lidarr.models.quality_model import QualityModel as QualityModel
+from lidarr.models.quality_profile_quality_item_resource import QualityProfileQualityItemResource as QualityProfileQualityItemResource
+from lidarr.models.quality_profile_resource import QualityProfileResource as QualityProfileResource
+from lidarr.models.queue_bulk_resource import QueueBulkResource as QueueBulkResource
+from lidarr.models.queue_resource import QueueResource as QueueResource
+from lidarr.models.queue_resource_paging_resource import QueueResourcePagingResource as QueueResourcePagingResource
+from lidarr.models.queue_status_resource import QueueStatusResource as QueueStatusResource
+from lidarr.models.ratings import Ratings as Ratings
+from lidarr.models.rejection import Rejection as Rejection
+from lidarr.models.rejection_type import RejectionType as RejectionType
+from lidarr.models.release_profile_resource import ReleaseProfileResource as ReleaseProfileResource
+from lidarr.models.release_resource import ReleaseResource as ReleaseResource
+from lidarr.models.release_status import ReleaseStatus as ReleaseStatus
+from lidarr.models.remote_path_mapping_resource import RemotePathMappingResource as RemotePathMappingResource
+from lidarr.models.rename_track_resource import RenameTrackResource as RenameTrackResource
+from lidarr.models.rescan_after_refresh_type import RescanAfterRefreshType as RescanAfterRefreshType
+from lidarr.models.retag_track_resource import RetagTrackResource as RetagTrackResource
+from lidarr.models.revision import Revision as Revision
+from lidarr.models.root_folder_resource import RootFolderResource as RootFolderResource
+from lidarr.models.runtime_mode import RuntimeMode as RuntimeMode
+from lidarr.models.search_resource import SearchResource as SearchResource
+from lidarr.models.secondary_album_type import SecondaryAlbumType as SecondaryAlbumType
+from lidarr.models.select_option import SelectOption as SelectOption
+from lidarr.models.sort_direction import SortDirection as SortDirection
+from lidarr.models.system_resource import SystemResource as SystemResource
+from lidarr.models.tag_details_resource import TagDetailsResource as TagDetailsResource
+from lidarr.models.tag_difference import TagDifference as TagDifference
+from lidarr.models.tag_resource import TagResource as TagResource
+from lidarr.models.task_resource import TaskResource as TaskResource
+from lidarr.models.track_file_list_resource import TrackFileListResource as TrackFileListResource
+from lidarr.models.track_file_resource import TrackFileResource as TrackFileResource
+from lidarr.models.track_resource import TrackResource as TrackResource
+from lidarr.models.tracked_download_state import TrackedDownloadState as TrackedDownloadState
+from lidarr.models.tracked_download_status import TrackedDownloadStatus as TrackedDownloadStatus
+from lidarr.models.tracked_download_status_message import TrackedDownloadStatusMessage as TrackedDownloadStatusMessage
+from lidarr.models.ui_config_resource import UiConfigResource as UiConfigResource
+from lidarr.models.update_changes import UpdateChanges as UpdateChanges
+from lidarr.models.update_mechanism import UpdateMechanism as UpdateMechanism
+from lidarr.models.update_resource import UpdateResource as UpdateResource
+from lidarr.models.write_audio_tags_type import WriteAudioTagsType as WriteAudioTagsType
+
+""",
+            name=__name__,
+            doc=__doc__,
+        )
+    )

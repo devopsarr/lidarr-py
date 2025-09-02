@@ -1,6 +1,86 @@
 # flake8: noqa
 
-# import apis into api package
+if __import__("typing").TYPE_CHECKING:
+    # import apis into api package
+    from lidarr.api.album_api import AlbumApi
+    from lidarr.api.album_lookup_api import AlbumLookupApi
+    from lidarr.api.album_studio_api import AlbumStudioApi
+    from lidarr.api.api_info_api import ApiInfoApi
+    from lidarr.api.artist_api import ArtistApi
+    from lidarr.api.artist_editor_api import ArtistEditorApi
+    from lidarr.api.artist_lookup_api import ArtistLookupApi
+    from lidarr.api.authentication_api import AuthenticationApi
+    from lidarr.api.auto_tagging_api import AutoTaggingApi
+    from lidarr.api.backup_api import BackupApi
+    from lidarr.api.blocklist_api import BlocklistApi
+    from lidarr.api.calendar_api import CalendarApi
+    from lidarr.api.calendar_feed_api import CalendarFeedApi
+    from lidarr.api.command_api import CommandApi
+    from lidarr.api.custom_filter_api import CustomFilterApi
+    from lidarr.api.custom_format_api import CustomFormatApi
+    from lidarr.api.cutoff_api import CutoffApi
+    from lidarr.api.delay_profile_api import DelayProfileApi
+    from lidarr.api.disk_space_api import DiskSpaceApi
+    from lidarr.api.download_client_api import DownloadClientApi
+    from lidarr.api.download_client_config_api import DownloadClientConfigApi
+    from lidarr.api.file_system_api import FileSystemApi
+    from lidarr.api.health_api import HealthApi
+    from lidarr.api.history_api import HistoryApi
+    from lidarr.api.host_config_api import HostConfigApi
+    from lidarr.api.import_list_api import ImportListApi
+    from lidarr.api.import_list_exclusion_api import ImportListExclusionApi
+    from lidarr.api.indexer_api import IndexerApi
+    from lidarr.api.indexer_config_api import IndexerConfigApi
+    from lidarr.api.indexer_flag_api import IndexerFlagApi
+    from lidarr.api.language_api import LanguageApi
+    from lidarr.api.localization_api import LocalizationApi
+    from lidarr.api.log_api import LogApi
+    from lidarr.api.log_file_api import LogFileApi
+    from lidarr.api.manual_import_api import ManualImportApi
+    from lidarr.api.media_cover_api import MediaCoverApi
+    from lidarr.api.media_management_config_api import MediaManagementConfigApi
+    from lidarr.api.metadata_api import MetadataApi
+    from lidarr.api.metadata_profile_api import MetadataProfileApi
+    from lidarr.api.metadata_profile_schema_api import MetadataProfileSchemaApi
+    from lidarr.api.metadata_provider_config_api import MetadataProviderConfigApi
+    from lidarr.api.missing_api import MissingApi
+    from lidarr.api.naming_config_api import NamingConfigApi
+    from lidarr.api.notification_api import NotificationApi
+    from lidarr.api.parse_api import ParseApi
+    from lidarr.api.ping_api import PingApi
+    from lidarr.api.quality_definition_api import QualityDefinitionApi
+    from lidarr.api.quality_profile_api import QualityProfileApi
+    from lidarr.api.quality_profile_schema_api import QualityProfileSchemaApi
+    from lidarr.api.queue_api import QueueApi
+    from lidarr.api.queue_action_api import QueueActionApi
+    from lidarr.api.queue_details_api import QueueDetailsApi
+    from lidarr.api.queue_status_api import QueueStatusApi
+    from lidarr.api.release_api import ReleaseApi
+    from lidarr.api.release_profile_api import ReleaseProfileApi
+    from lidarr.api.release_push_api import ReleasePushApi
+    from lidarr.api.remote_path_mapping_api import RemotePathMappingApi
+    from lidarr.api.rename_track_api import RenameTrackApi
+    from lidarr.api.retag_track_api import RetagTrackApi
+    from lidarr.api.root_folder_api import RootFolderApi
+    from lidarr.api.search_api import SearchApi
+    from lidarr.api.static_resource_api import StaticResourceApi
+    from lidarr.api.system_api import SystemApi
+    from lidarr.api.tag_api import TagApi
+    from lidarr.api.tag_details_api import TagDetailsApi
+    from lidarr.api.task_api import TaskApi
+    from lidarr.api.track_api import TrackApi
+    from lidarr.api.track_file_api import TrackFileApi
+    from lidarr.api.ui_config_api import UiConfigApi
+    from lidarr.api.update_api import UpdateApi
+    from lidarr.api.update_log_file_api import UpdateLogFileApi
+    
+else:
+    from lazy_imports import LazyModule, as_package, load
+
+    load(
+        LazyModule(
+            *as_package(__file__),
+            """# import apis into api package
 from lidarr.api.album_api import AlbumApi
 from lidarr.api.album_lookup_api import AlbumLookupApi
 from lidarr.api.album_studio_api import AlbumStudioApi
@@ -73,3 +153,8 @@ from lidarr.api.ui_config_api import UiConfigApi
 from lidarr.api.update_api import UpdateApi
 from lidarr.api.update_log_file_api import UpdateLogFileApi
 
+""",
+            name=__name__,
+            doc=__doc__,
+        )
+    )

@@ -18,6 +18,7 @@ from typing_extensions import Annotated
 
 from pydantic import StrictBool, StrictInt, StrictStr
 from typing import List, Optional
+from uuid import UUID
 from lidarr.models.artist_resource import ArtistResource
 
 from lidarr.api_client import ApiClient, RequestSerialized
@@ -860,7 +861,7 @@ class ArtistApi:
     @validate_call
     def list_artist(
         self,
-        mb_id: Optional[StrictStr] = None,
+        mb_id: Optional[UUID] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -926,7 +927,7 @@ class ArtistApi:
     @validate_call
     def list_artist_with_http_info(
         self,
-        mb_id: Optional[StrictStr] = None,
+        mb_id: Optional[UUID] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -992,7 +993,7 @@ class ArtistApi:
     @validate_call
     def list_artist_without_preload_content(
         self,
-        mb_id: Optional[StrictStr] = None,
+        mb_id: Optional[UUID] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
