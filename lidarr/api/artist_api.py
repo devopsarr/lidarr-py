@@ -879,7 +879,7 @@ class ArtistApi:
 
 
         :param mb_id:
-        :type mb_id: str
+        :type mb_id: UUID
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -945,7 +945,7 @@ class ArtistApi:
 
 
         :param mb_id:
-        :type mb_id: str
+        :type mb_id: UUID
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1011,7 +1011,7 @@ class ArtistApi:
 
 
         :param mb_id:
-        :type mb_id: str
+        :type mb_id: UUID
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
