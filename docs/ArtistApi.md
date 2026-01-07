@@ -296,7 +296,7 @@ configuration.api_key['X-Api-Key'] = os.environ["API_KEY"]
 with lidarr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lidarr.ArtistApi(api_client)
-    mb_id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID |  (optional)
+    mb_id = 'mb_id_example' # str |  (optional)
 
     try:
         api_response = api_instance.list_artist(mb_id=mb_id)
@@ -313,7 +313,7 @@ with lidarr.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **mb_id** | **UUID**|  | [optional] 
+ **mb_id** | **str**|  | [optional] 
 
 ### Return type
 
