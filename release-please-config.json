@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+    "release-type": "python",
+    "packages": {
+        ".": {
+            "extra-files": [
+                "README.md",
+                "pyproject.toml",
+                "setup.py",
+                "lidarr/__init__.py",
+                "lidarr/configuration.py",
+                "lidarr/api_client.py"
+            ]
+        }
+    }
+}
