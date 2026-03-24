@@ -23,6 +23,7 @@ from lidarr.models.artist_title_info import ArtistTitleInfo
 from lidarr.models.quality_model import QualityModel
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ParsedAlbumInfo(BaseModel):
     """
@@ -44,7 +45,8 @@ class ParsedAlbumInfo(BaseModel):
     __properties: ClassVar[List[str]] = ["releaseTitle", "albumTitle", "artistName", "albumType", "artistTitleInfo", "quality", "releaseDate", "discography", "discographyStart", "discographyEnd", "releaseGroup", "releaseHash", "releaseVersion"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -56,8 +58,7 @@ class ParsedAlbumInfo(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
