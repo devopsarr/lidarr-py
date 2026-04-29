@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.2.2](https://github.com/devopsarr/lidarr-py/compare/v1.2.1...v1.2.2) (2026-04-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency lidarr/lidarr to v3 ([df0291c](https://github.com/devopsarr/lidarr-py/commit/df0291c92706ce464df56d29d2fad4d39aa6f313))
+* **deps:** update dependency lidarr/lidarr to v3 ([8a40a88](https://github.com/devopsarr/lidarr-py/commit/8a40a88649aa9b3d8c06a5962eeb7d979c56bd2a))
+* **deps:** update dependency lidarr/lidarr to v3.1.0.4875 ([2d2dd7d](https://github.com/devopsarr/lidarr-py/commit/2d2dd7dd5195ce6a30db891d0b25acdc724e77a4))
+* **deps:** update dependency radarr/radarr to v5.28.0.10274 ([d44f770](https://github.com/devopsarr/lidarr-py/commit/d44f770f88f6188b7ccba5bd9116534e08054930))
+* **deps:** update dependency radarr/radarr to v5.28.0.10274 ([0dedc0a](https://github.com/devopsarr/lidarr-py/commit/0dedc0a0667c9f3de38535d8c91f0911cd8382e4))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.16.0 ([fd5f0cd](https://github.com/devopsarr/lidarr-py/commit/fd5f0cd0a70545beb7da5cab6531d58188bcfbb9))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.17.0 ([cdfe19d](https://github.com/devopsarr/lidarr-py/commit/cdfe19d6f9e20af48b1444c9c1dff6aa539939c8))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.18.0 ([94caea3](https://github.com/devopsarr/lidarr-py/commit/94caea3f8b906bea645cc6053e1daf211dfef7c2))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.18.0 ([532903b](https://github.com/devopsarr/lidarr-py/commit/532903be40f6efd58d4f95accc3c4eac5197b5e3))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.18.0 ([0449eaa](https://github.com/devopsarr/lidarr-py/commit/0449eaabbde75590a6367457c70a0721b7277046))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.19.0 ([70f01e0](https://github.com/devopsarr/lidarr-py/commit/70f01e01e51ab5680d044264ab217116dcf4f741))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.19.0 ([0a3926a](https://github.com/devopsarr/lidarr-py/commit/0a3926a6281d4ca117f2adc82da55502dbda67f1))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.20.0 ([434c837](https://github.com/devopsarr/lidarr-py/commit/434c8375a5ee2400e593c991aefbdd1ecee76fc1))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.20.0 ([2ca7c27](https://github.com/devopsarr/lidarr-py/commit/2ca7c273cb3961a17b569917b42655400066fc0b))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.21.0 ([a2cbda4](https://github.com/devopsarr/lidarr-py/commit/a2cbda44df781262404c016d334567268b26a793))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.21.0 ([122d404](https://github.com/devopsarr/lidarr-py/commit/122d4044134787fe73e03ac1a500f931c469c959))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.22.0 ([13ef4a2](https://github.com/devopsarr/lidarr-py/commit/13ef4a2faf2d05eaad723c302ede0d893fd26190))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.22.0 ([98373ef](https://github.com/devopsarr/lidarr-py/commit/98373eff70a7af6ea1d387a5d2069bbd6271fb44))
+
 ## [1.2.1](https://github.com/devopsarr/lidarr-py/compare/v1.2.0...v1.2.1) (2025-09-02)
 
 
