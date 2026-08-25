@@ -80,8 +80,7 @@ class RetagTrackResource(BaseModel):
         _items = []
         if self.changes:
             for _item_changes in self.changes:
-                if _item_changes:
-                    _items.append(_item_changes.to_dict())
+                _items.append(_item_changes.to_dict() if _item_changes is not None else None)
             _dict['changes'] = _items
         # set to None if track_numbers (nullable) is None
         # and model_fields_set contains the field

@@ -80,22 +80,19 @@ class MetadataProfileResource(BaseModel):
         _items = []
         if self.primary_album_types:
             for _item_primary_album_types in self.primary_album_types:
-                if _item_primary_album_types:
-                    _items.append(_item_primary_album_types.to_dict())
+                _items.append(_item_primary_album_types.to_dict() if _item_primary_album_types is not None else None)
             _dict['primaryAlbumTypes'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in secondary_album_types (list)
         _items = []
         if self.secondary_album_types:
             for _item_secondary_album_types in self.secondary_album_types:
-                if _item_secondary_album_types:
-                    _items.append(_item_secondary_album_types.to_dict())
+                _items.append(_item_secondary_album_types.to_dict() if _item_secondary_album_types is not None else None)
             _dict['secondaryAlbumTypes'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in release_statuses (list)
         _items = []
         if self.release_statuses:
             for _item_release_statuses in self.release_statuses:
-                if _item_release_statuses:
-                    _items.append(_item_release_statuses.to_dict())
+                _items.append(_item_release_statuses.to_dict() if _item_release_statuses is not None else None)
             _dict['releaseStatuses'] = _items
         # set to None if name (nullable) is None
         # and model_fields_set contains the field

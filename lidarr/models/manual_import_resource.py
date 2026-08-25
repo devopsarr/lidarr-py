@@ -102,8 +102,7 @@ class ManualImportResource(BaseModel):
         _items = []
         if self.tracks:
             for _item_tracks in self.tracks:
-                if _item_tracks:
-                    _items.append(_item_tracks.to_dict())
+                _items.append(_item_tracks.to_dict() if _item_tracks is not None else None)
             _dict['tracks'] = _items
         # override the default output from pydantic by calling `to_dict()` of quality
         if self.quality:
@@ -112,8 +111,7 @@ class ManualImportResource(BaseModel):
         _items = []
         if self.rejections:
             for _item_rejections in self.rejections:
-                if _item_rejections:
-                    _items.append(_item_rejections.to_dict())
+                _items.append(_item_rejections.to_dict() if _item_rejections is not None else None)
             _dict['rejections'] = _items
         # override the default output from pydantic by calling `to_dict()` of audio_tags
         if self.audio_tags:

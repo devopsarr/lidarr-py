@@ -91,8 +91,7 @@ class BlocklistResource(BaseModel):
         _items = []
         if self.custom_formats:
             for _item_custom_formats in self.custom_formats:
-                if _item_custom_formats:
-                    _items.append(_item_custom_formats.to_dict())
+                _items.append(_item_custom_formats.to_dict() if _item_custom_formats is not None else None)
             _dict['customFormats'] = _items
         # override the default output from pydantic by calling `to_dict()` of artist
         if self.artist:
