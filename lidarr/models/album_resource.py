@@ -110,15 +110,13 @@ class AlbumResource(BaseModel):
         _items = []
         if self.releases:
             for _item_releases in self.releases:
-                if _item_releases:
-                    _items.append(_item_releases.to_dict())
+                _items.append(_item_releases.to_dict() if _item_releases is not None else None)
             _dict['releases'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in media (list)
         _items = []
         if self.media:
             for _item_media in self.media:
-                if _item_media:
-                    _items.append(_item_media.to_dict())
+                _items.append(_item_media.to_dict() if _item_media is not None else None)
             _dict['media'] = _items
         # override the default output from pydantic by calling `to_dict()` of artist
         if self.artist:
@@ -127,15 +125,13 @@ class AlbumResource(BaseModel):
         _items = []
         if self.images:
             for _item_images in self.images:
-                if _item_images:
-                    _items.append(_item_images.to_dict())
+                _items.append(_item_images.to_dict() if _item_images is not None else None)
             _dict['images'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in links (list)
         _items = []
         if self.links:
             for _item_links in self.links:
-                if _item_links:
-                    _items.append(_item_links.to_dict())
+                _items.append(_item_links.to_dict() if _item_links is not None else None)
             _dict['links'] = _items
         # override the default output from pydantic by calling `to_dict()` of statistics
         if self.statistics:

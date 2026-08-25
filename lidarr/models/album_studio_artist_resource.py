@@ -76,8 +76,7 @@ class AlbumStudioArtistResource(BaseModel):
         _items = []
         if self.albums:
             for _item_albums in self.albums:
-                if _item_albums:
-                    _items.append(_item_albums.to_dict())
+                _items.append(_item_albums.to_dict() if _item_albums is not None else None)
             _dict['albums'] = _items
         # set to None if monitored (nullable) is None
         # and model_fields_set contains the field

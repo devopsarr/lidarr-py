@@ -78,8 +78,7 @@ class AlbumStudioResource(BaseModel):
         _items = []
         if self.artist:
             for _item_artist in self.artist:
-                if _item_artist:
-                    _items.append(_item_artist.to_dict())
+                _items.append(_item_artist.to_dict() if _item_artist is not None else None)
             _dict['artist'] = _items
         # override the default output from pydantic by calling `to_dict()` of monitoring_options
         if self.monitoring_options:
