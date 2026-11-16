@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.2.2 (2026-11-16)
+
+## What's Changed
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.16.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-py/pull/81
+* fix(deps): update dependency lidarr/lidarr to v3 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-py/pull/83
+* fix(deps): update dependency lidarr/lidarr to v3.1.0.4875 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-py/pull/84
+* fix(deps): update dependency radarr/radarr to v5.28.0.10274 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-py/pull/85
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.18.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-py/pull/86
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.19.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-py/pull/87
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.20.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-py/pull/88
+* chore: add files for relase please v4 migration by @devopsarr[bot] in https://github.com/devopsarr/lidarr-py/pull/89
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.21.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-py/pull/90
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.22.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-py/pull/91
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.23.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-py/pull/92
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.24.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-py/pull/93
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.25.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-py/pull/94
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.26.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-py/pull/95
+* fix(deps): update dependency lidarr/lidarr to v3.1.6.5079 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-py/pull/96
+* chore: align-versions by @devopsarr[bot] in https://github.com/devopsarr/lidarr-py/pull/97
+* chore: edit changelog type to github by @devopsarr[bot] in https://github.com/devopsarr/lidarr-py/pull/98
+
+
+**Full Changelog**: https://github.com/devopsarr/lidarr-py/compare/v1.2.1...v1.2.2
+
 ## [1.2.1](https://github.com/devopsarr/lidarr-py/compare/v1.2.0...v1.2.1) (2025-09-02)
 
 
